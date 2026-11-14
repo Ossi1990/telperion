@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=840">
+    <title>TELPERION 4.0 – One-Pager (A4)</title>
+    <style>
+        :root {
+            --bg-page: #0b0f19;
+            --bg-card: #131b2e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --gold: #eab308;
+            --silver: #38bdf8;
+            --green: #22c55e;
+            --purple: #a855f7;
+            --border: #26334d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.42;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Language visibility rules */
+        body[data-active-lang="pl"] [data-lang="en"],
+        body[data-active-lang="pl"] [data-lang="de"] {
+            display: none !important;
+        }
+        body[data-active-lang="en"] [data-lang="pl"],
+        body[data-active-lang="en"] [data-lang="de"] {
+            display: none !important;
+        }
+        body[data-active-lang="de"] [data-lang="pl"],
+        body[data-active-lang="de"] [data-lang="en"] {
+            display: none !important;
+        }
+
+        .bottom-toolbar {
+            width: 210mm;
+            margin: 0 auto 24px;
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #0b0f19;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3px;
+            gap: 4px;
+        }
+
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 9px;
+            border-radius: 6px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .lang-btn.active {
+            background: #1e293b;
+            color: var(--gold);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            border: 1px solid rgba(234, 179, 8, 0.45);
+        }
+
+        .flag-svg {
+            width: 18px;
+            height: 13px;
+            border-radius: 2px;
+            box-shadow: 0 0 2px rgba(0,0,0,0.6);
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+            color: #0b0f19;
+            border: none;
+            font-weight: 700;
+        }
+
+        /* Arkusz A4 na ekranie i w druku */
+        .a4-sheet {
+            width: 210mm;
+            min-height: 296mm;
+            margin: 20px auto;
+            background: #ffffff;
+            color: #0f172a;
+            padding: 11mm 12mm;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header A4 */
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 14px 18px;
+            border-radius: 8px;
+            border-left: 6px solid #eab308;
+        }
+
+        .header-bar h1 {
+            font-size: 18pt;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .header-bar .subtitle {
+            font-size: 9.5pt;
+            color: #cbd5e1;
+            margin-top: 2px;
+        }
+
+        .header-badge {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            border: 1px solid #22c55e;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 8pt;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* Pasek korzyści */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 9px;
+        }
+
+        .kpi-card {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 7px 10px;
+            text-align: center;
+        }
+
+        .kpi-val {
+            font-size: 11pt;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .kpi-lbl {
+            font-size: 7.5pt;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        /* Sekcja problemów */
+        .sec-title {
+            font-size: 10pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #0f172a;
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 3px;
+            margin-top: 10px;
+            margin-bottom: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .prob-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 3px solid #0284c7;
+            border-radius: 5px;
+            padding: 6px 9px;
+            font-size: 8pt;
+        }
+
+        .prob-item strong {
+            display: block;
+            color: #0f172a;
+            font-size: 8.3pt;
+            margin-bottom: 2px;
+        }
+
+        /* Dwie kolumny modułów: BASIC vs PRO */
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .tier-col {
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 9px 11px;
+            background: #ffffff;
+        }
+
+        .tier-col.basic {
+            border-top: 4px solid #0284c7;
+        }
+
+        .tier-col.pro {
+            border-top: 4px solid #ca8a04;
+        }
+
+        .tier-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .tier-head h3 {
+            font-size: 10.5pt;
+            font-weight: 800;
+        }
+
+        .tag {
+            font-size: 7pt;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .tag-basic {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .tag-pro {
+            background: #fef9c3;
+            color: #a16207;
+        }
+
+        .req-note {
+            font-size: 7.6pt;
+            color: #475569;
+            margin-bottom: 7px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .mod-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 6px 9px;
+            margin-bottom: 6px;
+        }
+
+        .mod-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .mod-box h4 {
+            font-size: 8.8pt;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 2px;
+        }
+
+        .mod-box p {
+            font-size: 7.7pt;
+            color: #334155;
+        }
+
+        /* Pasek Human in the loop + ERP */
+        .bottom-split {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .info-panel {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            padding: 8px 11px;
+            font-size: 7.9pt;
+        }
+
+        .info-panel h4 {
+            font-size: 8.8pt;
+            font-weight: 800;
+            margin-bottom: 3px;
+            color: #0f172a;
+        }
+
+        .info-panel.erp {
+            background: #faf5ff;
+            border-color: #d8b4fe;
+            border-left: 4px solid #9333ea;
+        }
+
+        /* Stopka kontaktowa */
+        .footer-cta {
+            margin-top: 9px;
+            background: #0f172a;
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-cta .cta-left h3 {
+            font-size: 10pt;
+            color: #eab308;
+            font-weight: 800;
+        }
+
+        .footer-cta .cta-left p {
+            font-size: 7.8pt;
+            color: #cbd5e1;
+        }
+
+        .footer-cta .cta-right {
+            text-align: right;
+            font-size: 8.3pt;
+            line-height: 1.35;
+            background: rgba(255,255,255,0.07);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px dashed rgba(234, 179, 8, 0.5);
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+            body {
+                background: #ffffff;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .a4-sheet {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 10mm 11mm;
+                box-shadow: none;
+                border-radius: 0;
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body data-active-lang="pl">
+
+    <!-- ========================================================================= -->
+    <!-- WERSJA POLSKA (PL)                                                        -->
+    <!-- ========================================================================= -->
+    <div class="a4-sheet" data-lang="pl">
+        <div>
+            <!-- NAGŁÓWEK -->
+            <div class="header-bar">
+                <div>
+                    <h1>SYSTEM TELPERION 4.0</h1>
+                    <div class="subtitle">Modułowa automatyzacja przygotowania produkcji: od modelu 3D i struktury SSoT do gotowych zleceń na halę</div>
+                </div>
+                <div class="header-badge">ARCHITEKTURA SSoT<br>BASIC (Excel) + PRO (CAD)</div>
+            </div>
+
+            <!-- KPI -->
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-val">-80% czasu</div>
+                    <div class="kpi-lbl">Generowanie DXF/STEP, BOM i kart gniazd</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">1 Baza SSoT</div>
+                    <div class="kpi-lbl">Wzorcowa struktura dla 1 szt. wyrobu</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">6 Modułów</div>
+                    <div class="kpi-lbl">Elastyczny dobór do każdego stanowiska</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">Bez CAD na hali</div>
+                    <div class="kpi-lbl">Pakiet Podstawowy wymaga tylko MS Excel</div>
+                </div>
+            </div>
+
+            <!-- ROZWIĄZYWANE PROBLEMY -->
+            <div class="sec-title">
+                <span>Kluczowe problemy produkcyjne i technologiczne, które eliminuje Telperion 4.0</span>
+            </div>
+            <div class="problems-grid">
+                <div class="prob-item">
+                    <strong>1. Żmudny eksport plików DXF i STEP</strong>
+                    Wspomagana konwersja na arkusz blachy (<em>Wstaw zgięcia</em>) pod nadzorem technologa, pomiar gabarytów i zrzut plików DXF/STEP.
+                </div>
+                <div class="prob-item">
+                    <strong>2. Błędy przepisania i chaos na hali</strong>
+                    Zamiast jednej tabeli na wszystko, każde gniazdo dostaje własną kartę operacyjną PDF ułożoną w kolejności procesu.
+                </div>
+                <div class="prob-item">
+                    <strong>3. Wielomateriałowość i kooperacja</strong>
+                    Obsługa w jednym zleceniu: blach, profili (6m/12m), części kupnych, kooperacji zewnętrznej, płyt drewnianych (m²) i tafli szkła (m²).
+                </div>
+            </div>
+
+            <!-- 6 MODUŁÓW W 2 WARSTWACH -->
+            <div class="sec-title">
+                <span>6 Modułów Systemu – Licencjonowanie warstwowe dopasowane do stanowisk</span>
+            </div>
+
+            <div class="tiers-grid">
+                <!-- PAKIET PODSTAWOWY -->
+                <div class="tier-col basic">
+                    <div class="tier-head">
+                        <h3>Moduły Podstawowe (BASIC)</h3>
+                        <span class="tag tag-basic">Stanowisko Biurowe</span>
+                    </div>
+                    <div class="req-note">
+                        <strong>Wymagania:</strong> Zwykły komputer biurowy z pakietem <strong>MS Excel</strong> i przeglądarką. <strong>Nie wymaga licencji CAD!</strong>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>1. Agregator SSoT (Konsolidator zamówień)</h4>
+                        <p>Łączy jednostkowe pliki <strong>SSoT</strong> (dla 1 szt. wyrobów) w jedną <strong>Zbiorczą Listę Części do Zamówienia</strong>. Przemnaża ilości przez wolumen zlecenia i sumuje powtarzające się detale.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>2. Generator Raportów (Karty PDF, Zakupy, Farby)</h4>
+                        <p>Z pliku SSoT lub Zbiorczej Listy Części tworzy: <strong>Zestawienie Materiałowe</strong> (stal kg, profile m.b., kupne szt., drewno i szkło m², alerty kooperacji), <strong>Raport Farb [L/m²]</strong> oraz <strong>Karty Operacyjne PDF</strong> (Piły, Laser, Giętarki, Tokarki/Frezarki, Kooperacja, Drewno, Szkło, Spawalnia oraz Zestawienie Załadunkowe z uwagami dot. konserwacji).</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>3. Nester 1D (Optymalizator cięcia sztang i profili)</h4>
+                        <p>Dobiera optymalny rozkrój dłużyc 6 m i 12 m z uwzględnieniem rzazu piły. Posiada filtry gniazd (drewno 1D, kooperacja), możliwość wykluczania pozycji oraz graficzne paski rozkroju dla operatora piły.</p>
+                    </div>
+                </div>
+
+                <!-- PAKIET PRO -->
+                <div class="tier-col pro">
+                    <div class="tier-head">
+                        <h3>Moduły PRO (Inżynierskie CAD)</h3>
+                        <span class="tag tag-pro">Stanowisko SolidWorks</span>
+                    </div>
+                    <div class="req-note">
+                        <strong>Wymagania:</strong> Stanowisko z <strong>SolidWorks</strong> + MS Excel. <em>(Obecnie moduły PRO są dostępne wyłącznie dla SolidWorks).</em>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>4. Harvester Metadanych i Plików Maszynowych</h4>
+                        <p>Wspomaga konwersję na arkusz blachy (<em>Wstaw zgięcia</em>) w trybie <strong>Human-in-the-Loop</strong> pod kontrolą technologa, eksportuje pliki <strong>DXF 1:1</strong> i <strong>STEP</strong>, wylicza gabaryty (A×B, L), masy, powierzchnie i rozpoznaje drewno oraz szkło.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>5. Generator CAD SSoT (Struktura dla 1 szt. wyrobu)</h4>
+                        <p>Tworzy wielopoziomową, wielokolumnową strukturę wzorcową <strong>SSoT</strong> (dla 1 szt. pojedynczego wyrobu: spawanie i montaż) bezpośrednio z drzewa złożenia SolidWorks wraz z domyślną marszrutą gniazd.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>6. Integrator SSoT (Pomost dokumentacji płaskiej i 3D)</h4>
+                        <p>Łączy istniejące listy części (np. z dokumentacji płaskiej) z danymi wyciągniętymi z modelu 3D w kompletny plik <strong>SSoT</strong> wyrobu. Paruje detale po znormalizowanych nazwach i uzupełnia gabaryty, grubości oraz masy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HUMAN IN THE LOOP + ERP -->
+            <div class="bottom-split">
+                <div class="info-panel">
+                    <h4>🛡️ Bezpieczeństwo „Human-in-the-Loop” (Kontrola Technologa)</h4>
+                    <p>
+                        Telperion nie zastępuje myślenia inżynierskiego – zdejmuje z technologa żmudne przeklikiwanie plików, podczas gdy dobór parametrów rozwinięcia blach oraz weryfikacja żółtych alertów w tabeli SSoT pozostają pod świadomą kontrolą człowieka.
+                    </p>
+                </div>
+                <div class="info-panel erp">
+                    <h4>🔌 Integracja z ERP na specjalne zamówienie (np. Streamsoft Prestiż)</h4>
+                    <p>
+                        Na życzenie tworzymy dedykowany moduł parsujący dane z systemu ERP (posiadamy sprawdzoną logikę m.in. dla <strong>Streamsoft Prestiż</strong>). Wdrożenie poprzedza wizyta w zakładzie, audyt procesu oraz analiza struktur eksportowych Państwa systemu ERP.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- STOPKA KONTAKTOWA -->
+        <div class="footer-cta">
+            <div class="cta-left">
+                <h3>Zainteresowany prezentacją na żywo na Twoich detalach?</h3>
+                <p>Skontaktuj się, aby umówić krótkie spotkanie online lub wizytę wdrożeniową w zakładzie.</p>
+            </div>
+            <div class="cta-right">
+                <strong>Przemysław Hamowski – System Telperion 4.0</strong><br>
+                📞 Tel.: <a href="tel:+48884362560" style="color: inherit; text-decoration: none;">+48 884 362 560</a> &nbsp;|&nbsp; ✉️ <a href="mailto:przemek.hamowski@gmail.com" style="color: inherit; text-decoration: none;">przemek.hamowski@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- WERSJA ANGIELSKA (EN)                                                     -->
+    <!-- ========================================================================= -->
+    <div class="a4-sheet" data-lang="en">
+        <div>
+            <!-- HEADER -->
+            <div class="header-bar">
+                <div>
+                    <h1>TELPERION 4.0 SYSTEM</h1>
+                    <div class="subtitle">Modular Production Engineering Automation: From 3D CAD &amp; SSoT Structure to Shop-Floor Work Orders</div>
+                </div>
+                <div class="header-badge">SSoT ARCHITECTURE<br>BASIC (Excel) + PRO (CAD)</div>
+            </div>
+
+            <!-- KPI -->
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-val">-80% Time</div>
+                    <div class="kpi-lbl">DXF/STEP export, BOM &amp; workstation cards</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">1 SSoT Core</div>
+                    <div class="kpi-lbl">Master BOM structure for 1 unit of product</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">6 Modules</div>
+                    <div class="kpi-lbl">Flexible deployment tailored to each workstation</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">No CAD Needed</div>
+                    <div class="kpi-lbl">BASIC Package requires only MS Excel &amp; Browser</div>
+                </div>
+            </div>
+
+            <!-- PROBLEMS SOLVED -->
+            <div class="sec-title">
+                <span>Key Manufacturing &amp; Engineering Bottlenecks Eliminated by Telperion 4.0</span>
+            </div>
+            <div class="problems-grid">
+                <div class="prob-item">
+                    <strong>1. Assisted DXF &amp; STEP File Exports</strong>
+                    Assisted sheet-metal conversion (<em>Insert Bends</em>) under technologist oversight, bounding-box measurement, and 1:1 DXF/STEP export.
+                </div>
+                <div class="prob-item">
+                    <strong>2. Data Entry Errors &amp; Shop-Floor Chaos</strong>
+                    Instead of one giant spreadsheet, each workstation receives its own clean, process-sequenced PDF job card.
+                </div>
+                <div class="prob-item">
+                    <strong>3. Multi-Material &amp; Subcontracting Control</strong>
+                    Handles in a single order: sheet metal, bars (6m/12m), purchased hardware, external subcontracting, wood panels (m²) &amp; glass (m²).
+                </div>
+            </div>
+
+            <!-- 6 MODULES IN 2 TIERS -->
+            <div class="sec-title">
+                <span>6 System Modules – Two-Tier Licensing Tailored to Your Workstations</span>
+            </div>
+
+            <div class="tiers-grid">
+                <!-- BASIC PACKAGE -->
+                <div class="tier-col basic">
+                    <div class="tier-head">
+                        <h3>Core Modules (BASIC Tier)</h3>
+                        <span class="tag tag-basic">Office Workstation</span>
+                    </div>
+                    <div class="req-note">
+                        <strong>Requirements:</strong> Standard office PC with <strong>MS Excel</strong> and a web browser. <strong>No CAD license required!</strong>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>1. SSoT Order Aggregator (Batch Consolidator)</h4>
+                        <p>Merges unit <strong>SSoT</strong> files (each for 1 pc of a product) into a <strong>Consolidated Order Parts List</strong>. Multiplies quantities by batch sizes and sums shared components across assemblies.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>2. Production &amp; Purchasing Report Generator</h4>
+                        <p>From a unit SSoT or Consolidated Order Parts List creates: <strong>Material &amp; Purchasing Summary</strong> (steel kg, profiles m, hardware pcs, wood &amp; glass m², subcontracting alerts), <strong>Paint Estimator [L/m²]</strong>, and <strong>PDF Workstation Cards</strong> (Saw, Laser, Press Brake, Lathes/Milling, Subcontracting, Wood, Glass, Welding, plus Loading &amp; Assembly Summary with conservation notes).</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>3. 1D Bar &amp; Profile Nester (Cutting Optimizer)</h4>
+                        <p>Computes optimal cutting layouts for 6 m and 12 m stock bars including saw kerf width. Features routing filters (1D wood, subcontracting), manual item exclusion, and graphical cutting bars for saw operators.</p>
+                    </div>
+                </div>
+
+                <!-- PRO PACKAGE -->
+                <div class="tier-col pro">
+                    <div class="tier-head">
+                        <h3>PRO Modules (CAD Engineering)</h3>
+                        <span class="tag tag-pro">SolidWorks Workstation</span>
+                    </div>
+                    <div class="req-note">
+                        <strong>Requirements:</strong> Engineering workstation with <strong>SolidWorks</strong> + MS Excel. <em>(Currently available exclusively for SolidWorks).</em>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>4. 3D Metadata &amp; Machine File Harvester</h4>
+                        <p>Assists sheet-metal conversion (<em>Insert Bends</em>) in <strong>Human-in-the-Loop</strong> mode under technologist control, exports <strong>1:1 DXF</strong> and <strong>STEP</strong> files, calculates bounding boxes (A×B, L), mass, paint area, and auto-detects wood and glass.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>5. CAD SSoT Structure Generator (1 Unit of Product)</h4>
+                        <p>Builds a multi-level, multi-column master <strong>SSoT</strong> structure (for 1 unit of a single product: welding &amp; final assembly) directly from the SolidWorks tree, with default workstation routing.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>6. SSoT Data Integrator (2D &amp; 3D Bridge)</h4>
+                        <p>Links existing part lists (e.g., from 2D drawings) with 3D CAD metadata into a complete product <strong>SSoT</strong>. Matches components by normalized part names and populates dimensions, thicknesses, and weights.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HUMAN IN THE LOOP + ERP -->
+            <div class="bottom-split">
+                <div class="info-panel">
+                    <h4>🛡️ "Human-in-the-Loop" Engineering Safety</h4>
+                    <p>
+                        Telperion eliminates tedious clicking without replacing engineering judgment – unfolding parameters and yellow-highlighted SSoT items remain under the technologist's conscious control before shop-floor PDF release.
+                    </p>
+                </div>
+                <div class="info-panel erp">
+                    <h4>🔌 Custom ERP Integration (e.g., Streamsoft Prestiż)</h4>
+                    <p>
+                        Upon request, we build dedicated ERP parsing connectors (with proven logic ready for <strong>Streamsoft Prestiż</strong>). Implementation begins with an on-site plant visit, workflow audit, and analysis of your ERP export structures.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER CTA -->
+        <div class="footer-cta">
+            <div class="cta-left">
+                <h3>Interested in a live demo on your own 3D assemblies?</h3>
+                <p>Get in touch to schedule a short online demonstration or an on-site engineering consultation.</p>
+            </div>
+            <div class="cta-right">
+                <strong>Przemysław Hamowski – Telperion 4.0 System</strong><br>
+                📞 Tel.: <a href="tel:+48884362560" style="color: inherit; text-decoration: none;">+48 884 362 560</a> &nbsp;|&nbsp; ✉️ <a href="mailto:przemek.hamowski@gmail.com" style="color: inherit; text-decoration: none;">przemek.hamowski@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- WERSJA NIEMIECKA (DE)                                                     -->
+    <!-- ========================================================================= -->
+    <div class="a4-sheet" data-lang="de">
+        <div>
+            <!-- HEADER -->
+            <div class="header-bar">
+                <div>
+                    <h1>SYSTEM TELPERION 4.0</h1>
+                    <div class="subtitle">Modulare Automatisierung der Arbeitsvorbereitung (AV): Vom 3D-Modell &amp; SSoT-Struktur bis zum Fertigungsauftrag</div>
+                </div>
+                <div class="header-badge">SSoT-ARCHITEKTUR<br>BASIC (Excel) + PRO (CAD)</div>
+            </div>
+
+            <!-- KPI -->
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-val">-80% Zeitaufwand</div>
+                    <div class="kpi-lbl">DXF/STEP-Export, Stücklisten &amp; Laufkarten</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">1 SSoT-Stamm</div>
+                    <div class="kpi-lbl">Stamm-Stückliste für 1 Stück des Produkts</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">6 Module</div>
+                    <div class="kpi-lbl">Flexibel kombinierbar für jeden Arbeitsplatz</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-val">Kein CAD in AV</div>
+                    <div class="kpi-lbl">BASIC-Paket benötigt nur MS Excel &amp; Browser</div>
+                </div>
+            </div>
+
+            <!-- GELÖSTE PROBLEME -->
+            <div class="sec-title">
+                <span>Zentrale Engpässe in Konstruktion und Fertigung, die Telperion 4.0 beseitigt</span>
+            </div>
+            <div class="problems-grid">
+                <div class="prob-item">
+                    <strong>1. Unterstützter DXF- &amp; STEP-Export</strong>
+                    Unterstützte Blechkonvertierung (<em>Biegungen einfügen</em>) unter Technologen-Kontrolle, Maßprüfung und 1:1-DXF/STEP-Export.
+                </div>
+                <div class="prob-item">
+                    <strong>2. Übertragungsfehler &amp; Hallen-Chaos</strong>
+                    Statt einer unübersichtlichen Gesamttabelle erhält jede Fertigungsinsel eigene, prozesssortierte PDF-Fertigungskarten.
+                </div>
+                <div class="prob-item">
+                    <strong>3. Multimaterial &amp; Fremdvergabe</strong>
+                    Verarbeitet in einem Auftrag: Bleche, Profile (6m/12m), Kaufteile, Fremdbearbeitung (Kooperation), Holzplatten (m²) &amp; Glas (m²).
+                </div>
+            </div>
+
+            <!-- 6 MODULE IN 2 EBENEN -->
+            <div class="sec-title">
+                <span>6 Systemmodule – Zweistufige Lizenzierung passend für Ihre Arbeitsplätze</span>
+            </div>
+
+            <div class="tiers-grid">
+                <!-- BASIC PAKET -->
+                <div class="tier-col basic">
+                    <div class="tier-head">
+                        <h3>Basismodule (BASIC-Paket)</h3>
+                        <span class="tag tag-basic">Büro-Arbeitsplatz</span>
+                    </div>
+                    <div class="req-note">
+                        <strong>Anforderungen:</strong> Standard-Büro-PC mit <strong>MS Excel</strong> und Browser. <strong>Keine CAD-Lizenz erforderlich!</strong>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>1. SSoT-Auftragsaggregator (Sammelaufträge)</h4>
+                        <p>Führt einzelne <strong>SSoT</strong>-Dateien (je 1 Stk. eines Produkts) zu einer <strong>Konsolidierten Auftrags-Teileliste</strong> zusammen. Multipliziert Stückzahlen mit Losgrößen und summiert identische Bauteile.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>2. Berichts- &amp; Laufkartengenerator (PDF, Einkauf, Lack)</h4>
+                        <p>Erzeugt aus SSoT oder Konsolidierter Auftragsliste: <strong>Material- &amp; Einkaufsübersicht</strong> (Stahl kg, Profile lfd.m, Kaufteile Stk., Holz &amp; Glas m², Kooperations-Warnungen), <strong>Lackbedarfsbericht [L/m²]</strong> sowie <strong>PDF-Arbeitskarten</strong> (Säge, Laser, Abkanten, Drehen/Fräsen, Kooperation, Holz, Glas, Schweißen sowie Verlade-/Montageliste inkl. Konservierungshinweisen).</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>3. 1D-Stangen- &amp; Profil-Nester (Zuschnittoptimierung)</h4>
+                        <p>Berechnet den optimalen Stangenzuschnitt (6 m / 12 m) inkl. Sägeschnittbreite. Mit Stationsfiltern (1D-Holz, Kooperation), manuellem Positionsausschluss und grafischen Schnittplänen für den Sägebediener.</p>
+                    </div>
+                </div>
+
+                <!-- PRO PAKET -->
+                <div class="tier-col pro">
+                    <div class="tier-head">
+                        <h3>PRO-Module (CAD-Konstruktion)</h3>
+                        <span class="tag tag-pro">SolidWorks-Arbeitsplatz</span>
+                    </div>
+                    <div class="req-note">
+                        <strong>Anforderungen:</strong> Konstruktions-PC mit <strong>SolidWorks</strong> + MS Excel. <em>(Aktuell exklusiv für SolidWorks verfügbar).</em>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>4. 3D-Metadaten- &amp; Maschinendatei-Harvester</h4>
+                        <p>Unterstützt die Blechkonvertierung (<em>Biegungen einfügen</em>) im <strong>Human-in-the-Loop</strong>-Modus unter Technologen-Aufsicht, exportiert <strong>1:1-DXF-</strong> und <strong>STEP-Dateien</strong>, berechnet Abmessungen (A×B, L), Masse, Fläche und erkennt Holz sowie Glas.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>5. CAD-SSoT-Strukturgenerator (1 Stück eines Produkts)</h4>
+                        <p>Erstellt die mehrstufige, mehrspaltige <strong>SSoT</strong>-Stammstruktur (für 1 Stück eines einzelnen Erzeugnisses: Schweißen &amp; Montage) direkt aus dem SolidWorks-Strukturbaum inkl. Standard-Arbeitsplatzzuweisung.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>6. SSoT-Datenintegrator (Brücke zwischen 2D &amp; 3D)</h4>
+                        <p>Verknüpft bestehende Stücklisten (z. B. aus 2D-Zeichnungen) mit den 3D-Modelldaten zu einer vollständigen Produkt-<strong>SSoT</strong>. Ordnet Bauteile über normalisierte Namen zu und ergänzt Maße, Dicken und Gewichte.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HUMAN IN THE LOOP + ERP -->
+            <div class="bottom-split">
+                <div class="info-panel">
+                    <h4>🛡️ „Human-in-the-Loop“-Sicherheit (Technologen-Kontrolle)</h4>
+                    <p>
+                        Telperion nimmt dem Ingenieur monotone Klickarbeit ab, ersetzt aber nicht sein Urteil: Biegeparameter und gelb markierte SSoT-Positionen bleiben bewusst unter der Kontrolle des Technologen, bevor verbindliche PDF-Karten entstehen.
+                    </p>
+                </div>
+                <div class="info-panel erp">
+                    <h4>🔌 Individuelle ERP-Integration (z. B. Streamsoft Prestiż)</h4>
+                    <p>
+                        Auf Wunsch entwickeln wir maßgeschneiderte ERP-Parser (erprobte Logik u. a. für <strong>Streamsoft Prestiż</strong> vorhanden). Der Einführung geht ein Vor-Ort-Besuch im Werk inklusive Prozessanalyse und Prüfung Ihrer ERP-Exportstrukturen voraus.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER CTA -->
+        <div class="footer-cta">
+            <div class="cta-left">
+                <h3>Interessiert an einer Live-Präsentation anhand Ihrer eigenen Bauteile?</h3>
+                <p>Kontaktieren Sie uns für eine kurze Online-Demo oder einen unverbindlichen Termin vor Ort in Ihrem Betrieb.</p>
+            </div>
+            <div class="cta-right">
+                <strong>Przemysław Hamowski – System Telperion 4.0</strong><br>
+                📞 Tel.: <a href="tel:+48884362560" style="color: inherit; text-decoration: none;">+48 884 362 560</a> &nbsp;|&nbsp; ✉️ <a href="mailto:przemek.hamowski@gmail.com" style="color: inherit; text-decoration: none;">przemek.hamowski@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-toolbar no-print">
+        <a href="index.html" id="link-index" class="btn">
+            <span data-lang="pl">⬅ Powrót do pełnej oferty</span>
+            <span data-lang="en">⬅ Back to Full Offer</span>
+            <span data-lang="de">⬅ Zurück zum Hauptangebot</span>
+        </a>
+
+        <div class="toolbar-right">
+            <div class="lang-switcher" aria-label="Language switcher">
+                <button type="button" class="lang-btn active" id="btn-lang-pl" onclick="setLanguage('pl')" title="Polski">
+                    <svg class="flag-svg" viewBox="0 0 16 12"><rect width="16" height="6" fill="#ffffff"/><rect y="6" width="16" height="6" fill="#dc143c"/></svg>
+                    PL
+                </button>
+                <button type="button" class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')" title="English">
+                    <svg class="flag-svg" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>
+                    EN
+                </button>
+                <button type="button" class="lang-btn" id="btn-lang-de" onclick="setLanguage('de')" title="Deutsch">
+                    <svg class="flag-svg" viewBox="0 0 5 3"><rect width="5" height="1" y="0" fill="#000000"/><rect width="5" height="1" y="1" fill="#dd0000"/><rect width="5" height="1" y="2" fill="#ffce00"/></svg>
+                    DE
+                </button>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="handlePrint()">
+                <span data-lang="pl">🖨️ Drukuj / PDF (A4)</span>
+                <span data-lang="en">🖨️ Print / PDF (A4)</span>
+                <span data-lang="de">🖨️ Drucken / PDF (A4)</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function handlePrint() {
+            var ua = navigator.userAgent || '';
+            var isInApp = /FBAN|FBAV|Messenger|Instagram|Line/i.test(ua);
+            try {
+                window.print();
+            } catch (e) {}
+            if (isInApp) {
+                var lang = document.body.getAttribute('data-active-lang') || 'pl';
+                var msgs = {
+                    pl: 'Wbudowana przeglądarka komunikatora (np. Messenger) blokuje funkcję drukowania/zapisu PDF.\n\nKliknij ikonę ••• w prawym górnym rogu i wybierz „Otwórz w przeglądarce” (Safari / Chrome), aby zapisać One-Pager jako PDF.',
+                    en: 'The in-app browser (e.g. Messenger) blocks printing/PDF export.\n\nTap the ••• icon in the top-right corner and choose "Open in external browser" (Safari / Chrome) to print or save as PDF.',
+                    de: 'Der In-App-Browser (z. B. Messenger) blockiert die Druck-/PDF-Funktion.\n\nTippen Sie oben rechts auf ••• und wählen Sie „Im Browser öffnen“ (Safari / Chrome), um den One-Pager als PDF zu speichern.'
+                };
+                setTimeout(function() {
+                    alert(msgs[lang] || msgs.pl);
+                }, 150);
+            }
+        }
+        function setLanguage(lang) {
+            if (!['pl', 'en', 'de'].includes(lang)) lang = 'pl';
+            document.body.setAttribute('data-active-lang', lang);
+            document.documentElement.setAttribute('lang', lang);
+
+            ['pl', 'en', 'de'].forEach(function(code) {
+                var btn = document.getElementById('btn-lang-' + code);
+                if (btn) {
+                    if (code === lang) btn.classList.add('active');
+                    else btn.classList.remove('active');
+                }
+            });
+
+            var titles = {
+                pl: 'TELPERION 4.0 – One-Pager (Pigułka Produktowa A4)',
+                en: 'TELPERION 4.0 – Product One-Pager (1 A4 Sheet)',
+                de: 'TELPERION 4.0 – Produkt-One-Pager (1 DIN-A4-Seite)'
+            };
+            document.title = titles[lang] || titles.pl;
+
+            var linkIndex = document.getElementById('link-index');
+            if (linkIndex) {
+                linkIndex.setAttribute('href', 'index.html?lang=' + lang);
+            }
+
+            try {
+                localStorage.setItem('telperion_web_lang', lang);
+                var url = new URL(window.location.href);
+                url.searchParams.set('lang', lang);
+                window.history.replaceState({}, '', url.toString());
+            } catch (e) {}
+        }
+
+        (function initLang() {
+            var lang = 'pl';
+            try {
+                var params = new URLSearchParams(window.location.search);
+                var qLang = params.get('lang');
+                var savedLang = localStorage.getItem('telperion_web_lang');
+                if (qLang && ['pl', 'en', 'de'].includes(qLang.toLowerCase())) {
+                    lang = qLang.toLowerCase();
+                } else if (savedLang && ['pl', 'en', 'de'].includes(savedLang.toLowerCase())) {
+                    lang = savedLang.toLowerCase();
+                }
+            } catch (e) {}
+            setLanguage(lang);
+        })();
+    </script>
+
+</body>
+</html>
