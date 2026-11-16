@@ -780,6 +780,138 @@
             }
         }
 
+        /* Przybornik Warsztatowy & Kalkulatory (7 narzędzi) */
+        .grid-tools {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .tool-span-4 {
+            grid-column: span 4;
+        }
+
+        .tool-span-3 {
+            grid-column: span 3;
+        }
+
+        @media screen and (max-width: 1080px) {
+            .grid-tools {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .tool-span-4, .tool-span-3 {
+                grid-column: span 1;
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            .grid-tools {
+                grid-template-columns: 1fr;
+            }
+            .tool-span-4, .tool-span-3 {
+                grid-column: span 1;
+            }
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid #38bdf8;
+            border-radius: 14px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .tool-sub {
+            font-size: 0.82rem;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        .tool-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin: 0;
+        }
+
+        .tool-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .tool-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #bae6fd;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 3px 9px;
+            border-radius: 999px;
+        }
+
+        .badge-tool {
+            background: rgba(56, 189, 248, 0.16);
+            color: #38bdf8;
+        }
+
+        .pro-roi-box {
+            background: rgba(234, 179, 8, 0.06);
+            border: 1px solid rgba(234, 179, 8, 0.28);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin-top: 18px;
+        }
+
+        .pro-roi-box h4 {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .pro-roi-box p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            .tool-card, .pro-roi-box {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                background: #f8fafc !important;
+                border-color: #cbd5e1 !important;
+            }
+            .tool-card h3, .pro-roi-box h4 {
+                color: #0f172a !important;
+            }
+            .tool-sub {
+                color: #0369a1 !important;
+            }
+            .tool-tag {
+                color: #0369a1 !important;
+                background: #e0f2fe !important;
+                border-color: #bae6fd !important;
+            }
+            .grid-tools {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            .tool-span-4, .tool-span-3 {
+                grid-column: span 1 !important;
+            }
+        }
+
         body[data-active-lang="pl"] [data-lang="en"],
         body[data-active-lang="pl"] [data-lang="de"],
         body[data-active-lang="en"] [data-lang="pl"],
@@ -845,9 +977,9 @@
                 <div class="hero-highlights">
                     <div class="pill">⚡ Skrócenie przygotowania produkcji o 70–90%</div>
                     <div class="pill">🛡️ Kontrola Inżyniera (Human-in-the-Loop)</div>
-                    <div class="pill">🧩 Licencjonowanie warstwowe: BASIC (Excel) / PRO (SolidWorks)</div>
-                    <div class="pill">🌍 Wielojęzyczny interfejs i raporty: PL / EN / DE</div>
-                    <div class="pill">🏭 stal, profil, blacha, kooperacja, drewno, szkło i malarnia</div>
+                    <div class="pill">🧩 8 głównych modułów (BASIC / PRO) + 7 narzędzi warsztatowych</div>
+                    <div class="pill">🌍 Wielojęzyczny interfejs, raporty i etykiety: PL / EN / DE</div>
+                    <div class="pill">🏭 Blacha, profile 1D, kooperacja, drewno, szkło, malarnia i wysyłka</div>
                 </div>
             </div>
 
@@ -862,9 +994,9 @@
                 <div class="hero-highlights">
                     <div class="pill">⚡ Cut production preparation time by 70–90%</div>
                     <div class="pill">🛡️ Engineer-in-Control (Human-in-the-Loop)</div>
-                    <div class="pill">🧩 Tiered Licensing: BASIC (Excel) / PRO (SolidWorks)</div>
-                    <div class="pill">🌍 Multi-Language UI &amp; Reports: PL / EN / DE</div>
-                    <div class="pill">🏭 sheet metal, profiles, subcontracting, wood, glass &amp; paint shop</div>
+                    <div class="pill">🧩 8 Core Modules (BASIC / PRO) + 7 Quick Workshop Tools</div>
+                    <div class="pill">🌍 Multi-Language UI, Reports &amp; Labels: PL / EN / DE</div>
+                    <div class="pill">🏭 Sheet metal, 1D bars, subcontracting, wood, glass, paint &amp; shipping</div>
                 </div>
             </div>
 
@@ -879,9 +1011,9 @@
                 <div class="hero-highlights">
                     <div class="pill">⚡ 70–90 % Zeitersparnis in der Arbeitsvorbereitung</div>
                     <div class="pill">🛡️ Ingenieur-Kontrolle (Human-in-the-Loop)</div>
-                    <div class="pill">🧩 Stufenlizenzierung: BASIC (Excel) / PRO (SolidWorks)</div>
-                    <div class="pill">🌍 Mehrsprachige Oberfläche &amp; Berichte: PL / EN / DE</div>
-                    <div class="pill">🏭 Blech, Profile, Fremdfertigung, Holz, Glas &amp; Lackiererei</div>
+                    <div class="pill">🧩 8 Kernmodule (BASIC / PRO) + 7 Werkstatt-Tools</div>
+                    <div class="pill">🌍 Mehrsprachige Oberfläche, Berichte &amp; Etiketten: PL / EN / DE</div>
+                    <div class="pill">🏭 Blech, 1D-Profile, Fremdfertigung, Holz, Glas, Lack &amp; Versand</div>
                 </div>
             </div>
 
@@ -907,15 +1039,15 @@
                 <div class="grid-3">
                     <div class="card card-problem">
                         <h3>1. Rozjazd dokumentacji i błędy przepisania</h3>
-                        <p>Zmiana grubości, materiału lub ilości w modelu nie zawsze trafia do wszystkich tabel. Telperion wprowadza standard <strong>SSoT</strong> (wielokolumnową strukturę wzorcową dla 1 szt. wyrobu) – dzięki czemu każda karta operacyjna, lista cięcia i zamówienie powstaje ze zweryfikowanej bazy.</p>
+                        <p>Zmiana grubości, materiału lub ilości w modelu nie zawsze trafia do wszystkich tabel. Telperion wprowadza standard <strong>SSoT</strong> (wielokolumnową strukturę wzorcową dla 1 szt. wyrobu) oraz wsadowy <strong>Inspektor SSoT</strong> – dzięki czemu każda karta operacyjna, lista cięcia i zamówienie powstaje ze zweryfikowanej bazy.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>2. Żmudny eksport plików DXF i STEP</h3>
                         <p>Ręczne otwieranie dziesiątek detali blaszanych po kolei zajmuje godziny. System automatyzuje ten proces w trybie <strong>Human-in-the-Loop</strong>: wywołuje konwersję na arkusz blachy (<em>Wstaw zgięcia</em>), zdejmując z inżyniera żmudne przeklikiwanie plików, podczas gdy za dobór parametrów rozwinięcia i weryfikację poprawności modelu odpowiada technolog.</p>
                     </div>
                     <div class="card card-problem">
-                        <h3>3. Chaos na gniazdach produkcyjnych</h3>
-                        <p>Zamiast jednej gigantycznej tabeli, z której operatorzy wykreślają pozycje markerem, każde gniazdo (Laser, Giętarka, Piły, Tokarki/Frezarki, Spawalnia, Stolarz, Szklarz) otrzymuje dedykowaną kartę operacyjną PDF ułożoną zgodnie z marszrutą.</p>
+                        <h3>3. Chaos na gniazdach produkcyjnych i w wysyłce</h3>
+                        <p>Zamiast jednej gigantycznej tabeli wykreślanej markerem, każde gniazdo (Piły, Laser, Giętarki <code>K/TAK</code>, Tokarki <code>T</code>, Frezarki <code>F</code>, Spawalnia, Kooperacja, Drewno, Szkło) dostaje dedykowaną kartę PDF ułożoną zgodnie z marszrutą, a dział spedycji – gotowe etykiety termiczne i zestawienie załadunkowe.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>4. Niedoszacowane zakupy i odpady</h3>
@@ -923,11 +1055,11 @@
                     </div>
                     <div class="card card-problem">
                         <h3>5. Brak wyliczeń farby przed malarnią</h3>
-                        <p>System wylicza dokładną powierzchnię malowania dla każdej warstwy lakierniczej (podkłady, nawierzchnie, RAL) z uwzględnieniem zużycia na m² i generuje gotowe zapotrzebowanie na farby jeszcze przed startem pił i lasera.</p>
+                        <p>System wylicza dokładną powierzchnię malowania aż dla <strong>5 wariantów kolorystycznych / systemów powłok</strong> (podkłady, międzywarstwy, nawierzchnie RAL) z uwzględnieniem zużycia i współczynnika strat, generując gotowe zapotrzebowanie na farby jeszcze przed startem pił i lasera.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>6. Kosztowne licencje na każdym biurku</h3>
-                        <p>Dzięki architekturze warstwowej stanowiska technologiczne, zakupowe i planistyczne nie potrzebują drogiego oprogramowania CAD – do pracy z pakietem Podstawowym wystarcza zwykły komputer biurowy z MS Excel.</p>
+                        <p>Dzięki architekturze warstwowej stanowiska technologiczne, zakupowe, planistyczne i wysyłkowe nie potrzebują drogiego oprogramowania CAD – do pracy z pakietem Podstawowym oraz Przybornikiem wystarcza zwykły komputer biurowy z MS Excel.</p>
                     </div>
                 </div>
             </section>
@@ -938,21 +1070,32 @@
                     <div class="section-eyebrow">Modułowość i elastyczność</div>
                     <h2 class="section-title">Architektura dwuwarstwowa: Pakiet Podstawowy (BASIC) oraz Pakiet PRO</h2>
                     <p class="section-desc">
-                        System Telperion 4.0 składa się z <strong>6 wyspecjalizowanych modułów</strong> podzielonych na dwie niezależne warstwy. Wszystkie moduły oraz generowane raporty obsługują języki <strong>Polski, Angielski i Niemiecki (PL / EN / DE)</strong>.
+                        System Telperion 4.0 tworzy <strong>8 głównych modułów</strong> podzielonych na dwie niezależne warstwy oraz zintegrowany <strong>przybornik 7 szybkich narzędzi warsztatowych</strong>. Wszystkie moduły, raporty i etykiety wspierają języki <strong>Polski, Angielski i Niemiecki (PL / EN / DE)</strong>.
                     </p>
                 </div>
 
                 <div class="grid-2">
                     <!-- PAKIET PODSTAWOWY -->
                     <div class="tier-box tier-basic">
-                        <span class="tier-badge badge-basic">Stanowisko Biurowe / Technologiczne</span>
+                        <span class="tier-badge badge-basic">Stanowisko Biurowe / Technologiczne / Spedycja</span>
                         <h3>Moduły Podstawowe (Pakiet BASIC)</h3>
                         <p style="color: var(--text-muted); font-size: 0.93rem; margin-top: 6px;">
                             <strong>Wymagania sprzętowe:</strong> Zwykły komputer biurowy z pakietem <strong>MS Excel</strong> oraz przeglądarką internetową. <strong>Nie wymaga licencji SolidWorks.</strong>
                         </p>
 
                         <div class="module-item">
-                            <h4>1. Agregator SSoT</h4>
+                            <h4>1. Inspektor SSoT</h4>
+                            <div class="module-sub">Wsadowa bramka jakości i walidator struktury przed agregacją</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Prześwietla hurtowo wskazane arkusze SSoT zanim trafią do produkcji – eliminuje błędy formalne bez otwierania SolidWorks.</p>
+                            <ul class="module-list">
+                                <li>Automatyczne zdejmowanie systemowych blokad plików Windows (<em>Zone.Identifier</em>) po pobraniu z sieci lub poczty.</li>
+                                <li>Kontrola kompletności kolumn, pustych gniazd, wymiarów, gatunków i spójności marszrut wtórnych oraz odbudowa relacji drzewa (<code>1, 1.1, 1.1.1</code>).</li>
+                                <li>Czytelny raport błędów i ostrzeżeń Excel A4 z autofiltrami i klikalnymi hiperlinkami bezpośrednio do komórek (PL / EN / DE).</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-item">
+                            <h4>2. Agregator SSoT</h4>
                             <div class="module-sub">Konsolidator zamówień wieloproduktowych</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Łączy jednostkowe struktury <strong>SSoT</strong> (opracowane dla 1 szt. poszczególnych wyrobów) wchodzące w skład zlecenia produkcyjnego w jedną spójną <strong>Zbiorczą Listę Części do Zamówienia</strong>.</p>
                             <ul class="module-list">
@@ -963,24 +1106,35 @@
                         </div>
 
                         <div class="module-item">
-                            <h4>2. Generator Raportów</h4>
+                            <h4>3. Generator Raportów</h4>
                             <div class="module-sub">Silnik dokumentacji wykonawczej, zakupowej i kart gniazdowych</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Przekształca zatwierdzony plik SSoT (dla pojedynczego wyrobu) lub <strong>Zbiorczą Listę Części do Zamówienia</strong> (z Agregatora) w komplet sformatowanych arkuszy oraz ponumerowanych technologicznie dokumentów PDF:</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Przekształca zatwierdzony plik SSoT (dla pojedynczego wyrobu) lub <strong>Zbiorczą Listę Części do Zamówienia</strong> w komplet sformatowanych arkuszy oraz ponumerowanych technologicznie dokumentów PDF:</p>
                             <ul class="module-list">
                                 <li><strong>Zestawienie Materiałowe i Zakupowe:</strong> Stal 2D (kg), Profile 1D (m.b. + przelicznik sztang 6m/12m), elementy kupne (szt.), Drewno (m²/m.b.), Szkło (m²) oraz alerty surowcowe dla Kooperacji.</li>
-                                <li><strong>Raport Farb i Powłok:</strong> Sumaryczna powierzchnia malowania [m²] i litraż na każdą warstwę.</li>
-                                <li><strong>Karty Operacyjne Gniazd (PDF):</strong> Dedykowane karty na Piły, Laser, Giętarki, Tokarki/Frezarki, Kooperację, Drewno, Szkło, Spawalnię oraz Zestawienie Załadunkowe i Montażowe (zawierające szczegółowe uwagi dotyczące konserwacji i powłok malarskich) – zawsze w logicznej kolejności procesu technologicznego.</li>
+                                <li><strong>Zaawansowany Kalkulator Farb i Powłok:</strong> Obsługa aż do <strong>5 wariantów kolorystycznych / systemów malarskich</strong> w jednym zleceniu z wyliczeniem powierzchni [m²] i litrażu na każdą warstwę.</li>
+                                <li><strong>Karty Operacyjne Gniazd (PDF):</strong> Dedykowane karty na Piły, Laser 2D/3D, Plazmę, gniazda wtórne (<strong>Giętarki <code>K/TAK</code>, Tokarki <code>T</code>, Frezarki <code>F</code> i ich kombinacje</strong>), Kooperację, Drewno, Szkło, Spawalnię, Komisjonowanie oraz Zestawienie Załadunkowe i Montażowe (z uwagami konserwacji i powłok).</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>3. Nester 1D</h4>
+                            <h4>4. Nester 1D</h4>
                             <div class="module-sub">Optymalizator rozkroju dłużyc i sztang z wizualizacją</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Interaktywne narzędzie dobierające optymalny plan cięcia profili, rur, prętów i listew w celu minimalizacji odpadu.</p>
                             <ul class="module-list">
                                 <li>Jednoczesna kalkulacja sztang 6000 mm i 12000 mm (lub wymiarów własnych) z uwzględnieniem rzazu piły.</li>
-                                <li>Filtry gniazd (np. włączanie/wyłączanie drewna 1D lub kooperacji) oraz ręczne pomijanie wybranych profili przed drukiem.</li>
-                                <li>Graficzne paski rozkroju dla operatora piły z wyliczeniem odpadu użytecznego i złomu.</li>
+                                <li><strong>Tryb mieszania zleceń i komisjonowania sekwencyjnego</strong>, filtry gniazd (drewno 1D, kooperacja) oraz ręczne pomijanie profili przed drukiem.</li>
+                                <li>Graficzne paski rozkroju dla operatora piły w dedykowanym folderze <code>NESTING</code> z wyliczeniem odpadu użytecznego i złomu.</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-item">
+                            <h4>5. Generator Etykiet Wysyłkowych</h4>
+                            <div class="module-sub">Etykiety termiczne B&amp;W oraz przetłumaczone zestawienia spedycyjne</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Zaciąga pozycje wprost z <strong>Listy Załadunkowej</strong> i generuje kontrastowe, czarno-białe etykiety (bez ramek i kolorów) w formacie <strong>PDF</strong> oraz opcjonalnie <strong>Excel (<code>.xlsx</code>)</strong> do dedykowanego podfolderu wysyłki.</p>
+                            <ul class="module-list">
+                                <li><strong>Przełączanie 1 klikiem dla każdego wiersza:</strong> tryb <strong>Szczegółowy (<code>1/N .. N/N</code>)</strong> dla pojedynczego oklejania wielkogabarytowych słupów lub tryb <strong>Zbiorczy (<code>szt. N</code>)</strong> dla drobnych detali pakowanych w jedną paczkę.</li>
+                                <li><strong>Dowolna etykieciarka:</strong> presety Zebra / Brother / Dymo oraz własny wymiar w mm (wraz z czytelnym układem mikro dla najmniejszych naklejek).</li>
+                                <li><strong>Pełna komunikacja eksportowa:</strong> warianty jednojęzyczne <strong>DE / EN / PL</strong> oraz wszystkie 6 kombinacji dwujęzycznych (<code>DE/EN</code>, <code>DE/PL</code>, <code>EN/PL</code> itd.) zarówno na etykietach, jak i w generowanym równolegle Zestawieniu Załadunkowym.</li>
                             </ul>
                         </div>
                     </div>
@@ -994,29 +1148,29 @@
                         </p>
 
                         <div class="module-item">
-                            <h4>4. Harvester Metadanych i Plików Maszynowych</h4>
+                            <h4>6. Harvester Metadanych i Plików Maszynowych</h4>
                             <div class="module-sub">Ekstraktor geometrii 3D, plików DXF/STEP i płaskiej listy części</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Przeszukuje złożenie 3D w SolidWorks, analizuje bryły i automatycznie generuje dokumentację maszynową pod nadzorem inżyniera.</p>
                             <ul class="module-list">
                                 <li>Wspomagana konwersja części na arkusz blachy (<em>Wstaw zgięcia</em>) w trybie <strong>Human-in-the-Loop</strong> – technolog odpowiada za parametry rozwinięcia i weryfikację modelu przed automatycznym zrzutem <strong>DXF 1:1</strong> oraz <strong>STEP</strong>.</li>
-                                <li>Automatyczny odczyt gabarytów rozwinięcia (A×B), długości (L), grubości, masy, powierzchni oraz rozpoznawanie stali, drewna i szkła.</li>
+                                <li>Automatyczny odczyt gabarytów rozwinięcia (A×B), długości (L), grubości, masy, powierzchni z jądra Parasolid oraz rozpoznawanie stali, drewna i szkła.</li>
                                 <li>Wizualne oznaczenie w arkuszu (żółty alert) wymiarów wymagających weryfikacji technologicznej.</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>5. Generator CAD SSoT</h4>
+                            <h4>7. Generator CAD SSoT</h4>
                             <div class="module-sub">Wielopoziomowy ekstraktor drzewa konstrukcyjnego (1 szt. wyrobu)</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Buduje pełną, wielokolumnową strukturę <strong>SSoT</strong> (drzewo podzespołów i detali dla 1 sztuki pojedynczego wyrobu) bezpośrednio z aktywnego złożenia SolidWorks.</p>
                             <ul class="module-list">
                                 <li>Zachowuje relacje rodzic–dziecko (hierarchia spawalnicza i montażowa 1, 1.1, 1.1.1).</li>
                                 <li>Błyskawicznie przelicza złożenia liczące setki części bez utraty kontekstu otwartych podzespołów.</li>
-                                <li>Automatycznie przypisuje domyślne gniazda produkcyjne i kategorie materiałowe.</li>
+                                <li>Automatycznie przypisuje domyślne gniazda produkcyjne (w tym marszruty wtórne K/T/F) i kategorie materiałowe.</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>6. Integrator SSoT</h4>
+                            <h4>8. Integrator SSoT</h4>
                             <div class="module-sub">Pomost łączący istniejącą dokumentację płaską z geometrią 3D</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Stworzony dla firm posiadających własne listy części, które chcą przekształcić je w kompletny plik <strong>SSoT</strong> wyrobu zasilony wymiarami i masami z modelu 3D.</p>
                             <ul class="module-list">
@@ -1024,6 +1178,139 @@
                                 <li>Automatyczny transfer gabarytów (A, B, L), grubości, masy, powierzchni i gniazd technologicznych.</li>
                                 <li>Raportowanie niezgodności między dotychczasową dokumentacją a rzeczywistym modelem 3D.</li>
                             </ul>
+                        </div>
+
+                        <div class="pro-roi-box">
+                            <h4>💎 Ekonomia wdrożenia: 1× PRO zasila całą halę</h4>
+                            <p>Konstruktor generuje wzorcową strukturę <strong>SSoT (dla 1 szt. wyrobu)</strong> raz w module PRO. Wszystkie kolejne etapy – walidacja, agregacja dużych zleceń, karty PDF na gniazda, rozkrój 1D, etykietowanie wysyłki i przybornik kalkulacyjny – pracują już na lekkich stanowiskach biurowych <strong>BASIC</strong> bez dodatkowych licencji CAD.</p>
+                            <ul class="module-list">
+                                <li>Pełna spójność wyjściowa: <code>DXF 1:1</code>, <code>STEP</code>, <code>SSoT .xlsx</code>, <code>Karty Gniazd PDF</code> i <code>Etykiety Zebra B&amp;W</code>.</li>
+                                <li>Szybsze wdrożenie nowych pracowników dzięki spójnemu standardowi danych i automatycznej walidacji Inspektorem SSoT.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRZYBORNIK WARSZTATOWY I KALKULATORY -->
+            <section>
+                <div class="section-header">
+                    <div class="section-eyebrow" style="color: #38bdf8;">Codzienne wsparcie hali, zaopatrzenia i logistyki</div>
+                    <h2 class="section-title">Przybornik Technologa i Warsztatu (7 szybkich narzędzi)</h2>
+                    <p class="section-desc">
+                        Zestaw błyskawicznych aplikacji dostępnych bezpośrednio z dolnego doku Dashboardu Telperion 4.0 – do szybkich wyliczeń wagowych, kalkulacji farb, naklejek warsztatowych oraz automatycznego kompletowania dokumentacji PDF, DXF, STEP i ZIP. Wszystkie narzędzia działają w językach <strong>PL / EN / DE</strong>.
+                    </p>
+                </div>
+
+                <div class="grid-tools">
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Kalkulator 1D</span>
+                        <h3>Szybki Kalkulator Wag 1D (Normy EN/DIN)</h3>
+                        <div class="tool-sub">Katalog profili normatywnych + zbiorczy raport PDF A4</div>
+                        <p>Natychmiastowe wyliczanie masy kształtowników i profili hutniczych na podstawie wbudowanej bazy norm europejskich.</p>
+                        <ul class="module-list">
+                            <li>Pełna biblioteka profili: <strong>IPE, IPN, HEA, HEB, HEM, UPN, UPE, C</strong> zimnogięte, <strong>T / TB</strong>, kątowniki równoramienne i nierównoramienne <strong>L</strong>, <strong>SHS / RHS</strong>, rury <strong>CHS</strong>, pręty i płaskowniki.</li>
+                            <li>Tryb szybki (<code>m.b.</code>) oraz zaawansowany (<code>długość mm × ilość szt.</code>) z dodawaniem wielopozycyjnych zestawień.</li>
+                            <li>Eksport zbiorczego raportu PDF A4 w PL/EN/DE (wszystkie obliczenia, samo podsumowanie lub oba widoki).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Normy EN / DIN</span>
+                            <span class="tool-tag">Teowniki &amp; Kątowniki</span>
+                            <span class="tool-tag">PDF A4 PL/EN/DE</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Kalkulator 2D</span>
+                        <h3>Przelicznik Wag i Powierzchni 2D (m² ↔ kg)</h3>
+                        <div class="tool-sub">21 materiałów inżynierskich &amp; przelicznik arkuszy</div>
+                        <p>Dwukierunkowa konwersja masy na metry kwadratowe i powierzchni na wagę pod wyceny, zakupy blach i szacowanie malarni.</p>
+                        <ul class="module-list">
+                            <li><strong>21 zdefiniowanych materiałów:</strong> stal czarna, ocynk, Hardox, Corten, nierdzewka 304/316L, aluminium, miedź, mosiądz, brąz, tytan, szkło, sklejka, MDF i tworzywa.</li>
+                            <li>Wyliczanie liczby standardowych lub własnych arkuszy oraz powierzchni dwustronnej (<code>×2</code>).</li>
+                            <li>Eksport przejrzystej karty kalkulacji do PDF A4 (PL / EN / DE).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">21 materiałów</span>
+                            <span class="tool-tag">m² ↔ kg + Arkusze</span>
+                            <span class="tool-tag">PDF A4</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Malarnia</span>
+                        <h3>Szybki Kalkulator Farb (LIGHT)</h3>
+                        <div class="tool-sub">Dane z karty TDS + realistyczny współczynnik strat</div>
+                        <p>Ekspresowy dobór litrażu farby dla zapytań ofertowych, lakierni oraz działu zaopatrzenia z jednej powierzchni [m²].</p>
+                        <ul class="module-list">
+                            <li>Elastyczne wprowadzanie danych z karty technicznej (<strong>TDS</strong>): wydajność <code>m²/l</code> lub zużycie <code>l/m²</code> oraz grubość powłoki w <code>µm</code>.</li>
+                            <li>Obsługa systemów wielowarstwowych oraz <strong>7-poziomowy suwak strat malarskich</strong> (od <code>+30%</code> do konstrukcji kratowych <code>+250%</code>).</li>
+                            <li>Gotowa do druku fiszka zakupowo-lakiernicza PDF A4 w PL/EN/DE.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">TDS m²/l &amp; µm</span>
+                            <span class="tool-tag">Straty +30..+250%</span>
+                            <span class="tool-tag">Fiszka PDF</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Znakowanie</span>
+                        <h3>Generator Etykiet Dowolnych</h3>
+                        <div class="tool-sub">Szybkie naklejki opisowe i uwagi na halę</div>
+                        <p>Błyskawiczne tworzenie czytelnych etykiet termicznych B&amp;W z dowolnej uwagi rysunkowej lub tekstu wklejonego np. z tłumacza.</p>
+                        <ul class="module-list">
+                            <li>Formaty Zebra / Dymo / własne mm z trybem <strong>Auto-Fit</strong> lub ręcznym rozmiarem czcionki, wyrównaniem i opcjonalną ramką.</li>
+                            <li>Dodawanie serii etykiet przyciskiem <code>+</code> oraz definiowanie liczby kopii do wektorowego PDF B&amp;W.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Auto-Fit PDF B&amp;W</span>
+                            <span class="tool-tag">Zebra / Dymo / mm</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Archiwa</span>
+                        <h3>Zbiorczy Rozpakowywacz ZIP</h3>
+                        <div class="tool-sub">Paczki dokumentacji bez krzaków w nazwach</div>
+                        <p>Rozpakowuje jednym kliknięciem dziesiątki archiwów <code>.zip</code> z paczek od klientów lub podwykonawców.</p>
+                        <ul class="module-list">
+                            <li>Przetwarzanie całych folderów i podfolderów z wyborem rozpakowania na miejscu lub do dedykowanych katalogów.</li>
+                            <li>Automatyczna naprawa kodowania polskich i niemieckich znaków (<code>CP852 / UTF-8</code>) w nazwach plików.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Wsadowy ZIP</span>
+                            <span class="tool-tag">Naprawa PL/DE znaków</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Dokumentacja PDF</span>
+                        <h3>Kolekcjoner i Łącznik PDF</h3>
+                        <div class="tool-sub">Kompletowanie rysunków oraz scalanie paczek</div>
+                        <p>Dwa moduły w jednym oknie: szybki zbieracz rysunków PDF według listy oraz narzędzie do łączenia wielu plików PDF.</p>
+                        <ul class="module-list">
+                            <li>Wyszukiwanie rysunków po numerach z <strong>SSoT / Excela / listy</strong> lub zebranie wszystkich PDF z drzewa katalogów wraz z raportem braków.</li>
+                            <li>Opcjonalne zestawienie Excel A4 (alfabetycznie + autofiltry + timestamp) oraz łączenie wybranych PDF w jeden plik.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Lista braków</span>
+                            <span class="tool-tag">PDF Merge + XLS A4</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Kooperacja &amp; CAM</span>
+                        <h3>Kolekcjoner DXF / STEP</h3>
+                        <div class="tool-sub">Zbieranie plików maszyn z niezależnym wydrukiem list</div>
+                        <p>Niezależny zbieracz plików CAD/CAM (<code>.dxf</code>, <code>.step/.stp</code>, <code>.iges</code>, <code>.dwg</code>) z dowolnego drzewa folderów pod laser i kooperację.</p>
+                        <ul class="module-list">
+                            <li>Dynamiczne foldery wynikowe dopasowane do wybranych formatów (np. osobne <code>DXF_ZEBRANE</code> i <code>STEP_ZEBRANE</code> lub wspólny).</li>
+                            <li>Niezależne checkboxy dla zbiorczych oraz osobnych zestawień Excel A4 z datą, autofiltrami i sortowaniem.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">DXF / STEP / IGES / DWG</span>
+                            <span class="tool-tag">Listy Excel A4</span>
                         </div>
                     </div>
                 </div>
@@ -1046,9 +1333,9 @@
                         <p>Wspomagane rozwijanie blach pod nadzorem technologa, wyciągnięcie gabarytów i mas oraz eksport DXF i STEP z SolidWorks.</p>
                     </div>
                     <div class="flow-step">
-                        <div class="step-num">Krok 2 • Weryfikacja SSoT</div>
-                        <h4>Kontrola Technologa</h4>
-                        <p>Technolog przegląda wzorcowy plik SSoT (dla 1 szt. wyrobu) w Excelu, weryfikuje żółte alerty i zatwierdza marszrutę.</p>
+                        <div class="step-num">Krok 2 • Inspektor &amp; Weryfikacja</div>
+                        <h4>Walidacja SSoT</h4>
+                        <p>Inspektor SSoT sprawdza spójność plików wsadowo, a technolog weryfikuje żółte alerty w Excelu i zatwierdza marszrutę.</p>
                     </div>
                     <div class="flow-step">
                         <div class="step-num">Krok 3 • Pakiet BASIC</div>
@@ -1056,9 +1343,9 @@
                         <p>Agregator łączy zatwierdzone pliki SSoT różnych wyrobów w jedną Zbiorczą Listę Części do Zamówienia wg zadanych ilości.</p>
                     </div>
                     <div class="flow-step">
-                        <div class="step-num">Krok 4 • Pakiet BASIC</div>
-                        <h4>Raporty i Nester 1D</h4>
-                        <p>Jednym kliknięciem powstają karty operacyjne PDF na gniazda, zamówienia materiałowe, raport farb i rozkrój sztang.</p>
+                        <div class="step-num">Krok 4 • Produkcja &amp; Spedycja</div>
+                        <h4>Raporty, Nester 1D i Etykiety</h4>
+                        <p>Powstają karty operacyjne PDF na gniazda, zamówienia materiałowe, raport farb, rozkrój 1D oraz etykiety wysyłkowe na paczki.</p>
                     </div>
                 </div>
             </section>
@@ -1097,7 +1384,7 @@
                     <table class="spec-table">
                         <thead>
                             <tr>
-                                <th>Moduł systemu Telperion 4.0</th>
+                                <th>Moduł / Narzędzie systemu Telperion 4.0</th>
                                 <th>Warstwa licencji</th>
                                 <th>Wymagane środowisko na stanowisku</th>
                                 <th>Główny odbiorca w zakładzie</th>
@@ -1123,6 +1410,12 @@
                                 <td>Konstruktor CAD / Technolog</td>
                             </tr>
                             <tr>
+                                <td><strong>Inspektor SSoT</strong></td>
+                                <td><span class="tier-badge badge-basic" style="margin:0;">Podstawowy</span></td>
+                                <td>Zwykły PC biurowy z MS Excel (bez CAD)</td>
+                                <td>Technolog / Planista / Weryfikacja Jakości</td>
+                            </tr>
+                            <tr>
                                 <td><strong>Agregator SSoT</strong></td>
                                 <td><span class="tier-badge badge-basic" style="margin:0;">Podstawowy</span></td>
                                 <td>Zwykły PC biurowy z MS Excel (bez CAD)</td>
@@ -1139,6 +1432,24 @@
                                 <td><span class="tier-badge badge-basic" style="margin:0;">Podstawowy</span></td>
                                 <td>Zwykły PC biurowy z MS Excel i przeglądarką</td>
                                 <td>Technolog / Zaopatrzenie / Operator Piły</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Generator Etykiet Wysyłkowych</strong></td>
+                                <td><span class="tier-badge badge-basic" style="margin:0;">Podstawowy</span></td>
+                                <td>Zwykły PC biurowy + drukarka Zebra / laser</td>
+                                <td>Spedycja / Magazyn / Pakowanie</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kalkulatory Inżynierskie (1D EN/DIN, 2D m²/kg, Farby LIGHT)</strong></td>
+                                <td><span class="tier-badge badge-tool" style="margin:0;">Przybornik</span></td>
+                                <td>Zwykły PC z Windows (bez CAD i bez Excela)</td>
+                                <td>Wyceny / Zaopatrzenie / Lakiernia / Technolog</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Narzędzia Spedycji i Dokumentacji (Etykiety dowolne, ZIP, Kolekcjonery PDF &amp; DXF/STEP)</strong></td>
+                                <td><span class="tier-badge badge-tool" style="margin:0;">Przybornik</span></td>
+                                <td>Zwykły PC z Windows (bez CAD)</td>
+                                <td>Przygotowanie Produkcji / Kooperacja / Magazyn</td>
                             </tr>
                             <tr>
                                 <td><strong>Parser i Integrator ERP (np. Streamsoft Prestiż)</strong></td>
@@ -1180,15 +1491,15 @@
                 <div class="grid-3">
                     <div class="card card-problem">
                         <h3>1. Documentation Mismatches &amp; Manual Errors</h3>
-                        <p>A change in thickness, material grade, or quantity in the 3D model rarely updates every spreadsheet. Telperion introduces the <strong>SSoT</strong> standard (a multi-column master BOM for 1 unit of a product) – every job card, cut list, and purchase order comes from one verified source.</p>
+                        <p>A change in thickness, material grade, or quantity in the 3D model rarely updates every spreadsheet. Telperion introduces the <strong>SSoT</strong> standard (a multi-column master BOM for 1 unit of a product) and the batch <strong>SSoT Inspector</strong> – every job card, cut list, and purchase order comes from a verified source.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>2. Tedious DXF &amp; STEP File Exports</h3>
                         <p>Manually opening dozens of sheet metal parts one by one takes hours. Telperion automates this workflow in <strong>Human-in-the-Loop</strong> mode: it triggers sheet-metal conversion (<em>Insert Bends</em>) to eliminate tedious clicking, while the technologist remains responsible for bend parameters and verifying 3D model geometry.</p>
                     </div>
                     <div class="card card-problem">
-                        <h3>3. Shop-Floor Chaos across Work Centers</h3>
-                        <p>Instead of one giant spreadsheet marked up with highlighters, each work center (Laser, Press Brake, Saws, Lathes/Milling, Welding, Carpentry, Glazier) receives a dedicated PDF operation card sorted by process routing.</p>
+                        <h3>3. Shop-Floor &amp; Dispatch Chaos</h3>
+                        <p>Instead of one giant spreadsheet marked up with highlighters, each work center (Saws, Laser, Press Brakes <code>K/TAK</code>, Lathes <code>T</code>, Milling <code>F</code>, Welding, Subcontracting, Carpentry, Glazier) receives a dedicated PDF operation card sorted by routing, while Shipping gets thermal labels and the Loading Summary.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>4. Underestimated Purchasing &amp; Scrap</h3>
@@ -1196,11 +1507,11 @@
                     </div>
                     <div class="card card-problem">
                         <h3>5. Missing Paint Calculations Before Coating</h3>
-                        <p>The system calculates exact painting surface area [m²] for every coating layer (primers, topcoats, RAL) and generates paint demand in liters before saws and lasers even start cutting.</p>
+                        <p>The system calculates exact painting surface area [m²] for up to <strong>5 color / coating systems simultaneously</strong> (primers, mid-coats, RAL topcoats) including loss factors and required liters before saws and lasers even start cutting.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>6. Expensive CAD Licenses at Every Desk</h3>
-                        <p>Thanks to its two-tier architecture, production planning, purchasing, and technological workstations do not need expensive CAD licenses – the BASIC package runs on a standard office PC with MS Excel.</p>
+                        <p>Thanks to its two-tier architecture, production planning, purchasing, engineering calculations, and shipping workstations do not need expensive CAD licenses – the BASIC package and Toolbox run on a standard office PC with MS Excel.</p>
                     </div>
                 </div>
             </section>
@@ -1211,21 +1522,32 @@
                     <div class="section-eyebrow">Modularity &amp; Flexibility</div>
                     <h2 class="section-title">Two-Tier Architecture: BASIC Package &amp; PRO Package</h2>
                     <p class="section-desc">
-                        System Telperion 4.0 consists of <strong>6 specialized modules</strong> divided into two independent tiers. All modules and generated reports natively support <strong>Polish, English, and German (PL / EN / DE)</strong>.
+                        System Telperion 4.0 consists of <strong>8 core modules</strong> divided into two independent tiers plus an integrated <strong>7-tool engineering &amp; workshop toolbox</strong>. All modules, reports, and labels natively support <strong>Polish, English, and German (PL / EN / DE)</strong>.
                     </p>
                 </div>
 
                 <div class="grid-2">
                     <!-- BASIC PACKAGE -->
                     <div class="tier-box tier-basic">
-                        <span class="tier-badge badge-basic">Office / Production Planning Workstation</span>
+                        <span class="tier-badge badge-basic">Office / Production Planning / Dispatch Workstation</span>
                         <h3>Basic Modules (BASIC Package)</h3>
                         <p style="color: var(--text-muted); font-size: 0.93rem; margin-top: 6px;">
                             <strong>System Requirements:</strong> Standard office PC with <strong>MS Excel</strong> and a web browser. <strong>No SolidWorks license required.</strong>
                         </p>
 
                         <div class="module-item">
-                            <h4>1. SSoT Aggregator</h4>
+                            <h4>1. SSoT Inspector</h4>
+                            <div class="module-sub">Pre-Aggregation Batch Quality Gate &amp; Structure Validator</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Scans multiple SSoT workbooks in seconds before they enter production ordering – catches structural errors without opening SolidWorks.</p>
+                            <ul class="module-list">
+                                <li>Automatically removes Windows security locks (<em>Zone.Identifier</em>) on files received via email or network shares.</li>
+                                <li>Validates required columns, missing work centers, dimensions, grades, secondary routing, and rebuilds hierarchy paths (<code>1, 1.1, 1.1.1</code>).</li>
+                                <li>Generates a printable A4 Excel audit report with AutoFilters and clickable cell hyperlinks in PL / EN / DE.</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-item">
+                            <h4>2. SSoT Aggregator</h4>
                             <div class="module-sub">Multi-Product Order Consolidator</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Combines unit <strong>SSoT</strong> structures (each defining 1 pc of a single finished product) across a production order into one unified <strong>Consolidated Order Parts List</strong>.</p>
                             <ul class="module-list">
@@ -1236,24 +1558,35 @@
                         </div>
 
                         <div class="module-item">
-                            <h4>2. Production Reports Generator</h4>
+                            <h4>3. Production Reports Generator</h4>
                             <div class="module-sub">Shop-Floor Cards, Purchasing &amp; Paint Calculation Engine</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Transforms an approved unit SSoT file or a <strong>Consolidated Order Parts List</strong> (from the Aggregator) into formatted worksheets and process-numbered PDF shop-floor documents:</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Transforms an approved unit SSoT file or a <strong>Consolidated Order Parts List</strong> into formatted worksheets and process-numbered PDF shop-floor documents:</p>
                             <ul class="module-list">
                                 <li><strong>Material &amp; Purchasing Summary:</strong> 2D Steel (kg), 1D Profiles (linear meters + 6m/12m bar count), Fasteners/Purchased parts (pcs), Wood (m²/m), Glass (m²), and Subcontracting material alerts.</li>
-                                <li><strong>Paint &amp; Coating Calculator:</strong> Total painting area [m²] and required liters per coating layer.</li>
-                                <li><strong>Work Center Operation Cards (PDF):</strong> Dedicated cards for Saws, 2D/3D Laser, Press Brakes, Lathes/Milling, Subcontracting, Wood, Glass, Welding, plus the Loading &amp; Assembly Summary (complete with conservation and surface treatment notes) – always sequenced in logical process order.</li>
+                                <li><strong>Advanced Paint &amp; Coating Calculator:</strong> Up to <strong>5 distinct color / coating systems</strong> per order with exact surface area [m²] and liters per coat.</li>
+                                <li><strong>Work Center Operation Cards (PDF):</strong> Dedicated cards for Saws, 2D/3D Laser, Plasma, secondary routing (<strong>Press Brakes <code>K/TAK</code>, Lathes <code>T</code>, Milling <code>F</code> and combinations</strong>), Subcontracting, Wood, Glass, Welding, Picking, plus Loading &amp; Assembly Summary with conservation notes.</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>3. 1D Bar Nester</h4>
+                            <h4>4. 1D Bar Nester</h4>
                             <div class="module-sub">1D Bar &amp; Profile Cutting Optimizer with Visual Layouts</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Interactive optimization engine calculating the best cutting plan for profiles, tubes, bars, and timber to minimize scrap.</p>
                             <ul class="module-list">
                                 <li>Simultaneous calculation of 6000 mm and 12000 mm stock bars (or custom lengths) including saw kerf.</li>
-                                <li>Work center filters (e.g. include/exclude 1D wood or subcontracting) and manual profile exclusion before printing.</li>
-                                <li>Graphical cutting bars for saw operators showing usable offcuts and scrap percentages.</li>
+                                <li><strong>Multi-order mixing &amp; sequential picking mode</strong>, work center filters (1D wood, subcontracting), and manual exclusion before printing.</li>
+                                <li>Graphical cutting bars saved in a dedicated <code>NESTING</code> folder with usable offcut and scrap calculations.</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-item">
+                            <h4>5. Shipping Label Generator</h4>
+                            <div class="module-sub">Thermal B&amp;W Labels &amp; Translated Dispatch Documentation</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Reads positions directly from the <strong>Loading Summary</strong> and outputs clean, high-contrast black-and-white thermal labels (borderless PDF or <code>.xlsx</code>) into a dedicated dispatch folder.</p>
+                            <ul class="module-list">
+                                <li><strong>One-click per-row mode toggle:</strong> <strong>Detailed (<code>1/N .. N/N</code>)</strong> for tagging individual large structural beams or <strong>Bulk (<code>Pcs N</code>)</strong> for small parts packed into a single box.</li>
+                                <li><strong>Any label printer:</strong> Ready presets for Zebra / Brother / Dymo plus custom mm sizing (including compact micro layout for small stickers).</li>
+                                <li><strong>Full export language matrix:</strong> Single-language <strong>DE / EN / PL</strong> and all 6 bilingual combinations (<code>DE/EN</code>, <code>DE/PL</code>, <code>EN/PL</code>, etc.) across both labels and the parallel Loading Summary workbook.</li>
                             </ul>
                         </div>
                     </div>
@@ -1267,29 +1600,29 @@
                         </p>
 
                         <div class="module-item">
-                            <h4>4. CAD Metadata &amp; Machine File Harvester</h4>
+                            <h4>6. CAD Metadata &amp; Machine File Harvester</h4>
                             <div class="module-sub">3D Geometry, DXF/STEP Exporter &amp; Flat BOM Extractor</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Traverses the 3D assembly in SolidWorks, analyzes solid bodies, and generates machine files under engineer supervision.</p>
                             <ul class="module-list">
                                 <li>Assisted sheet-metal conversion (<em>Insert Bends</em>) in <strong>Human-in-the-Loop</strong> mode – the technologist controls bend parameters and verifies model geometry before automatic <strong>1:1 DXF</strong> and <strong>STEP</strong> export.</li>
-                                <li>Automatic extraction of flat pattern dimensions (A×B), length (L), thickness, mass, and material recognition (steel, wood, glass).</li>
+                                <li>Automatic extraction of flat pattern dimensions (A×B), length (L), thickness, mass, and Parasolid geometry (steel, wood, glass).</li>
                                 <li>Visual yellow cell alerts in Excel for items requiring technological verification.</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>5. CAD SSoT Generator</h4>
+                            <h4>7. CAD SSoT Generator</h4>
                             <div class="module-sub">Multi-Level Assembly Tree Extractor (1 Unit of Product)</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Builds a complete, multi-column <strong>SSoT</strong> master structure (hierarchical BOM for 1 unit of a single product) directly from the active SolidWorks assembly.</p>
                             <ul class="module-list">
                                 <li>Preserves parent–child relationships (welding and assembly hierarchy 1, 1.1, 1.1.1).</li>
                                 <li>Rapidly processes assemblies with hundreds of components using in-memory chunk stitching.</li>
-                                <li>Automatically assigns default work centers and raw material categories.</li>
+                                <li>Automatically assigns default work centers (including K/T/F secondary routing) and raw material categories.</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>6. SSoT Integrator</h4>
+                            <h4>8. SSoT Integrator</h4>
                             <div class="module-sub">Relational Bridge Between 2D/PDF BOMs and 3D CAD</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Designed for companies working with external or 2D part lists that need to be converted into a complete product <strong>SSoT</strong> enriched with 3D CAD dimensions and weights.</p>
                             <ul class="module-list">
@@ -1297,6 +1630,139 @@
                                 <li>Automatic injection of dimensions (A, B, L), thicknesses, unit weights, materials, and work centers.</li>
                                 <li>Instant CAD verification column highlighting quantity mismatches or parts missing in 3D.</li>
                             </ul>
+                        </div>
+
+                        <div class="pro-roi-box">
+                            <h4>💎 License Leverage: 1× PRO Powers the Whole Plant</h4>
+                            <p>The design engineer creates the verified <strong>SSoT master structure (for 1 unit)</strong> once in PRO. Downstream validation, multi-product aggregation, shop-floor PDF cards, 1D bar nesting, shipping labels, and daily workshop calculators all run on affordable <strong>BASIC</strong> office PCs without extra CAD seats.</p>
+                            <ul class="module-list">
+                                <li>Unified deliverables: <code>1:1 DXF</code>, <code>STEP</code>, <code>SSoT .xlsx</code>, <code>PDF Job Cards</code>, and <code>Thermal B&amp;W Labels</code>.</li>
+                                <li>Fast onboarding across departments thanks to standardized data and automated SSoT Inspector checks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ENGINEERING & WORKSHOP TOOLBOX -->
+            <section>
+                <div class="section-header">
+                    <div class="section-eyebrow" style="color: #38bdf8;">Daily Support for Estimators, Buyers &amp; Logistics</div>
+                    <h2 class="section-title">Engineering &amp; Shop-Floor Toolbox (7 Quick Utilities)</h2>
+                    <p class="section-desc">
+                        Instant desktop utilities launched straight from the bottom dock of the Telperion 4.0 Dashboard – purpose-built for fast weight and paint estimates, ad-hoc thermal labeling, and automated PDF, DXF, STEP &amp; ZIP package assembly in <strong>PL / EN / DE</strong>.
+                    </p>
+                </div>
+
+                <div class="grid-tools">
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">1D Calculator</span>
+                        <h3>Quick 1D Profile Weight Calculator (EN/DIN)</h3>
+                        <div class="tool-sub">Standard Steel Catalog + Combined A4 PDF Report</div>
+                        <p>Instant weight calculation for structural beams and profiles using an integrated EN/DIN dimensional catalog.</p>
+                        <ul class="module-list">
+                            <li>Complete library: <strong>IPE, IPN, HEA, HEB, HEM, UPN, UPE, cold-formed C, T / TB</strong> tees, equal &amp; unequal <strong>L</strong> angles, <strong>SHS / RHS</strong>, circular tubes <strong>CHS</strong>, bars, and flats.</li>
+                            <li>Quick mode (linear meters) and Advanced mode (<code>length mm × pcs</code>) with multi-item calculation lists.</li>
+                            <li>Exports A4 PDF reports in PL/EN/DE (full breakdown, summary only, or both views).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">EN / DIN Standards</span>
+                            <span class="tool-tag">Tees &amp; Unequal Angles</span>
+                            <span class="tool-tag">PDF A4 PL/EN/DE</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">2D Converter</span>
+                        <h3>2D Weight &amp; Area Converter (m² ↔ kg)</h3>
+                        <div class="tool-sub">21 Engineering Materials &amp; Sheet Count Calculator</div>
+                        <p>Two-way conversion between weight and surface area for quoting, plate purchasing, and paint surface checks.</p>
+                        <ul class="module-list">
+                            <li><strong>21 preloaded materials:</strong> mild &amp; galvanized steel, Hardox, Corten, 304/316L stainless, aluminum, copper, brass, bronze, titanium, glass, plywood, MDF &amp; plastics.</li>
+                            <li>Calculates standard or custom sheet counts plus double-sided (<code>×2</code>) coating area.</li>
+                            <li>Generates clean, printable A4 calculation sheets in PDF (PL / EN / DE).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">21 Materials</span>
+                            <span class="tool-tag">m² ↔ kg + Sheets</span>
+                            <span class="tool-tag">PDF A4</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Coating</span>
+                        <h3>Quick Paint Calculator (LIGHT)</h3>
+                        <div class="tool-sub">TDS Coverage Input + Realistic Loss Factor Slider</div>
+                        <p>Fast coating volume estimation from surface area [m²] for RFQs, buyers, and coating subcontractors.</p>
+                        <ul class="module-list">
+                            <li>Accepts datasheet (<strong>TDS</strong>) specs as <code>m²/L</code> or <code>L/m²</code> alongside dry-film thickness in <code>µm</code>.</li>
+                            <li>Multi-coat stack builder plus a <strong>7-step coating loss slider</strong> (from <code>+30%</code> controlled spray up to <code>+250%</code> lattice structures).</li>
+                            <li>Exports a ready-to-buy A4 paint specification PDF in PL/EN/DE.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">TDS m²/L &amp; µm</span>
+                            <span class="tool-tag">+30%..+250% Loss</span>
+                            <span class="tool-tag">PDF Spec Sheet</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Labeling</span>
+                        <h3>Custom Labels Generator</h3>
+                        <div class="tool-sub">Ad-Hoc Shop-Floor &amp; Drawing Notes</div>
+                        <p>Turn any drawing note, translator snippet, or bin text into sharp black-and-white vector PDF labels.</p>
+                        <ul class="module-list">
+                            <li>Zebra / Dymo / custom mm dimensions with automatic font <strong>Auto-Fit</strong> or manual pt size, alignment, and optional border.</li>
+                            <li>Build label batches with <code>+</code> and print multiple copies straight to thermal printers.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Auto-Fit PDF B&amp;W</span>
+                            <span class="tool-tag">Zebra / Dymo / mm</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Archives</span>
+                        <h3>Batch ZIP Extractor</h3>
+                        <div class="tool-sub">Clean Multi-Archive Unpacking</div>
+                        <p>Unpack dozens of client or supplier <code>.zip</code> documentation archives in a single batch operation.</p>
+                        <ul class="module-list">
+                            <li>Processes nested folders cleanly with choice of in-place extraction or structured target folders.</li>
+                            <li>Automatically repairs broken Polish/German filename encodings (<code>CP852 / UTF-8</code>).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Batch Unpack</span>
+                            <span class="tool-tag">PL/DE Charset Fix</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">PDF Docs</span>
+                        <h3>PDF Collector &amp; Merger</h3>
+                        <div class="tool-sub">Drawing Gathering &amp; Binder Assembly</div>
+                        <p>Two-in-one utility to gather PDF drawings from directory trees and merge multi-sheet print packs.</p>
+                        <ul class="module-list">
+                            <li>Collects drawings matching <strong>SSoT / Excel / text lists</strong> (or all PDFs) with a missing-drawing report.</li>
+                            <li>Optional A4 Excel index (alphabetical + AutoFilters + timestamps) and single-file PDF merging.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Missing Audit</span>
+                            <span class="tool-tag">Merge + Excel A4</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">CAM &amp; Subcontracting</span>
+                        <h3>DXF / STEP Collector</h3>
+                        <div class="tool-sub">Machine File Gathering &amp; Print Lists</div>
+                        <p>Standalone collector for gathering CAD/CAM files (<code>.dxf</code>, <code>.step/.stp</code>, <code>.iges</code>, <code>.dwg</code>) ready for laser cutting or outsourcing.</p>
+                        <ul class="module-list">
+                            <li>Dynamic output folders per selected format (e.g., separate <code>DXF_ZEBRANE</code> / <code>STEP_ZEBRANE</code> or unified).</li>
+                            <li>Independent checkboxes for combined and per-format printable Excel A4 manifest lists.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">DXF / STEP / IGES / DWG</span>
+                            <span class="tool-tag">Excel A4 Lists</span>
                         </div>
                     </div>
                 </div>
@@ -1319,9 +1785,9 @@
                         <p>Assisted sheet-metal unfolding under engineer oversight, dimension/mass extraction, and 1:1 DXF &amp; STEP export from SolidWorks.</p>
                     </div>
                     <div class="flow-step">
-                        <div class="step-num">Step 2 • SSoT Review</div>
-                        <h4>Engineer Verification</h4>
-                        <p>The technologist reviews the master SSoT table (for 1 unit of a product) in Excel, checks yellow alerts, and approves routing.</p>
+                        <div class="step-num">Step 2 • Inspector &amp; Review</div>
+                        <h4>SSoT Validation</h4>
+                        <p>SSoT Inspector validates files in batch, while the technologist reviews yellow Excel alerts and approves workstation routing.</p>
                     </div>
                     <div class="flow-step">
                         <div class="step-num">Step 3 • BASIC Package</div>
@@ -1329,9 +1795,9 @@
                         <p>The Aggregator merges approved product SSoTs into a Consolidated Order Parts List multiplied by ordered batch quantities.</p>
                     </div>
                     <div class="flow-step">
-                        <div class="step-num">Step 4 • BASIC Package</div>
-                        <h4>Reports &amp; 1D Nester</h4>
-                        <p>With one click, generate work center PDF cards, purchasing summaries, paint calculations, and 1D bar cutting plans.</p>
+                        <div class="step-num">Step 4 • Shop Floor &amp; Dispatch</div>
+                        <h4>Reports, Nester &amp; Labels</h4>
+                        <p>Generate PDF work center cards, purchasing sheets, up to 5 paint variants, 1D bar cut plans, and thermal shipping labels.</p>
                     </div>
                 </div>
             </section>
@@ -1370,7 +1836,7 @@
                     <table class="spec-table">
                         <thead>
                             <tr>
-                                <th>Telperion 4.0 System Module</th>
+                                <th>Telperion 4.0 Module / Utility</th>
                                 <th>License Tier</th>
                                 <th>Required Workstation Environment</th>
                                 <th>Primary User in the Plant</th>
@@ -1396,6 +1862,12 @@
                                 <td>CAD Design Engineer / Technologist</td>
                             </tr>
                             <tr>
+                                <td><strong>SSoT Inspector</strong></td>
+                                <td><span class="tier-badge badge-basic" style="margin:0;">Basic</span></td>
+                                <td>Standard Office PC with MS Excel (no CAD)</td>
+                                <td>Technologist / Planner / Quality Gate</td>
+                            </tr>
+                            <tr>
                                 <td><strong>SSoT Aggregator</strong></td>
                                 <td><span class="tier-badge badge-basic" style="margin:0;">Basic</span></td>
                                 <td>Standard Office PC with MS Excel (no CAD)</td>
@@ -1412,6 +1884,24 @@
                                 <td><span class="tier-badge badge-basic" style="margin:0;">Basic</span></td>
                                 <td>Standard Office PC with MS Excel &amp; Browser</td>
                                 <td>Technologist / Purchasing / Saw Operator</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shipping Label Generator</strong></td>
+                                <td><span class="tier-badge badge-basic" style="margin:0;">Basic</span></td>
+                                <td>Standard Office PC + Zebra / Thermal / Laser Printer</td>
+                                <td>Logistics / Dispatch / Warehouse</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Engineering Calculators (1D EN/DIN, 2D m²/kg, Paint LIGHT)</strong></td>
+                                <td><span class="tier-badge badge-tool" style="margin:0;">Toolbox</span></td>
+                                <td>Standard Windows PC (no CAD or Excel needed)</td>
+                                <td>Estimators / Buyers / Paint Shop / Engineering</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logistics &amp; File Tools (Custom Labels, ZIP, PDF &amp; DXF/STEP Collectors)</strong></td>
+                                <td><span class="tier-badge badge-tool" style="margin:0;">Toolbox</span></td>
+                                <td>Standard Windows PC (no CAD needed)</td>
+                                <td>Preparation / Subcontracting / Warehouse</td>
                             </tr>
                             <tr>
                                 <td><strong>Custom ERP Parser &amp; Integrator</strong></td>
@@ -1453,15 +1943,15 @@
                 <div class="grid-3">
                     <div class="card card-problem">
                         <h3>1. Inkonsistente Stücklisten &amp; Tippfehler</h3>
-                        <p>Änderungen von Blechdicke, Werkstoff oder Menge im 3D-Modell landen selten in allen Tabellen. Telperion etabliert den <strong>SSoT-Standard</strong> (die mehrspaltige Stamm-Stückliste für 1 Stück eines Erzeugnisses) – jede Laufkarte, Sägeliste und Bestellung entsteht aus einer geprüften Quelle.</p>
+                        <p>Änderungen von Blechdicke, Werkstoff oder Menge im 3D-Modell landen selten in allen Tabellen. Telperion etabliert den <strong>SSoT-Standard</strong> (die mehrspaltige Stamm-Stückliste für 1 Stück eines Erzeugnisses) sowie den <strong>SSoT-Inspektor</strong> – jede Laufkarte, Sägeliste und Bestellung entsteht aus einer geprüften Quelle.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>2. Zeitraubender DXF- &amp; STEP-Export</h3>
                         <p>Das manuelle Einzelöffnen dutzender Blechteile kostet Stunden. Das System automatisiert diesen Ablauf im <strong>Human-in-the-Loop</strong>-Modus: Es startet die Blechkonvertierung (<em>Biegungen einfügen</em>) und erspart monotone Klickarbeit, während der Technologe die Abwicklungsparameter und die Modellgeometrie verantwortlich prüft.</p>
                     </div>
                     <div class="card card-problem">
-                        <h3>3. Chaos an den Fertigungsinseln</h3>
-                        <p>Statt einer riesigen Sammeltabelle erhält jede Fertigungsinsel (Laser, Abkantpresse, Säge, Drehen/Fräsen, Schweißerei, Schreinerei, Glaserei) eine eigene, nach Arbeitsplan sortierte PDF-Fertigungskarte.</p>
+                        <h3>3. Chaos an den Fertigungsinseln &amp; im Versand</h3>
+                        <p>Statt einer riesigen Sammeltabelle erhält jede Fertigungsinsel (Sägen, Laser, Abkantpressen <code>K/TAK</code>, Drehen <code>T</code>, Fräsen <code>F</code>, Schweißerei, Fremdfertigung, Schreinerei, Glaserei) eine eigene, nach Arbeitsplan sortierte PDF-Laufkarte – und der Versand fertige Thermoetiketten samt Verladeliste.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>4. Fehlmengen im Einkauf &amp; Verschnitt</h3>
@@ -1469,11 +1959,11 @@
                     </div>
                     <div class="card card-problem">
                         <h3>5. Fehlende Lackberechnung vorab</h3>
-                        <p>Das System berechnet die exakte Lackierfläche [m²] für jede Schicht (Grundierung, Decklack, RAL) inkl. Verbrauch pro m² und liefert den Farbbedarf in Litern noch vor dem ersten Säge- oder Laserschnitt.</p>
+                        <p>Das System berechnet die exakte Lackierfläche [m²] für bis zu <strong>5 Farb- und Beschichtungssysteme gleichzeitig</strong> (Grundierung, Zwischenanstrich, Decklack RAL) inkl. Verlustfaktor und liefert den Farbbedarf in Litern noch vor dem ersten Schnitt.</p>
                     </div>
                     <div class="card card-problem">
                         <h3>6. Teure CAD-Lizenzen an jedem Platz</h3>
-                        <p>Dank der Zwei-Schichten-Architektur benötigen Arbeitsvorbereitung, Einkauf und Planung keine teure CAD-Lizenz – für das Basispaket genügt ein normaler Büro-PC mit MS Excel.</p>
+                        <p>Dank der Zwei-Schichten-Architektur benötigen Arbeitsvorbereitung, Einkauf, Kalkulation und Versand keine teure CAD-Lizenz – für das Basispaket und die Toolbox genügt ein normaler Büro-PC mit MS Excel.</p>
                     </div>
                 </div>
             </section>
@@ -1484,21 +1974,32 @@
                     <div class="section-eyebrow">Modularität &amp; Flexibilität</div>
                     <h2 class="section-title">Zwei-Schichten-Architektur: Basispaket (BASIC) und PRO-Paket</h2>
                     <p class="section-desc">
-                        Das System Telperion 4.0 besteht aus <strong>6 spezialisierten Modulen</strong> in zwei unabhängigen Ebenen. Alle Oberflächen und generierten Produktionsberichte unterstützen <strong>Polnisch, Englisch und Deutsch (PL / EN / DE)</strong>.
+                        Das System Telperion 4.0 umfasst <strong>8 spezialisierte Kernmodule</strong> in zwei unabhängigen Ebenen sowie eine integrierte <strong>Werkstatt-Toolbox mit 7 Schnellwerkzeugen</strong>. Alle Oberflächen, Berichte und Etiketten unterstützen <strong>Polnisch, Englisch und Deutsch (PL / EN / DE)</strong>.
                     </p>
                 </div>
 
                 <div class="grid-2">
                     <!-- BASISPAKET -->
                     <div class="tier-box tier-basic">
-                        <span class="tier-badge badge-basic">Büro- / AV-Arbeitsplatz</span>
+                        <span class="tier-badge badge-basic">Büro- / AV- / Versand-Arbeitsplatz</span>
                         <h3>Basismodule (BASIC-Paket)</h3>
                         <p style="color: var(--text-muted); font-size: 0.93rem; margin-top: 6px;">
                             <strong>Systemanforderungen:</strong> Standard-Büro-PC mit <strong>MS Excel</strong> und Webbrowser. <strong>Keine SolidWorks-Lizenz erforderlich.</strong>
                         </p>
 
                         <div class="module-item">
-                            <h4>1. SSoT-Aggregator</h4>
+                            <h4>1. SSoT-Inspektor</h4>
+                            <div class="module-sub">Batch-Qualitätsprüfung &amp; Strukturvalidator vor der Auftragsbündelung</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Prüft beliebig viele SSoT-Arbeitsmappen im Stapel, bevor sie in die Fertigungssteuerung gehen – ganz ohne SolidWorks-Start.</p>
+                            <ul class="module-list">
+                                <li>Entfernt automatisch Windows-Sicherheitsblockaden (<em>Zone.Identifier</em>) bei Dateien aus E-Mail oder Netzlaufwerken.</li>
+                                <li>Prüft Pflichtspalten, fehlende Arbeitsplätze, Maße, Werkstoffe, Folgeprozesse und rekonstruiert die Baumhierarchie (<code>1, 1.1, 1.1.1</code>).</li>
+                                <li>Erzeugt einen druckfertigen A4-Excel-Prüfbericht mit Autofiltern und direkten Zellen-Hyperlinks in PL / EN / DE.</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-item">
+                            <h4>2. SSoT-Aggregator</h4>
                             <div class="module-sub">Auftragskonsolidierung für Mehrproduktaufträge</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Führt die einzelnen <strong>SSoT</strong>-Strukturlisten (jeweils für 1 Stück eines Enderzeugnisses) innerhalb eines Fertigungsauftrags zu einer <strong>Konsolidierten Auftrags-Teileliste</strong> zusammen.</p>
                             <ul class="module-list">
@@ -1509,24 +2010,35 @@
                         </div>
 
                         <div class="module-item">
-                            <h4>2. Produktionsberichte-Generator</h4>
+                            <h4>3. Produktionsberichte-Generator</h4>
                             <div class="module-sub">Engine für Fertigungskarten, Einkauf &amp; Lackbedarf</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Verwandelt eine freigegebene SSoT-Datei (für ein einzelnes Erzeugnis) oder die <strong>Konsolidierte Auftrags-Teileliste</strong> (aus dem Aggregator) in formatierte Tabellenblätter und technologisch nummerierte PDF-Fertigungspapiere:</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Verwandelt eine freigegebene SSoT-Datei oder die <strong>Konsolidierte Auftrags-Teileliste</strong> in formatierte Tabellenblätter und technologisch nummerierte PDF-Fertigungspapiere:</p>
                             <ul class="module-list">
                                 <li><strong>Material- &amp; Einkaufsübersicht:</strong> 2D-Blech (kg), 1D-Profile (lfd. Meter + Stangen 6m/12m), Kaufteile &amp; Normteile (Stk.), Holz (m²/lfm), Glas (m²) sowie Rohmaterial-Warnungen für Fremdfertigung.</li>
-                                <li><strong>Lack- &amp; Beschichtungsrechner:</strong> Gesamte Lackierfläche [m²] und Literbedarf je Schicht.</li>
-                                <li><strong>Fertigungsinsel-Karten (PDF):</strong> Eigene Laufkarten für Sägen, 2D/3D-Laser, Abkantpressen, Drehen/Fräsen, Fremdfertigung, Holz, Glas, Schweißerei sowie die Verlade- und Montageliste (inkl. Hinweisen zu Konservierung und Oberflächenschutz) – stets in logischer Prozessreihenfolge.</li>
+                                <li><strong>Erweiterter Lack- &amp; Beschichtungsrechner:</strong> Verarbeitet bis zu <strong>5 Farb- bzw. Beschichtungsvarianten</strong> je Auftrag inkl. Lackierfläche [m²] und Literbedarf je Schicht.</li>
+                                <li><strong>Fertigungsinsel-Karten (PDF):</strong> Eigene Laufkarten für Sägen, 2D/3D-Laser, Plasma, Sekundärprozesse (<strong>Abkantpressen <code>K/TAK</code>, Drehen <code>T</code>, Fräsen <code>F</code> und Kombinationen</strong>), Fremdfertigung, Holz, Glas, Schweißerei, Kommissionierung sowie Verlade- und Montageliste (inkl. Konservierungshinweisen).</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>3. 1D-Stangennester</h4>
+                            <h4>4. 1D-Stangennester</h4>
                             <div class="module-sub">Stangen- &amp; Profilzuschnittoptimierung mit Grafik</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Interaktives Optimierungswerkzeug für den verschnittarmen Zuschnitt von Profilen, Rohren, Stäben und Leisten.</p>
                             <ul class="module-list">
                                 <li>Gleichzeitige Berechnung von 6000-mm- und 12000-mm-Stangen (oder Sonderlängen) inklusive Sägeschnittbreite.</li>
-                                <li>Fertigungsinsel-Filter (z.B. 1D-Holz oder Fremdfertigung ein-/ausblenden) und manuelles Ausblenden einzelner Profile vor dem Druck.</li>
-                                <li>Grafische Schnittbalken für den Sägebediener mit Ausweis von Nutzrest und Schrottanteil.</li>
+                                <li><strong>Auftragsmischmodus &amp; sequenzielle Kommissionierung</strong>, Fertigungsinsel-Filter (1D-Holz, Fremdfertigung) sowie manuelles Ausblenden vor dem Druck.</li>
+                                <li>Grafische Schnittbalken im dedizierten Ordner <code>NESTING</code> mit Ausweis von Nutzrest und Schrottanteil.</li>
+                            </ul>
+                        </div>
+
+                        <div class="module-item">
+                            <h4>5. Versandetiketten-Generator</h4>
+                            <div class="module-sub">Schwarz-Weiß-Thermoetiketten &amp; zweisprachige Versandlisten</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Liest Positionen direkt aus der <strong>Verladeliste</strong> und erzeugt kontrastreiche Schwarz-Weiß-Etiketten (ohne Rahmen/Farbe) als <strong>PDF</strong> sowie optional <strong>Excel (<code>.xlsx</code>)</strong> in einem eigenen Versand-Unterordner.</p>
+                            <ul class="module-list">
+                                <li><strong>Ein-Klick-Umschaltung pro Zeile:</strong> <strong>Detailmodus (<code>1/N .. N/N</code>)</strong> für einzeln beklebte Großbauteile oder <strong>Sammelmodus (<code>Stk. N</code>)</strong> für Kleinteile in einem Karton.</li>
+                                <li><strong>Für jeden Etikettendrucker:</strong> Fertige Presets für Zebra / Brother / Dymo plus freie mm-Eingabe (inkl. Mikro-Layout für Kleinstetiketten).</li>
+                                <li><strong>Vollständige Export-Sprachmatrix:</strong> Einsprachig <strong>DE / EN / PL</strong> sowie alle 6 zweisprachigen Kombinationen (<code>DE/EN</code>, <code>DE/PL</code>, <code>EN/PL</code> usw.) für Etiketten und die parallel erzeugte Verladeliste.</li>
                             </ul>
                         </div>
                     </div>
@@ -1540,29 +2052,29 @@
                         </p>
 
                         <div class="module-item">
-                            <h4>4. CAD-Metadaten- &amp; Maschinendatei-Harvester</h4>
+                            <h4>6. CAD-Metadaten- &amp; Maschinendatei-Harvester</h4>
                             <div class="module-sub">3D-Geometrie-, DXF/STEP-Exporter &amp; Flache BOM</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Durchsucht die 3D-Baugruppe in SolidWorks, analysiert Volumenkörper und erzeugt unter Aufsicht des Ingenieurs Maschinendateien.</p>
                             <ul class="module-list">
                                 <li>Unterstützte Blechkonvertierung (<em>Biegungen einfügen</em>) im <strong>Human-in-the-Loop</strong>-Modus – der Technologe verantwortet die Abwicklungsparameter und prüft das Modell vor dem automatischen <strong>1:1-DXF-</strong> sowie <strong>STEP-Export</strong>.</li>
-                                <li>Automatische Erfassung von Abwicklungsmaßen (A×B), Länge (L), Dicke, Masse sowie Werkstofferkennung (Stahl, Holz, Glas).</li>
+                                <li>Automatische Erfassung von Abwicklungsmaßen (A×B), Länge (L), Dicke, Masse aus dem Parasolid-Kern sowie Werkstofferkennung (Stahl, Holz, Glas).</li>
                                 <li>Optische gelbe Markierung in Excel bei prüfbedürftigen Geometrien.</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>5. CAD-SSoT-Generator</h4>
+                            <h4>7. CAD-SSoT-Generator</h4>
                             <div class="module-sub">Mehrstufiger Strukturbaum-Extraktor (1 Stück eines Produkts)</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Erstellt die vollständige, mehrspaltige <strong>SSoT</strong>-Stammstruktur (hierarchische Stückliste für 1 Stück eines einzelnen Erzeugnisses) direkt aus der aktiven SolidWorks-Baugruppe.</p>
                             <ul class="module-list">
                                 <li>Bewahrt Eltern-Kind-Beziehungen (Schweiß- und Montagehierarchie 1, 1.1, 1.1.1).</li>
                                 <li>Verarbeitet Baugruppen mit hunderten Komponenten schnell und zuverlässig im Arbeitsspeicher.</li>
-                                <li>Weist automatisch Standard-Fertigungsinseln und Rohmaterialkategorien zu.</li>
+                                <li>Weist automatisch Standard-Fertigungsinseln (inkl. Sekundärarbeitsgängen K/T/F) und Rohmaterialkategorien zu.</li>
                             </ul>
                         </div>
 
                         <div class="module-item">
-                            <h4>6. SSoT-Integrator</h4>
+                            <h4>8. SSoT-Integrator</h4>
                             <div class="module-sub">Relationale Brücke zwischen 2D-Stücklisten und 3D-CAD</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Entwickelt für Unternehmen mit bestehenden Stücklisten, die in eine vollständige <strong>SSoT</strong>-Produktdatei mit Abmessungen und Gewichten aus dem 3D-Modell überführt werden sollen.</p>
                             <ul class="module-list">
@@ -1570,6 +2082,139 @@
                                 <li>Automatische Übernahme von Abmessungen (A, B, L), Blechdicken, Einzelgewichten, Werkstoffen und Fertigungsinseln.</li>
                                 <li>Integrierte CAD-Prüfspalte meldet Mengenabweichungen oder im 3D-Modell fehlende Positionen.</li>
                             </ul>
+                        </div>
+
+                        <div class="pro-roi-box">
+                            <h4>💎 Lizenzhebel: 1× PRO versorgt den gesamten Betrieb</h4>
+                            <p>Der Konstrukteur erzeugt die geprüfte <strong>SSoT-Stammliste (für 1 Stück)</strong> einmalig im PRO-Modul. Sämtliche Folgeprozesse – Prüfung, Auftragsbündelung, PDF-Laufkarten, 1D-Zuschnitt, Versandetiketten und Kalkulations-Tools – laufen anschließend auf günstigen <strong>BASIC</strong>-Büro-PCs ohne weitere CAD-Lizenzen.</p>
+                            <ul class="module-list">
+                                <li>Durchgängige Ergebnisse: <code>1:1-DXF</code>, <code>STEP</code>, <code>SSoT .xlsx</code>, <code>PDF-Laufkarten</code> &amp; <code>Zebra S/W-Etiketten</code>.</li>
+                                <li>Schnelle Einarbeitung aller Abteilungen dank einheitlichem Datenstandard und automatischem SSoT-Inspektor.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WERKSTATT-TOOLBOX & SCHNELLRECHNER -->
+            <section>
+                <div class="section-header">
+                    <div class="section-eyebrow" style="color: #38bdf8;">Tägliche Unterstützung für Kalkulation, Einkauf &amp; Logistik</div>
+                    <h2 class="section-title">Werkstatt-Toolbox &amp; Schnellrechner (7 Praxis-Tools im Dock)</h2>
+                    <p class="section-desc">
+                        Direkt aus der unteren Leiste des Telperion 4.0 Dashboards startbare Werkzeuge für schnelle Gewichts- und Farb-Kalkulationen, Ad-hoc-Thermoetiketten sowie das automatische Sammeln von PDF-, DXF-, STEP- und ZIP-Paketen in <strong>PL / EN / DE</strong>.
+                    </p>
+                </div>
+
+                <div class="grid-tools">
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">1D-Rechner</span>
+                        <h3>Schnellrechner 1D-Profilgewicht (EN/DIN)</h3>
+                        <div class="tool-sub">Normkatalog + Sammelbericht als PDF A4</div>
+                        <p>Sofortige Gewichtsberechnung für Stahlträger und Profile auf Basis hinterlegter europäischer Normtabellen.</p>
+                        <ul class="module-list">
+                            <li>Umfassende Profilbibliothek: <strong>IPE, IPN, HEA, HEB, HEM, UPN, UPE, kaltgeformte C, T / TB</strong>, gleich- &amp; ungleichschenklige Winkel <strong>L</strong>, <strong>SHS / RHS</strong>, Rohre <strong>CHS</strong>, Stäbe &amp; Flachstahl.</li>
+                            <li>Schnellmodus (<code>lfd. m</code>) sowie Profimodus (<code>Länge mm × Stückzahl</code>) mit mehrzeiligen Positionslisten.</li>
+                            <li>Export druckfertiger A4-PDF-Berichte in PL/EN/DE (Einzelpositionen, Summenübersicht oder kombiniert).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">EN / DIN-Normen</span>
+                            <span class="tool-tag">T- &amp; Ungleich-Winkel</span>
+                            <span class="tool-tag">PDF A4 PL/EN/DE</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">2D-Umrechner</span>
+                        <h3>2D-Umrechner Gewicht &amp; Fläche (m² ↔ kg)</h3>
+                        <div class="tool-sub">21 Werkstoffe &amp; Tafelbedarf-Berechnung</div>
+                        <p>Bidirektionale Umrechnung zwischen Gewicht und Quadratmetern für Angebotskalkulation, Blecheinkauf und Lackfläche.</p>
+                        <ul class="module-list">
+                            <li><strong>21 hinterlegte Werkstoffe:</strong> Baustahl, verzinkter Stahl, Hardox, Corten, Edelstahl 304/316L, Alu, Kupfer, Messing, Bronze, Titan, Glas, Sperrholz, MDF &amp; Kunststoffe.</li>
+                            <li>Berechnung benötigter Standard-/Sondertafeln sowie beidseitiger Beschichtungsfläche (<code>×2</code>).</li>
+                            <li>Export sauberer A4-Kalkulationsblätter als PDF (PL / EN / DE).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">21 Werkstoffe</span>
+                            <span class="tool-tag">m² ↔ kg + Tafeln</span>
+                            <span class="tool-tag">PDF A4</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-4">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Lackiererei</span>
+                        <h3>Schnell-Lackrechner (LIGHT)</h3>
+                        <div class="tool-sub">TDS-Vorgaben + praxisnaher Verlustfaktor-Regler</div>
+                        <p>Schnelle Mengenermittlung für Lacke anhand der Bauteiloberfläche [m²] für Kalkulation, Einkauf und Lohnbeschichter.</p>
+                        <ul class="module-list">
+                            <li>Flexible Datenübernahme aus technischen Merkblättern (<strong>TDS</strong>): Ergiebigkeit <code>m²/l</code> oder Verbrauch <code>l/m²</code> samt Schichtdicke in <code>µm</code>.</li>
+                            <li>Mehrschicht-Systemaufbau plus <strong>7-stufiger Verlust-Schieberegler</strong> (von <code>+30 %</code> bis Gitterkonstruktionen <code>+250 %</code>).</li>
+                            <li>Druckfertiges A4-Bestellblatt als PDF in PL/EN/DE.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">TDS m²/l &amp; µm</span>
+                            <span class="tool-tag">Verlust +30..+250%</span>
+                            <span class="tool-tag">PDF-Datenblatt</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Kennzeichnung</span>
+                        <h3>Freie Etiketten Generator</h3>
+                        <div class="tool-sub">Ad-hoc-Hinweise &amp; Zeichnungstexte</div>
+                        <p>Verwandelt beliebige Zeichnungshinweise, Übersetzungstexte oder Lagerhinweise sofort in gestochen scharfe S/W-Vektor-PDF-Etiketten.</p>
+                        <ul class="module-list">
+                            <li>Zebra / Dymo / freie mm-Formate mit <strong>Auto-Fit</strong>-Schriftanpassung oder manueller pt-Größe, Ausrichtung und optionalem Rahmen.</li>
+                            <li>Etikettenserien per <code>+</code>-Taste aufbauen und mit gewünschter Kopienzahl direkt drucken.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Auto-Fit PDF S/W</span>
+                            <span class="tool-tag">Zebra / Dymo / mm</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">Archive</span>
+                        <h3>ZIP-Sammelentpacker</h3>
+                        <div class="tool-sub">Dokumentenpakete ohne Sonderzeichenfehler</div>
+                        <p>Entpackt per Klick dutzende <code>.zip</code>-Archive aus Kunden- oder Lieferantenpaketen in einem Durchgang.</p>
+                        <ul class="module-list">
+                            <li>Verarbeitet ganze Verzeichnisbäume wahlweise direkt vor Ort oder in strukturierte Zielordner.</li>
+                            <li>Korrigiert automatisch fehlerhafte polnische und deutsche Umlaute in Dateinamen (<code>CP852 / UTF-8</code>).</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Batch-Entpackung</span>
+                            <span class="tool-tag">PL/DE-Zeichensatz</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">PDF-Doku</span>
+                        <h3>PDF-Sammler &amp; Combiner</h3>
+                        <div class="tool-sub">Zeichnungen einsammeln &amp; mappenweise binden</div>
+                        <p>Zwei Werkzeuge in einem Fenster: gezieltes Einsammeln von PDF-Zeichnungen nach Liste sowie PDF-Zusammenführung.</p>
+                        <ul class="module-list">
+                            <li>Sucht Zeichnungen gemäß <strong>SSoT / Excel / Nummernliste</strong> (oder alle PDFs) inkl. Fehlteilliste.</li>
+                            <li>Optionales A4-Excel-Verzeichnis (alphabetisch + Autofilter + Zeitstempel) sowie Mergen in eine PDF-Datei.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">Fehlteil-Report</span>
+                            <span class="tool-tag">PDF Merge + XLS A4</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card tool-span-3">
+                        <span class="tier-badge badge-tool" style="align-self: flex-start; margin-bottom: 4px;">CAM &amp; Vergabe</span>
+                        <h3>DXF / STEP-Sammler</h3>
+                        <div class="tool-sub">Maschinendateien bündeln inkl. Drucklisten</div>
+                        <p>Eigenständiger Sammler für CAD/CAM-Dateien (<code>.dxf</code>, <code>.step/.stp</code>, <code>.iges</code>, <code>.dwg</code>) aus beliebigen Projektordnern für Laser und Lohnfertiger.</p>
+                        <ul class="module-list">
+                            <li>Dynamische Zielordner je Formatwahl (z. B. getrennt nach <code>DXF_ZEBRANE</code> / <code>STEP_ZEBRANE</code> oder gemeinsam).</li>
+                            <li>Unabhängige Checkboxen für Gesamt- sowie formatgetrennte A4-Excel-Verzeichnisse mit Datum und Autofiltern.</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span class="tool-tag">DXF / STEP / IGES / DWG</span>
+                            <span class="tool-tag">Excel A4-Listen</span>
                         </div>
                     </div>
                 </div>
@@ -1592,9 +2237,9 @@
                         <p>Unterstützte Blechabwicklung unter Ingenieurkontrolle, Maß-/Masse-Auslesung sowie DXF- und STEP-Export aus SolidWorks.</p>
                     </div>
                     <div class="flow-step">
-                        <div class="step-num">Schritt 2 • SSoT-Prüfung</div>
-                        <h4>Freigabe durch Technologen</h4>
-                        <p>Der Technologe prüft die SSoT-Stammtabelle (für 1 Stück des Produkts) in Excel, kontrolliert gelbe Warnungen und gibt den Arbeitsplan frei.</p>
+                        <div class="step-num">Schritt 2 • Inspektor &amp; Prüfung</div>
+                        <h4>SSoT-Validierung</h4>
+                        <p>Der SSoT-Inspektor prüft ganze Dateistapel vorab; der Technologe kontrolliert gelbe Excel-Hinweise und gibt den Arbeitsplan frei.</p>
                     </div>
                     <div class="flow-step">
                         <div class="step-num">Schritt 3 • BASIC-Paket</div>
@@ -1602,9 +2247,9 @@
                         <p>Der Aggregator bündelt freigegebene Produkt-SSoTs zu einer Konsolidierten Auftrags-Teileliste multipliziert mit den Bestellmengen.</p>
                     </div>
                     <div class="flow-step">
-                        <div class="step-num">Schritt 4 • BASIC-Paket</div>
-                        <h4>Berichte &amp; 1D-Nester</h4>
-                        <p>Per Klick entstehen PDF-Fertigungskarten, Einkaufslisten, Lackbedarfsrechnungen und 1D-Stangenzuschnittpläne.</p>
+                        <div class="step-num">Schritt 4 • Fertigung &amp; Versand</div>
+                        <h4>Berichte, Nester &amp; Etiketten</h4>
+                        <p>Per Klick entstehen PDF-Laufkarten, Einkaufslisten, bis zu 5 Lackvarianten, 1D-Zuschnittpläne und Thermo-Versandetiketten.</p>
                     </div>
                 </div>
             </section>
@@ -1643,7 +2288,7 @@
                     <table class="spec-table">
                         <thead>
                             <tr>
-                                <th>Modul des Systems Telperion 4.0</th>
+                                <th>Modul / Werkzeug des Systems Telperion 4.0</th>
                                 <th>Lizenzstufe</th>
                                 <th>Erforderliche Arbeitsplatzumgebung</th>
                                 <th>Hauptanwender im Betrieb</th>
@@ -1669,6 +2314,12 @@
                                 <td>CAD-Konstrukteur / Arbeitsvorbereiter</td>
                             </tr>
                             <tr>
+                                <td><strong>SSoT-Inspektor</strong></td>
+                                <td><span class="tier-badge badge-basic" style="margin:0;">Basis</span></td>
+                                <td>Standard-Büro-PC mit MS Excel (ohne CAD)</td>
+                                <td>Arbeitsvorbereiter / Planer / Qualitätssicherung</td>
+                            </tr>
+                            <tr>
                                 <td><strong>SSoT-Aggregator</strong></td>
                                 <td><span class="tier-badge badge-basic" style="margin:0;">Basis</span></td>
                                 <td>Standard-Büro-PC mit MS Excel (ohne CAD)</td>
@@ -1685,6 +2336,24 @@
                                 <td><span class="tier-badge badge-basic" style="margin:0;">Basis</span></td>
                                 <td>Standard-Büro-PC mit MS Excel &amp; Browser</td>
                                 <td>Arbeitsvorbereiter / Einkauf / Sägebediener</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Versandetiketten-Generator</strong></td>
+                                <td><span class="tier-badge badge-basic" style="margin:0;">Basis</span></td>
+                                <td>Standard-Büro-PC + Zebra- / Thermo- / Laserdrucker</td>
+                                <td>Versand / Logistik / Warenausgang</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ingenieur-Rechner (1D EN/DIN, 2D m²/kg, Lack LIGHT)</strong></td>
+                                <td><span class="tier-badge badge-tool" style="margin:0;">Toolbox</span></td>
+                                <td>Standard-Windows-PC (ohne CAD &amp; Excel)</td>
+                                <td>Kalkulation / Einkauf / Lackiererei / AV</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Versand- &amp; Datei-Tools (Freie Etiketten, ZIP, PDF- &amp; DXF/STEP-Sammler)</strong></td>
+                                <td><span class="tier-badge badge-tool" style="margin:0;">Toolbox</span></td>
+                                <td>Standard-Windows-PC (ohne CAD)</td>
+                                <td>Arbeitsvorbereitung / Fremdvergabe / Lager</td>
                             </tr>
                             <tr>
                                 <td><strong>ERP-Parser &amp; Integrator (z.B. Streamsoft Prestiż)</strong></td>
