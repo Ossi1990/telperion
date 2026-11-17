@@ -513,16 +513,16 @@
             </div>
             <div class="problems-grid">
                 <div class="prob-item">
-                    <strong>1. Żmudny eksport plików DXF i STEP</strong>
-                    Wspomagana konwersja na arkusz blachy (<em>Wstaw zgięcia</em>) pod nadzorem technologa, pomiar gabarytów z jądra Parasolid i zrzut plików DXF/STEP.
+                    <strong>1. Półautomatyczny eksport DXF i STEP</strong>
+                    Półautomatyczna konwersja na arkusz blachy pod okiem technologa, odczyt wymiarów i wag z 3D oraz hurtowy eksport DXF/STEP.
                 </div>
                 <div class="prob-item">
-                    <strong>2. Błędy przepisania i chaos na hali</strong>
-                    Wsadowa kontrola SSoT przed agregacją oraz dedykowane karty operacyjne PDF na każde gniazdo w logicznej kolejności marszruty.
+                    <strong>2. Spójność SSoT i logika produkcji</strong>
+                    Kontrola kompletności SSoT przed agregacją oraz posortowane karty PDF na gniazda (szybszy nesting, mniej przezbrojeń, łatwy załadunek).
                 </div>
                 <div class="prob-item">
-                    <strong>3. Wielomateriałowość, malarnia i spedycja</strong>
-                    Blachy, profile (6m/12m), kupne, kooperacja, drewno (m²), szkło (m²), do 5 wariantów farb oraz termiczne etykiety wysyłkowe.
+                    <strong>3. Sekcje zakupowe, malarnia i wysyłka</strong>
+                    Posortowane zestawienie materiałów (blachy, sztangi 6/12/dowolne, kupne, półprodukty, drewno, szkło), do 5 farb i etykiety B&amp;W.
                 </div>
             </div>
 
@@ -543,28 +543,28 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>1. Inspektor SSoT (Wsadowa kontrola jakości przed agregacją)</h4>
-                        <p>Prześwietla pliki SSoT zanim trafią do produkcji: zdejmuje blokady Windows (<em>Zone.Identifier</em>), sprawdza braki gniazd/wymiarów/marszrut wtórnych, odbudowuje hierarchię drzewa i generuje raport A4 z hiperlinkami (PL/EN/DE).</p>
+                        <h4>1. Inspektor SSoT (Weryfikacja kompletności przed agregacją)</h4>
+                        <p>Sprawdza kompletność i poprawność plików SSoT przed produkcją: odblokowuje pobrane arkusze, wykrywa braki gniazd/wymiarów, odbudowuje drzewo i tworzy raport A4 z klikalnym przejściem do poprawki (PL/EN/DE).</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>2. Agregator SSoT (Konsolidator zamówień wieloproduktowych)</h4>
-                        <p>Łączy jednostkowe pliki <strong>SSoT</strong> (dla 1 szt. wyrobów) w jedną <strong>Zbiorczą Listę Części do Zamówienia</strong>. Przemnaża ilości przez wolumen zlecenia i sumuje powtarzające się detale między wyrobami.</p>
+                        <p>Łączy jednostkowe pliki <strong>SSoT</strong> (dla 1 szt. wyrobów) w <strong>Zbiorczą Listę Części do Zamówienia</strong>. Przemnaża ilości przez wolumen zlecenia, scala detale i porządkuje kolejność pod produkcję seryjną.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Generator Raportów (Karty PDF, Zakupy, do 5 systemów Farb)</h4>
-                        <p>Tworzy: <strong>Zestawienie Materiałowe</strong>, <strong>Kalkulator Farb</strong> (aż do <strong>5 wariantów kolorystycznych</strong> [m²/L]) oraz <strong>Karty Operacyjne PDF</strong>: Piły, Laser, gniazda wtórne (<strong>Giętarki K/TAK, Tokarki T, Frezarki F</strong>), Kooperacja, Drewno, Szkło, Spawalnia i Zestawienie Załadunkowe z uwagami konserwacji.</p>
+                        <h4>3. Generator Raportów (Karty PDF, Zakupy, do 5 Farb)</h4>
+                        <p>Tworzy posortowane sekcje zakupowe (wybór sztangi 6/12/dowolnej), <strong>Kalkulator Farb</strong> (do <strong>5 wariantów</strong> [m²/L]) i <strong>Karty PDF</strong> (Piły, Laser, Giętarki, Tokarki, Frezarki, Kooperacja, Drewno, Szkło, Spawalnia, Lista Załadunkowa) z kolumną ilości pod nesting.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>4. Nester 1D (Optymalizator cięcia sztang i profili)</h4>
-                        <p>Dobiera rozkrój dłużyc 6 m / 12 m z uwzględnieniem rzazu piły. Tryb mieszania zleceń, komisjonowanie sekwencyjne, filtry gniazd, pomijanie pozycji, dedykowany folder <code>NESTING</code> i graficzne paski cięcia.</p>
+                        <h4>4. Nester 1D (Rozkrój pod realia hali, nie tylko na papier)</h4>
+                        <p>Dobiera sztangi 6 m / 12 m / dowolne z rzazem piły. Dwa tryby: <strong>globalny</strong> (min. odpad) lub <strong>z podziałem na podzlecenia</strong> pod późniejsze komisjonowanie bez szukania pomieszanych detali, filtry gniazd i folder <code>NESTING</code>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>5. Generator Etykiet Wysyłkowych (PDF B&amp;W / Excel, Zebra/Dymo)</h4>
-                        <p>Zaciąga pozycje z Listy Załadunkowej do folderu wysyłki. Tryb <strong>Szczegółowy (1/N)</strong> lub <strong>Zbiorczy (szt. N)</strong> przełączany 1 klikiem per wiersz, własne rozmiary mm (+ tryb mikro), warianty <strong>DE / EN / PL</strong> i 6 kombinacji dwujęzycznych + tłumaczona Lista Załadunkowa.</p>
+                        <p>Zaciąga pozycje z Listy Załadunkowej do folderu wysyłki. Przełączanie 1 klikiem per wiersz: <strong>Szczegółowy (1/N)</strong> na duże elementy wysyłkowe lub <strong>Zbiorczy (szt. N)</strong>, własne mm (+ mikro), <strong>DE/EN/PL</strong> i 6 opcji dwujęzycznych + Lista.</p>
                     </div>
                 </div>
 
@@ -580,22 +580,22 @@
 
                     <div class="mod-box">
                         <h4>6. Harvester Metadanych i Plików Maszynowych</h4>
-                        <p>Wspomaga konwersję na arkusz blachy (<em>Wstaw zgięcia</em>) w trybie <strong>Human-in-the-Loop</strong> pod kontrolą technologa, eksportuje pliki <strong>DXF 1:1</strong> i <strong>STEP</strong>, wylicza gabaryty z jądra Parasolid (A×B, L), masy, powierzchnie i rozpoznaje drewno oraz szkło.</p>
+                        <p>Półautomatyczna konwersja na arkusz blachy pod okiem technologa, eksport plików <strong>DXF 1:1</strong> i <strong>STEP</strong>, harvesting wymiarów i wag z 3D, automatyczny dobór jasnych gniazd (np. drewno, szkło) oraz <strong>żółty alert</strong> pozycji do sprawdzenia.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>7. Generator CAD SSoT (Struktura dla 1 szt. wyrobu)</h4>
-                        <p>Tworzy wielopoziomową, wielokolumnową strukturę wzorcową <strong>SSoT</strong> (dla 1 szt. pojedynczego wyrobu: spawanie i montaż 1, 1.1, 1.1.1) bezpośrednio z drzewa złożenia SolidWorks wraz z domyślną marszrutą gniazd.</p>
+                        <p>Tworzy wielopoziomową strukturę wzorcową <strong>SSoT</strong> (dla 1 szt. wyrobu: spawanie i montaż 1, 1.1, 1.1.1) prosto z drzewa SolidWorks. Wykrywa gięcia i przyporządkowuje krawędziarkę tylko tam, gdzie występują.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>8. Integrator SSoT (Pomost dokumentacji płaskiej i 3D)</h4>
-                        <p>Łączy istniejące listy części (np. z dokumentacji płaskiej 2D) z danymi wyciągniętymi z modelu 3D w kompletny plik <strong>SSoT</strong> wyrobu. Paruje detale po znormalizowanych nazwach, uzupełnia wymiary oraz wykrywa rozbieżności z CAD.</p>
+                        <h4>8. Integrator SSoT (Szkielet 2D zasilany danymi z 3D)</h4>
+                        <p>Głównie dla importowanej geometrii (i własnych PDF o różnych sortowaniach). Technolog buduje nadrzędny <strong>szkielet SSoT</strong> ze stałym porządkiem z dokumentacji płaskiej, a Integrator zasila go wymiarami i masami z 3D oraz wykrywa braki.</p>
                     </div>
 
                     <div class="pro-roi-mini">
-                        <h4>💎 Ekonomia warstw: 1× stanowisko PRO zasila całą produkcję</h4>
-                        <p>Konstruktor generuje zweryfikowany wzorzec <strong>SSoT (1 szt.)</strong> raz w środowisku SolidWorks. Dalszą kontrolę jakości, agregację dużych zleceń, dokumentację gniazd PDF, rozkrój 1D, wysyłkę oraz wszystkie 7 narzędzi przybornika uruchamiasz na standardowych stanowiskach biurowych <strong>BASIC bez dodatkowych licencji CAD</strong>. Wszystkie moduły pracują w <strong>PL / EN / DE</strong>.</p>
+                        <h4>🧩 Elastyczność: PRO przyspiesza, BASIC jest samowystarczalny</h4>
+                        <p>Tam, gdzie biuro ma konstruktora 3D, pakiet <strong>PRO</strong> błyskawicznie zasila dane przez harvesting. Ale <strong>BASIC działa w 100% samodzielnie bez licencji CAD</strong> – ręczne zbudowanie SSoT na starcie zajmuje nieco więcej czasu, lecz <strong>raz gotowe SSoT służy potem cały czas</strong> dla raportów, nestingu i wysyłki.</p>
                     </div>
                 </div>
             </div>
@@ -610,7 +610,7 @@
                     <div><strong>• Generator Etykiet Dowolnych:</strong> Szybkie naklejki termiczne B&amp;W z dowolnego tekstu/tłumacza, Auto-Fit, wyrównanie, kopie przyciskiem + (Zebra/PDF).</div>
                     <div><strong>• Zbiorczy Rozpakowywacz ZIP:</strong> Masowe rozpakowywanie archiwów od klientów/kooperacji z podfolderami i naprawą polskich/niemieckich znaków.</div>
                     <div><strong>• Kolekcjoner i Łącznik PDF:</strong> Zbieranie rysunków wg SSoT/Excel/listy z raportem braków, zestawieniem Excel A4 oraz scalaniem wielu PDF.</div>
-                    <div><strong>• Kolekcjoner DXF / STEP:</strong> Zbieracz plików CAD/CAM (.dxf, .step, .iges, .dwg) z drzewa katalogów + osobne/łączne wydruki Excel A4 dla kooperacji.</div>
+                    <div><strong>• Kolekcjoner DXF / STEP:</strong> Zbieracz plików produkcyjnych (.dxf, .step, .iges, .dwg) z drzewa katalogów + osobne/łączne wydruki Excel A4 dla kooperacji.</div>
                     <div><strong>• Gotowość wyjściowa:</strong> Czyste pliki PDF A4 i termiczne B&amp;W, zestawienia Excel z autofiltrami i datą – zero zależności od CAD.</div>
                 </div>
             </div>
@@ -620,7 +620,7 @@
                 <div class="info-panel">
                     <h4>🛡️ Bezpieczeństwo „Human-in-the-Loop” (Kontrola Technologa)</h4>
                     <p>
-                        Telperion nie zastępuje myślenia inżynierskiego – zdejmuje z technologa żmudne przeklikiwanie plików, podczas gdy dobór parametrów rozwinięcia blach oraz weryfikacja żółtych alertów w tabeli SSoT pozostają pod świadomą kontrolą człowieka.
+                        Telperion nie zastępuje myślenia inżynierskiego – zdejmuje z technologa monotonne przeklikiwanie plików, podczas gdy realne decyzje obróbcze oraz weryfikacja żółtych alertów w tabeli SSoT pozostają pod świadomą kontrolą człowieka.
                     </p>
                 </div>
                 <div class="info-panel erp">
@@ -685,16 +685,16 @@
             </div>
             <div class="problems-grid">
                 <div class="prob-item">
-                    <strong>1. Assisted DXF &amp; STEP File Exports</strong>
-                    Assisted sheet-metal conversion (<em>Insert Bends</em>) under technologist oversight, Parasolid measurements, and 1:1 DXF/STEP export.
+                    <strong>1. Semi-Automatic DXF &amp; STEP Export</strong>
+                    Semi-automatic sheet-metal conversion under technologist oversight, 3D dimension/weight harvesting, and bulk DXF/STEP export.
                 </div>
                 <div class="prob-item">
-                    <strong>2. Data Entry Errors &amp; Shop-Floor Chaos</strong>
-                    Batch SSoT quality checks before consolidation plus clean, process-sequenced PDF operation cards for every work center.
+                    <strong>2. Verified SSoT &amp; Shop-Floor Logic</strong>
+                    Pre-consolidation SSoT completeness check plus sorted PDF job cards (faster nesting, fewer setups, easy picking &amp; loading).
                 </div>
                 <div class="prob-item">
-                    <strong>3. Multi-Material, Paint &amp; Shipping</strong>
-                    Sheet metal, bars (6m/12m), fasteners, subcontracting, wood &amp; glass (m²), up to 5 paint systems, and thermal shipping labels.
+                    <strong>3. Sorted Purchasing, Paint &amp; Dispatch</strong>
+                    Sectioned purchasing summary (plates, 6/12/custom bars, hardware, subassemblies, wood, glass), up to 5 paints, and B&amp;W labels.
                 </div>
             </div>
 
@@ -715,28 +715,28 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>1. SSoT Inspector (Pre-Consolidation Batch Quality Gate)</h4>
-                        <p>Validates multiple SSoT workbooks before production: strips Windows security locks (<em>Zone.Identifier</em>), checks missing routing/sizes, rebuilds tree levels, and exports an A4 report with clickable hyperlinks (PL/EN/DE).</p>
+                        <h4>1. SSoT Inspector (Completeness Check Prior to Consolidation)</h4>
+                        <p>Verifies SSoT data completeness before ordering: unblocks files, detects missing work centers/sizes, rebuilds tree levels, and exports an A4 report with click-to-fix hyperlinks (PL/EN/DE).</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>2. SSoT Order Aggregator (Batch Consolidator)</h4>
-                        <p>Merges unit <strong>SSoT</strong> files (each for 1 pc of a product) into a <strong>Consolidated Order Parts List</strong>. Multiplies quantities by batch sizes and sums shared components across assemblies.</p>
+                        <h4>2. SSoT Order Aggregator (Multi-Product Consolidator)</h4>
+                        <p>Merges unit <strong>SSoT</strong> files (each for 1 pc of a product) into a <strong>Consolidated Order Parts List</strong>. Multiplies quantities by batch volumes and organizes sequence for series production.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Production Reports Generator (PDF, Purchasing, 5 Paint Systems)</h4>
-                        <p>Creates <strong>Material &amp; Purchasing Summary</strong>, <strong>Paint Estimator</strong> (up to <strong>5 color / coating systems</strong> [m²/L]), and <strong>PDF Workstation Cards</strong>: Saws, Laser, secondary ops (<strong>Press Brakes K/TAK, Lathes T, Milling F</strong>), Subcontracting, Wood, Glass, Welding &amp; Loading Summary with conservation notes.</p>
+                        <h4>3. Production Reports Generator (PDF, Purchasing, 5 Paints)</h4>
+                        <p>Creates sectioned purchasing sheets (6/12/custom bar length choice), <strong>Paint Estimator</strong> (up to <strong>5 variants</strong> [m²/L]), and <strong>PDF Job Cards</strong> (Saws, Laser, Brakes, Lathes, Milling, Subcontracting, Wood, Glass, Welding, Loading) with nesting qty totals.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>4. 1D Bar &amp; Profile Nester (Cutting Optimizer)</h4>
-                        <p>Computes optimal cutting layouts for 6 m / 12 m bars including saw kerf. Multi-order mixing, sequential picking, routing filters, manual exclusion, dedicated <code>NESTING</code> folder, and graphical cutting bars.</p>
+                        <h4>4. 1D Bar &amp; Profile Nester (Built for Real Shop Floors)</h4>
+                        <p>Supports 6/12/custom bars + saw kerf. Two modes: <strong>global waste minimization</strong> or <strong>sub-order division</strong> for sequential picking without hunting mixed parts on the shop floor, station filters, and <code>NESTING</code> folder.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>5. Shipping Label Generator (Thermal B&amp;W PDF / Excel, Zebra)</h4>
-                        <p>Pulls rows directly from the Loading Summary into a dispatch folder. One-click per-row toggle between <strong>Detailed (1/N)</strong> and <strong>Bulk (Pcs N)</strong>, custom mm sizes (+ micro layout), <strong>DE / EN / PL</strong> + all 6 bilingual variants &amp; translated Loading List.</p>
+                        <p>Pulls rows from the Loading Summary into a dispatch folder. One-click per-row switch: <strong>Detailed (1/N)</strong> for large shipping items or <strong>Bulk (Pcs N)</strong>, custom mm (+ micro layout), <strong>DE/EN/PL</strong> + 6 bilingual variants &amp; Loading List.</p>
                     </div>
                 </div>
 
@@ -752,22 +752,22 @@
 
                     <div class="mod-box">
                         <h4>6. 3D Metadata &amp; Machine File Harvester</h4>
-                        <p>Assists sheet-metal conversion (<em>Insert Bends</em>) in <strong>Human-in-the-Loop</strong> mode under technologist control, exports <strong>1:1 DXF</strong> and <strong>STEP</strong> files, extracts Parasolid dimensions (A×B, L), mass, area, and auto-detects wood and glass.</p>
+                        <p>Semi-automatic sheet-metal conversion under technologist control, bulk <strong>1:1 DXF</strong> and <strong>STEP</strong> export, dimension &amp; weight harvesting from 3D, auto-assignment of obvious stations (wood/glass), and <strong>yellow review alerts</strong>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>7. CAD SSoT Structure Generator (1 Unit of Product)</h4>
-                        <p>Builds a multi-level, multi-column master <strong>SSoT</strong> structure (for 1 unit of a single product: welding &amp; assembly hierarchy 1, 1.1, 1.1.1) directly from the SolidWorks assembly tree with default routing.</p>
+                        <p>Builds a multi-level master <strong>SSoT</strong> structure (for 1 unit of product: welding &amp; assembly 1, 1.1, 1.1.1) straight from SolidWorks. Detects bends and assigns press brakes strictly where bends exist.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>8. SSoT Data Integrator (2D &amp; 3D Bridge)</h4>
-                        <p>Links existing part lists (e.g., from 2D drawings) with 3D CAD metadata into a complete product <strong>SSoT</strong>. Matches components by normalized part names, populates dimensions/weights, and flags CAD mismatches.</p>
+                        <h4>8. SSoT Data Integrator (2D Master Skeleton + 3D Feed)</h4>
+                        <p>Built primarily for imported geometry (and custom PDFs with varied sorting). The technologist builds the master <strong>SSoT skeleton</strong> from 2D docs under one standard order, while Integrator populates 3D dimensions/weights and flags mismatches.</p>
                     </div>
 
                     <div class="pro-roi-mini">
-                        <h4>💎 Tier ROI: 1× PRO Seat Powers the Entire Shop Floor</h4>
-                        <p>Engineers generate the verified <strong>unit SSoT (1 pc)</strong> once in SolidWorks. All downstream inspection, batch consolidation, PDF job cards, 1D bar cutting, shipping labels, and all 7 quick workshop utilities run on affordable <strong>BASIC</strong> office PCs with <strong>zero extra CAD seats</strong> – natively across <strong>PL / EN / DE</strong>.</p>
+                        <h4>🧩 Flexibility: PRO Accelerates, BASIC Stands Alone</h4>
+                        <p>Where an office has 3D CAD engineers, <strong>PRO</strong> rapidly speeds up harvesting. Yet <strong>BASIC is 100% self-sufficient without any CAD license</strong> – creating an initial SSoT manually takes a bit longer, but <strong>once built it serves permanently</strong> for every repeat run.</p>
                     </div>
                 </div>
             </div>
@@ -782,7 +782,7 @@
                     <div><strong>• Custom Labels Generator:</strong> Crisp B&amp;W thermal labels from pasted notes or translator text, Auto-Fit, alignment, + copies (Zebra/PDF).</div>
                     <div><strong>• Batch ZIP Extractor:</strong> Unpack dozens of client or supplier archives in one click across subfolders with PL/DE filename encoding repair.</div>
                     <div><strong>• PDF Collector &amp; Merger:</strong> Gather drawings matching SSoT/Excel/lists with missing report, A4 Excel manifest, and single-file PDF merging.</div>
-                    <div><strong>• DXF / STEP Collector:</strong> Gather CAD/CAM files (.dxf, .step, .iges, .dwg) across folders with per-format or combined A4 Excel outsourcing lists.</div>
+                    <div><strong>• DXF / STEP Collector:</strong> Gather production files (.dxf, .step, .iges, .dwg) across folders with per-format or combined A4 Excel outsourcing lists.</div>
                     <div><strong>• Zero-CAD Deliverables:</strong> Crisp A4 PDF reports, borderless B&amp;W thermal labels, and AutoFiltered Excel manifests ready for shop printing.</div>
                 </div>
             </div>
@@ -792,7 +792,7 @@
                 <div class="info-panel">
                     <h4>🛡️ "Human-in-the-Loop" Engineering Safety</h4>
                     <p>
-                        Telperion eliminates tedious clicking without replacing engineering judgment – unfolding parameters and yellow-highlighted SSoT items remain under the technologist's conscious control before shop-floor PDF release.
+                        Telperion eliminates tedious clicking without replacing engineering judgment – real-world process decisions and yellow-highlighted SSoT items remain under the technologist's conscious control before shop-floor PDF release.
                     </p>
                 </div>
                 <div class="info-panel erp">
@@ -857,16 +857,16 @@
             </div>
             <div class="problems-grid">
                 <div class="prob-item">
-                    <strong>1. Unterstützter DXF- &amp; STEP-Export</strong>
-                    Unterstützte Blechkonvertierung (<em>Biegungen einfügen</em>) unter Technologen-Kontrolle, Parasolid-Maßprüfung und 1:1-DXF/STEP-Export.
+                    <strong>1. Halbautomatischer DXF- &amp; STEP-Export</strong>
+                    Halbautomatische Blechkonvertierung unter Technologen-Aufsicht, 3D-Maß-/Gewichtserfassung und Stapel-Export von DXF/STEP.
                 </div>
                 <div class="prob-item">
-                    <strong>2. Übertragungsfehler &amp; Hallen-Chaos</strong>
-                    Batch-SSoT-Prüfung vor der Bündelung sowie eigene, prozesssortierte PDF-Fertigungskarten für jede Fertigungsinsel.
+                    <strong>2. Geprüftes SSoT &amp; Fertigungslogik</strong>
+                    SSoT-Vollständigkeitsprüfung vorab sowie sortierte PDF-Laufkarten (schnelleres Nesting, weniger Rüstzeiten, leichtes Verladen).
                 </div>
                 <div class="prob-item">
-                    <strong>3. Multimaterial, Lack &amp; Versand</strong>
-                    Bleche, Profile (6m/12m), Kaufteile, Kooperation, Holz &amp; Glas (m²), bis zu 5 Lacksysteme sowie Thermo-Versandetiketten.
+                    <strong>3. Einkaufsrubriken, Lack &amp; Versand</strong>
+                    Sortierte Einkaufsbereiche (Bleche, 6/12/freie Stangen, Kaufteile, Halbfabrikate, Holz, Glas), bis 5 Lacksysteme &amp; S/W-Etiketten.
                 </div>
             </div>
 
@@ -887,28 +887,28 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>1. SSoT-Inspektor (Batch-Qualitätsprüfung vor der Bündelung)</h4>
-                        <p>Prüft SSoT-Dateien im Stapel vor Auftragsstart: entfernt Windows-Blockaden (<em>Zone.Identifier</em>), findet fehlende Arbeitsplätze/Maße/Folgeprozesse, baut die Baumhierarchie neu auf und exportiert A4-Berichte mit Hyperlinks (PL/EN/DE).</p>
+                        <h4>1. SSoT-Inspektor (Vollständigkeitsprüfung vor der Bündelung)</h4>
+                        <p>Prüft SSoT-Dateien vor Auftragsstart auf Vollständigkeit &amp; Korrektheit: hebt Sperren auf, findet fehlende Arbeitsplätze/Maße und erstellt A4-Berichte mit Klick-Sprung direkt in die fehlerhafte Zelle (PL/EN/DE).</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>2. SSoT-Auftragsaggregator (Mehrprodukt-Konsolidierung)</h4>
-                        <p>Führt einzelne <strong>SSoT</strong>-Dateien (je 1 Stk. eines Produkts) zu einer <strong>Konsolidierten Auftrags-Teileliste</strong> zusammen. Multipliziert Stückzahlen mit Losgrößen und summiert identische Bauteile.</p>
+                        <p>Führt einzelne <strong>SSoT</strong>-Dateien (je 1 Stk. eines Produkts) zur <strong>Konsolidierten Auftrags-Teileliste</strong> zusammen. Multipliziert Losgrößen und strukturiert die Reihenfolge für Serienfertigung.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Berichts- &amp; Laufkartengenerator (PDF, Einkauf, 5 Lacksysteme)</h4>
-                        <p>Erzeugt <strong>Materialübersicht</strong>, <strong>Lackrechner</strong> (bis zu <strong>5 Farbvarianten</strong> [m²/L]) sowie <strong>PDF-Arbeitskarten</strong>: Säge, Laser, Sekundärprozesse (<strong>Abkanten K/TAK, Drehen T, Fräsen F</strong>), Kooperation, Holz, Glas, Schweißen &amp; Verladeliste inkl. Konservierung.</p>
+                        <h4>3. Berichts- &amp; Laufkartengenerator (PDF, Einkauf, 5 Lacke)</h4>
+                        <p>Erzeugt sortierte Einkaufsrubriken (6/12/freie Stangen), <strong>Lackrechner</strong> (bis <strong>5 Systeme</strong> [m²/L]) und <strong>PDF-Karten</strong> (Säge, Laser, Kantbank, Drehen, Fräsen, Kooperation, Holz, Glas, Schweißen, Verladeliste) samt Nesting-Summe.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>4. 1D-Stangen- &amp; Profil-Nester (Zuschnittoptimierung)</h4>
-                        <p>Optimiert Stangenzuschnitt (6 m / 12 m) inkl. Sägeschnittbreite. Auftragsmischmodus, sequenzielle Kommissionierung, Stationsfilter, manuelles Ausblenden, Ordner <code>NESTING</code> und grafische Schnittbalken.</p>
+                        <h4>4. 1D-Stangen- &amp; Profil-Nester (Für reale Abläufe entwickelt)</h4>
+                        <p>6 m / 12 m / freie Handelslängen inkl. Sägeschnitt. Zwei Modi: <strong>global</strong> (min. Rest) oder <strong>unterauftragsweise</strong> für sequentielles Kommissionieren ohne Suchen vermischter Teile auf der Halle, Ordner <code>NESTING</code>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>5. Versandetiketten-Generator (S/W-PDF / Excel, Zebra/Dymo)</h4>
-                        <p>Liest direkt aus der Verladeliste in einen eigenen Versandordner. Ein-Klick-Wechsel je Zeile zwischen <strong>Detail (1/N)</strong> und <strong>Sammel (Stk. N)</strong>, freie mm-Größen (+ Mikro-Layout), <strong>DE / EN / PL</strong> + 6 Zweisprach-Varianten inkl. Verladeliste.</p>
+                        <p>Liest direkt aus der Verladeliste. Ein-Klick-Wechsel je Zeile: <strong>Detail (1/N)</strong> für große Versandteile oder <strong>Sammel (Stk. N)</strong>, freie mm (+ Mikro), <strong>DE/EN/PL</strong> + 6 Zweisprach-Varianten inkl. Verladeliste.</p>
                     </div>
                 </div>
 
@@ -924,22 +924,22 @@
 
                     <div class="mod-box">
                         <h4>6. 3D-Metadaten- &amp; Maschinendatei-Harvester</h4>
-                        <p>Unterstützt die Blechkonvertierung (<em>Biegungen einfügen</em>) im <strong>Human-in-the-Loop</strong>-Modus unter Technologen-Aufsicht, exportiert <strong>1:1-DXF</strong> und <strong>STEP</strong>, misst Abwicklung (A×B, L), Masse, Fläche im Parasolid-Kern und erkennt Holz &amp; Glas.</p>
+                        <p>Halbautomatische Blechkonvertierung unter Technologen-Aufsicht, Stapel-Export von <strong>1:1-DXF</strong> &amp; <strong>STEP</strong>, Erfassung von Maßen &amp; Gewichten, Zuweisung klarer Plätze (Holz/Glas) und <strong>gelbe Prüf-Hinweise</strong>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>7. CAD-SSoT-Strukturgenerator (1 Stück eines Produkts)</h4>
-                        <p>Erstellt die mehrstufige, mehrspaltige <strong>SSoT</strong>-Stammstruktur (für 1 Stk. eines einzelnen Erzeugnisses: Schweißen &amp; Montage 1, 1.1, 1.1.1) direkt aus dem SolidWorks-Strukturbaum inkl. Standard-Arbeitsplatzzuweisung.</p>
+                        <p>Erstellt die mehrstufige <strong>SSoT</strong>-Stammstruktur (für 1 Stk.: Schweißen &amp; Montage 1, 1.1, 1.1.1) direkt aus SolidWorks. Erkennt gekantete Teile und ordnet die Abkantpresse gezielt bei Biegungen zu.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>8. SSoT-Datenintegrator (Brücke zwischen 2D &amp; 3D)</h4>
-                        <p>Verknüpft bestehende Stücklisten (z. B. aus 2D-Zeichnungen) mit 3D-Modelldaten zu einer vollständigen Produkt-<strong>SSoT</strong>. Ordnet Bauteile über normalisierte Namen zu, ergänzt Maße/Gewichte und meldet Abweichungen.</p>
+                        <h4>8. SSoT-Datenintegrator (2D-Gerüst + 3D-Datenzufuhr)</h4>
+                        <p>Vor allem für importierte Geometrien (&amp; eigene PDFs mit fremder Sortierung). Der Technologe baut das <strong>übergeordnete SSoT-Gerüst</strong> aus 2D-Daten im festen Ordnungsschema, der Integrator speist 3D-Maße/Gewichte zu.</p>
                     </div>
 
                     <div class="pro-roi-mini">
-                        <h4>💎 Lizenz-ROI: 1× PRO-Arbeitsplatz versorgt den gesamten Betrieb</h4>
-                        <p>Der Konstrukteur erzeugt die geprüfte <strong>SSoT-Stammliste (1 Stk.)</strong> einmalig in SolidWorks. Prüfung, Auftragsbündelung, PDF-Laufkarten, 1D-Zuschnitt, Versandetiketten sowie alle 7 Werkstatt-Tools laufen anschließend auf günstigen <strong>BASIC</strong>-Büro-PCs ohne weitere CAD-Lizenzen – durchgängig in <strong>PL / EN / DE</strong>.</p>
+                        <h4>🧩 Flexibilität: PRO beschleunigt, BASIC arbeitet eigenständig</h4>
+                        <p>Mit 3D-Konstrukteuren im Haus beschleunigt <strong>PRO</strong> das Harvesting enorm. Dennoch ist <strong>BASIC zu 100 % autark ohne CAD-Lizenz</strong> – der manuelle SSoT-Aufbau dauert anfangs etwas länger, doch <strong>einmal erstellt dient das SSoT dauerhaft</strong>.</p>
                     </div>
                 </div>
             </div>
@@ -954,7 +954,7 @@
                     <div><strong>• Freie Etiketten Generator:</strong> S/W-Thermoetiketten aus Zeichnungshinweisen/Übersetzung, Auto-Fit, Ausrichtung, +-Kopien (Zebra/PDF).</div>
                     <div><strong>• ZIP-Sammelentpacker:</strong> Entpackt ganze Kunden-/Kooperationspakete per Klick inkl. Unterordnern und automatischer PL/DE-Zeichenkorrektur.</div>
                     <div><strong>• PDF-Sammler &amp; Combiner:</strong> Sammelt PDF-Zeichnungen nach SSoT/Excel/Liste inkl. Fehlteil-Report, A4-Excel-Liste und PDF-Zusammenführung.</div>
-                    <div><strong>• DXF / STEP-Sammler:</strong> Bündelt CAD/CAM-Dateien (.dxf, .step, .iges, .dwg) mit getrennten oder kombinierten A4-Excel-Drucklisten für Laser/Vergabe.</div>
+                    <div><strong>• DXF / STEP-Sammler:</strong> Bündelt Produktionsdateien (.dxf, .step, .iges, .dwg) mit getrennten oder kombinierten A4-Excel-Drucklisten für Laser/Vergabe.</div>
                     <div><strong>• Sofort einsatzbereit:</strong> Saubere A4-PDFs, randlose S/W-Thermoetiketten und A4-Excel-Listen mit Autofilter &amp; Zeitstempel – ohne CAD-Lizenz.</div>
                 </div>
             </div>
@@ -964,7 +964,7 @@
                 <div class="info-panel">
                     <h4>🛡️ „Human-in-the-Loop“-Sicherheit (Technologen-Kontrolle)</h4>
                     <p>
-                        Telperion nimmt dem Ingenieur monotone Klickarbeit ab, ersetzt aber nicht sein Urteil: Biegeparameter und gelb markierte SSoT-Positionen bleiben bewusst unter der Kontrolle des Technologen, bevor verbindliche PDF-Karten entstehen.
+                        Telperion nimmt dem Ingenieur monotone Klickarbeit ab, ersetzt aber nicht sein Urteil: Praxisnahe Fertigungsentscheidungen und gelb markierte SSoT-Positionen bleiben bewusst unter Technologen-Kontrolle, bevor PDF-Karten entstehen.
                     </p>
                 </div>
                 <div class="info-panel erp">
