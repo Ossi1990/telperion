@@ -1099,9 +1099,9 @@
                             <div class="module-sub">Konsolidator zamówień wieloproduktowych</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Łączy jednostkowe struktury <strong>SSoT</strong> (opracowane dla 1 szt. poszczególnych wyrobów) wchodzące w skład zlecenia produkcyjnego w jedną spójną <strong>Zbiorczą Listę Części do Zamówienia</strong>.</p>
                             <ul class="module-list">
-                                <li>Przeliczanie ilości jednostkowych z plików SSoT przez zadane mnożniki wyrobów gotowych.</li>
-                                <li>Automatyczne scalanie powtarzających się detali między różnymi wyrobami i podzespołami.</li>
-                                <li>Wygodny interfejs zarządzania kolejnością i krotnością wyrobów w zleceniu, tworzący czytelną bazę pod produkcję seryjną i dalszy nesting.</li>
+                                <li>Przeliczanie ilości jednostkowych i mas z plików SSoT przez zadane mnożniki wyrobów gotowych w zamówieniu.</li>
+                                <li>Połączenie pełnych drzew strukturalnych wszystkich wyrobów z zamówienia w jeden spójny plik z zachowaniem przejrzystości pozycji.</li>
+                                <li>Wygodny interfejs zarządzania kolejnością i krotnością wyrobów w zleceniu, tworzący czytelną bazę pod produkcję seryjną i dalsze raporty.</li>
                             </ul>
                         </div>
 
@@ -1113,6 +1113,7 @@
                                 <li><strong>Zestawienie Materiałowe dla Zakupów:</strong> Posortowane i podzielone na czytelne sekcje (blachy 2D, kształtowniki 1D z wyborem sztangi 6 m / 12 m lub dowolnej i wyliczeniem odpadu, elementy zakupowe, półprodukty, drewno, szkło oraz alerty kooperacji).</li>
                                 <li><strong>Zaawansowany Kalkulator Farb i Powłok:</strong> Obsługa aż do <strong>5 wariantów kolorystycznych / systemów malarskich</strong> w jednym zleceniu z wyliczeniem powierzchni [m²] i litrażu na każdą warstwę.</li>
                                 <li><strong>Karty Operacyjne Gniazd (PDF):</strong> Dedykowane karty na Piły, Laser, Plazmę, Giętarki, Tokarki, Frezarki, Kooperację, Drewno, Szkło, Spawalnię, Komisjonowanie oraz Zestawienie Załadunkowe i Montażowe (z uwagami konserwacji) – posortowane pod kątem optymalizacji nestingu (z <strong>dodatkową kolumną skonsolidowanych ilości identycznych detali</strong>), minimalizacji przezbrojeń maszyn i wygody załadunku.</li>
+                                <li><strong>Wersje dedykowane pod zakład (opcjonalnie):</strong> Podobnie jak przy integracji z ERP, istnieje możliwość przygotowania wersji raportów oraz algorytmów automatycznego doboru gniazd ściśle pod park maszynowy i wytyczne konkretnego zakładu.</li>
                             </ul>
                         </div>
 
@@ -1153,7 +1154,7 @@
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Przeszukuje złożenie 3D w SolidWorks, pobiera dane geometryczne i generuje pliki produkcyjne DXF oraz STEP pod nadzorem technologa.</p>
                             <ul class="module-list">
                                 <li><strong>Półautomatyczna konwersja na arkusz blachy</strong> prowadzona pod okiem technologa przed hurtowym eksportem plików <strong>DXF 1:1</strong> oraz <strong>STEP</strong>.</li>
-                                <li>Automatyczny harvesting wymiarów, gabarytów, grubości i wag z modelu 3D oraz automatyczny dobór gniazd tam, gdzie wynika to jasno z materiału (np. drewno, szkło).</li>
+                                <li>Automatyczny harvesting wymiarów, gabarytów, grubości i wag z modelu 3D oraz wstępne rozpoznanie gniazd na podstawie geometrii i materiału (np. dla blach &lt; 20 mm przypisywany jest laser 2D, grubszych plazma, a także rozróżniane są drewno i szkło) – z pełną możliwością zmiany przez technologa zgodnie z wytycznymi zakładu.</li>
                                 <li>Wizualne oznaczenie w arkuszu (<strong>żółty alert</strong>) pozycji wymagających weryfikacji technologicznej.</li>
                             </ul>
                         </div>
@@ -1551,9 +1552,9 @@
                             <div class="module-sub">Multi-Product Order Consolidator</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Combines unit <strong>SSoT</strong> structures (each defining 1 pc of a single finished product) across a production order into one unified <strong>Consolidated Order Parts List</strong>.</p>
                             <ul class="module-list">
-                                <li>Multiplies unit SSoT quantities by target order volumes for each finished product.</li>
-                                <li>Automatically consolidates recurring parts shared across different products and subassemblies.</li>
-                                <li>Intuitive interface for managing product sequence and batch quantities in the order, creating a clean base for series production and nesting.</li>
+                                <li>Multiplies unit SSoT quantities and weights by target order volumes for each finished product.</li>
+                                <li>Brings complete structural trees of all ordered products into one cohesive order workbook with clear item traceability.</li>
+                                <li>Intuitive interface for managing product sequence and batch quantities in the order, creating a clean base for series production and reporting.</li>
                             </ul>
                         </div>
 
@@ -1565,6 +1566,7 @@
                                 <li><strong>Material &amp; Purchasing Summary:</strong> Sorted and split into clear sections (2D plates, 1D profiles with 6 m / 12 m or custom stock length selection &amp; waste calculation, purchased hardware, subassemblies, wood, glass, and subcontracting alerts).</li>
                                 <li><strong>Advanced Paint &amp; Coating Calculator:</strong> Up to <strong>5 distinct color / coating systems</strong> per order with exact surface area [m²] and liters per coat.</li>
                                 <li><strong>Work Center Operation Cards (PDF):</strong> Dedicated cards for Saws, Laser, Plasma, Press Brakes, Lathes, Milling, Subcontracting, Wood, Glass, Welding, Picking, plus Loading &amp; Assembly Summary with conservation notes – sorted for efficient nesting (with an <strong>extra consolidated quantity column for identical parts</strong>), fewer machine setups, and smooth loading.</li>
+                                <li><strong>Custom Plant Tailoring (Optional):</strong> Just like custom ERP parsing, reports and automated workstation selection rules can be tailored specifically to your factory's machinery and internal guidelines.</li>
                             </ul>
                         </div>
 
@@ -1605,7 +1607,7 @@
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Traverses the 3D assembly in SolidWorks, harvests geometric data, and exports production DXF and STEP files under engineer supervision.</p>
                             <ul class="module-list">
                                 <li><strong>Semi-automatic sheet-metal conversion</strong> under technologist control before bulk <strong>1:1 DXF</strong> and <strong>STEP</strong> export.</li>
-                                <li>Automatic harvesting of flat dimensions, lengths, thicknesses, and weights from 3D models, plus automatic work-center assignment where clear from material (e.g. wood, glass).</li>
+                                <li>Automatic harvesting of dimensions, thicknesses, and weights from 3D models, plus geometry- and material-based default station recognition (e.g. sheet metal &lt; 20 mm assigned to 2D laser, thicker plates to plasma, alongside wood and glass detection) – fully editable by the technologist to match plant guidelines.</li>
                                 <li>Visual <strong>yellow alerts</strong> in Excel highlighting edge-case items requiring engineering review.</li>
                             </ul>
                         </div>
@@ -2003,9 +2005,9 @@
                             <div class="module-sub">Auftragskonsolidierung für Mehrproduktaufträge</div>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Führt die einzelnen <strong>SSoT</strong>-Strukturlisten (jeweils für 1 Stück eines Enderzeugnisses) innerhalb eines Fertigungsauftrags zu einer <strong>Konsolidierten Auftrags-Teileliste</strong> zusammen.</p>
                             <ul class="module-list">
-                                <li>Multipliziert die Einzelmengen aus den SSoT-Dateien mit den Bestellmengen der jeweiligen Enderzeugnisse.</li>
-                                <li>Bündelt identische Einzelteile automatisch über verschiedene Erzeugnisse und Unterbaugruppen hinweg.</li>
-                                <li>Übersichtliche Oberfläche zur Steuerung von Reihenfolge und Losgrößen für Serienfertigung und Nesting.</li>
+                                <li>Multipliziert die Einzelmengen und Gewichte aus den SSoT-Dateien mit den Bestellmengen der jeweiligen Enderzeugnisse.</li>
+                                <li>Vereint komplette Baugruppenstrukturen aller Positionen in einer übersichtlichen Auftragsdatei bei voller Rückverfolgbarkeit.</li>
+                                <li>Übersichtliche Oberfläche zur Steuerung von Reihenfolge und Losgrößen für Serienfertigung und weitere Berichte.</li>
                             </ul>
                         </div>
 
@@ -2017,6 +2019,7 @@
                                 <li><strong>Material- &amp; Einkaufsübersicht:</strong> Sortiert und gegliedert in klare Bereiche (2D-Blech, 1D-Profile inkl. Wahl von 6 m, 12 m oder freier Stangenlänge samt Verschnitt, Kaufteile, Halbfabrikate, Holz, Glas sowie Fremdfertigungs-Warnungen).</li>
                                 <li><strong>Erweiterter Lack- &amp; Beschichtungsrechner:</strong> Verarbeitet bis zu <strong>5 Farb- bzw. Beschichtungsvarianten</strong> je Auftrag inkl. Lackierfläche [m²] und Literbedarf je Schicht.</li>
                                 <li><strong>Fertigungsinsel-Karten (PDF):</strong> Eigene Laufkarten für Sägen, Laser, Plasma, Abkantpressen, Drehen, Fräsen, Fremdfertigung, Holz, Glas, Schweißerei, Kommissionierung sowie Verladeliste (inkl. Konservierungshinweisen) – sortiert für schnelleres Nesting (inkl. <strong>Zusatzspalte für konsolidierte Gesamtmengen identischer Teile</strong>), weniger Rüstvorgänge und reibungslose Verladung.</li>
+                                <li><strong>Werksspezifische Anpassung (optional):</strong> Wie bei individuellen ERP-Anbindungen lassen sich Berichte und automatisierte Fertigungsinsel-Regeln exakt auf Ihren Maschinenpark und Ihre Werksrichtlinien zuschneiden.</li>
                             </ul>
                         </div>
 
@@ -2057,7 +2060,7 @@
                             <p style="font-size: 0.9rem; color: var(--text-muted);">Durchsucht die 3D-Baugruppe in SolidWorks, liest geometrische Daten aus und erzeugt Produktionsdateien unter Aufsicht des Technologen.</p>
                             <ul class="module-list">
                                 <li><strong>Halbautomatische Blechkonvertierung</strong> unter Technologen-Kontrolle vor dem automatischen Stapel-Export von <strong>1:1-DXF</strong> und <strong>STEP</strong>.</li>
-                                <li>Automatische Erfassung (Harvesting) von Abmessungen, Dicken und Gewichten aus dem 3D-Modell sowie klare Fertigungsinsel-Zuweisung direkt über den Werkstoff (z. B. Holz, Glas).</li>
+                                <li>Automatische Erfassung (Harvesting) von Abmessungen, Dicken und Gewichten aus dem 3D-Modell sowie Vorbelegung anhand von Geometrie und Werkstoff (z. B. Blech &lt; 20 mm auf 2D-Laser, dicker auf Plasma sowie Holz und Glas) – vom Technologen jederzeit gemäß Werksrichtlinien anpassbar.</li>
                                 <li>Optische <strong>gelbe Markierung</strong> in Excel für Positionen, die vom Technologen geprüft werden sollten.</li>
                             </ul>
                         </div>

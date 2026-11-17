@@ -549,12 +549,12 @@
 
                     <div class="mod-box">
                         <h4>2. Agregator SSoT (Konsolidator zamówień wieloproduktowych)</h4>
-                        <p>Łączy jednostkowe pliki <strong>SSoT</strong> (dla 1 szt. wyrobów) w <strong>Zbiorczą Listę Części do Zamówienia</strong>. Przemnaża ilości przez wolumen zlecenia, scala detale i porządkuje kolejność pod produkcję seryjną.</p>
+                        <p>Łączy pełne struktury <strong>SSoT</strong> (dla 1 szt. wyrobów) w jeden arkusz zamówienia, przemnaża ilości i masy przez wolumen oraz porządkuje kolejność pod produkcję seryjną i dalsze raporty.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>3. Generator Raportów (Karty PDF, Zakupy, do 5 Farb)</h4>
-                        <p>Tworzy posortowane sekcje zakupowe (wybór sztangi 6/12/dowolnej), <strong>Kalkulator Farb</strong> (do <strong>5 wariantów</strong> [m²/L]) i <strong>Karty PDF</strong> (Piły, Laser, Giętarki, Tokarki, Frezarki, Kooperacja, Drewno, Szkło, Spawalnia, Lista Załadunkowa) z kolumną ilości pod nesting.</p>
+                        <p>Tworzy posortowane sekcje zakupowe (sztangi 6/12/dowolne), <strong>Kalkulator Farb</strong> (do <strong>5 wariantów</strong> [m²/L]) i <strong>Karty PDF</strong> z kolumną ilości pod nesting. <em>Opcjonalnie wersja dedykowana pod gniazda i algorytmy zakładu.</em></p>
                     </div>
 
                     <div class="mod-box">
@@ -580,7 +580,7 @@
 
                     <div class="mod-box">
                         <h4>6. Harvester Metadanych i Plików Maszynowych</h4>
-                        <p>Półautomatyczna konwersja na arkusz blachy pod okiem technologa, eksport plików <strong>DXF 1:1</strong> i <strong>STEP</strong>, harvesting wymiarów i wag z 3D, automatyczny dobór jasnych gniazd (np. drewno, szkło) oraz <strong>żółty alert</strong> pozycji do sprawdzenia.</p>
+                        <p>Półautomatyczna konwersja na blachę pod okiem technologa, eksport <strong>DXF 1:1</strong> i <strong>STEP</strong>, harvesting wymiarów i wag, wstępne gniazda z geometrii (np. blacha &lt; 20 mm → laser 2D; edytowalne przez technologa) oraz <strong>żółty alert</strong>.</p>
                     </div>
 
                     <div class="mod-box">
@@ -721,12 +721,12 @@
 
                     <div class="mod-box">
                         <h4>2. SSoT Order Aggregator (Multi-Product Consolidator)</h4>
-                        <p>Merges unit <strong>SSoT</strong> files (each for 1 pc of a product) into a <strong>Consolidated Order Parts List</strong>. Multiplies quantities by batch volumes and organizes sequence for series production.</p>
+                        <p>Combines full unit <strong>SSoT</strong> trees (for 1 pc of each product) into one order sheet, multiplies quantities &amp; weights by batch size, and sets production order sequence.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>3. Production Reports Generator (PDF, Purchasing, 5 Paints)</h4>
-                        <p>Creates sectioned purchasing sheets (6/12/custom bar length choice), <strong>Paint Estimator</strong> (up to <strong>5 variants</strong> [m²/L]), and <strong>PDF Job Cards</strong> (Saws, Laser, Brakes, Lathes, Milling, Subcontracting, Wood, Glass, Welding, Loading) with nesting qty totals.</p>
+                        <p>Creates sorted purchasing sections (6/12/custom bar lengths), <strong>Paint Estimator</strong> (up to <strong>5 coats</strong> [m²/L]), and <strong>PDF Job Cards</strong> with nesting totals. <em>Optional plant-specific workstation &amp; routing edition.</em></p>
                     </div>
 
                     <div class="mod-box">
@@ -752,7 +752,7 @@
 
                     <div class="mod-box">
                         <h4>6. 3D Metadata &amp; Machine File Harvester</h4>
-                        <p>Semi-automatic sheet-metal conversion under technologist control, bulk <strong>1:1 DXF</strong> and <strong>STEP</strong> export, dimension &amp; weight harvesting from 3D, auto-assignment of obvious stations (wood/glass), and <strong>yellow review alerts</strong>.</p>
+                        <p>Semi-automatic sheet conversion under technologist oversight, bulk <strong>1:1 DXF</strong> &amp; <strong>STEP</strong> export, 3D dimension/weight harvesting, geometry-based routing (e.g. sheet &lt; 20 mm → 2D laser; editable by technologist) &amp; <strong>yellow alerts</strong>.</p>
                     </div>
 
                     <div class="mod-box">
@@ -893,12 +893,12 @@
 
                     <div class="mod-box">
                         <h4>2. SSoT-Auftragsaggregator (Mehrprodukt-Konsolidierung)</h4>
-                        <p>Führt einzelne <strong>SSoT</strong>-Dateien (je 1 Stk. eines Produkts) zur <strong>Konsolidierten Auftrags-Teileliste</strong> zusammen. Multipliziert Losgrößen und strukturiert die Reihenfolge für Serienfertigung.</p>
+                        <p>Führt komplette <strong>SSoT</strong>-Baugruppen (je 1 Stk. je Erzeugnis) zu einer Auftragsliste zusammen, multipliziert Mengen &amp; Gewichte mit Losgrößen und steuert die Serienreihenfolge.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>3. Berichts- &amp; Laufkartengenerator (PDF, Einkauf, 5 Lacke)</h4>
-                        <p>Erzeugt sortierte Einkaufsrubriken (6/12/freie Stangen), <strong>Lackrechner</strong> (bis <strong>5 Systeme</strong> [m²/L]) und <strong>PDF-Karten</strong> (Säge, Laser, Kantbank, Drehen, Fräsen, Kooperation, Holz, Glas, Schweißen, Verladeliste) samt Nesting-Summe.</p>
+                        <p>Erzeugt sortierte Einkaufsrubriken (6/12/freie Stangen), <strong>Lackrechner</strong> (bis <strong>5 Systeme</strong> [m²/L]) und <strong>PDF-Karten</strong> samt Nesting-Summe. <em>Optional maßgeschneiderte Werksversion inkl. Maschinenpark-Regeln.</em></p>
                     </div>
 
                     <div class="mod-box">
@@ -924,7 +924,7 @@
 
                     <div class="mod-box">
                         <h4>6. 3D-Metadaten- &amp; Maschinendatei-Harvester</h4>
-                        <p>Halbautomatische Blechkonvertierung unter Technologen-Aufsicht, Stapel-Export von <strong>1:1-DXF</strong> &amp; <strong>STEP</strong>, Erfassung von Maßen &amp; Gewichten, Zuweisung klarer Plätze (Holz/Glas) und <strong>gelbe Prüf-Hinweise</strong>.</p>
+                        <p>Halbautomatische Blechkonvertierung unter Aufsicht, Stapel-Export <strong>1:1-DXF</strong> &amp; <strong>STEP</strong>, 3D-Maß-/Gewichts-Harvesting, Geometrie-Vorbelegung (z. B. Blech &lt; 20 mm → 2D-Laser; vom Technologen änderbar) &amp; <strong>gelbe Hinweise</strong>.</p>
                     </div>
 
                     <div class="mod-box">
