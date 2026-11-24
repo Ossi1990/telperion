@@ -27,7 +27,7 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--bg-page);
             color: var(--text-main);
-            line-height: 1.42;
+            line-height: 1.4;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
@@ -139,7 +139,7 @@
             margin: 20px auto;
             background: #ffffff;
             color: #0f172a;
-            padding: 9mm 11mm;
+            padding: 8.5mm 10.5mm;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
             border-radius: 6px;
             display: flex;
@@ -152,7 +152,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #0f172a;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
             padding: 9px 15px;
             border-radius: 7px;
@@ -166,7 +166,7 @@
         }
 
         .header-bar .subtitle {
-            font-size: 8.4pt;
+            font-size: 8.3pt;
             color: #cbd5e1;
             margin-top: 1px;
         }
@@ -177,7 +177,7 @@
             border: 1px solid #22c55e;
             padding: 4px 10px;
             border-radius: 999px;
-            font-size: 7.3pt;
+            font-size: 7.2pt;
             font-weight: 700;
             text-align: center;
             white-space: nowrap;
@@ -188,39 +188,40 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 6px;
-            margin-top: 6px;
+            margin-top: 5.5px;
         }
 
         .kpi-card {
             background: #f1f5f9;
             border: 1px solid #cbd5e1;
+            border-top: 2.5px solid #0f172a;
             border-radius: 5px;
-            padding: 4.5px 7px;
+            padding: 4px 7px;
             text-align: center;
         }
 
         .kpi-val {
-            font-size: 9.8pt;
+            font-size: 9.6pt;
             font-weight: 800;
             color: #0f172a;
         }
 
         .kpi-lbl {
-            font-size: 6.8pt;
+            font-size: 6.75pt;
             color: #475569;
             font-weight: 600;
         }
 
         /* Sekcja problemów */
         .sec-title {
-            font-size: 8.8pt;
+            font-size: 8.6pt;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #0f172a;
             border-bottom: 2px solid #0f172a;
             padding-bottom: 2px;
-            margin-top: 6px;
+            margin-top: 5.5px;
             margin-bottom: 4px;
             display: flex;
             justify-content: space-between;
@@ -236,17 +237,17 @@
         .prob-item {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-left: 3px solid #0284c7;
+            border-left: 3.5px solid #0284c7;
             border-radius: 5px;
             padding: 4.5px 7px;
-            font-size: 7.2pt;
+            font-size: 7.15pt;
             line-height: 1.24;
         }
 
         .prob-item strong {
             display: block;
             color: #0f172a;
-            font-size: 7.6pt;
+            font-size: 7.55pt;
             margin-bottom: 1px;
         }
 
@@ -282,12 +283,12 @@
         }
 
         .tier-head h3 {
-            font-size: 9.4pt;
+            font-size: 9.3pt;
             font-weight: 800;
         }
 
         .tag {
-            font-size: 6.5pt;
+            font-size: 6.4pt;
             font-weight: 800;
             padding: 1.5px 6px;
             border-radius: 4px;
@@ -305,7 +306,7 @@
         }
 
         .req-note {
-            font-size: 6.95pt;
+            font-size: 6.9pt;
             color: #475569;
             margin-bottom: 4px;
             padding-bottom: 3px;
@@ -325,14 +326,14 @@
         }
 
         .mod-box h4 {
-            font-size: 7.85pt;
+            font-size: 7.8pt;
             font-weight: 800;
             color: #0f172a;
             margin-bottom: 1px;
         }
 
         .mod-box p {
-            font-size: 6.85pt;
+            font-size: 6.8pt;
             line-height: 1.22;
             color: #334155;
         }
@@ -340,22 +341,22 @@
         .pro-roi-mini {
             background: #fefce8;
             border: 1px solid #fde047;
-            border-left: 3px solid #ca8a04;
+            border-left: 3.5px solid #ca8a04;
             border-radius: 5px;
             padding: 5px 8px;
             margin-top: auto;
         }
 
         .pro-roi-mini h4 {
-            font-size: 7.8pt;
+            font-size: 7.75pt;
             font-weight: 800;
             color: #854d0e;
             margin-bottom: 2px;
         }
 
         .pro-roi-mini p {
-            font-size: 6.85pt;
-            line-height: 1.24;
+            font-size: 6.8pt;
+            line-height: 1.23;
             color: #334155;
         }
 
@@ -369,7 +370,7 @@
         }
 
         .toolbox-bar h4 {
-            font-size: 7.9pt;
+            font-size: 7.85pt;
             font-weight: 800;
             color: #0c4a6e;
             margin-bottom: 2.5px;
@@ -378,7 +379,7 @@
         .toolbox-items {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2px 10px;
+            gap: 2.5px 10px;
             font-size: 6.8pt;
             line-height: 1.22;
             color: #1e293b;
@@ -397,12 +398,12 @@
             border: 1px solid #cbd5e1;
             border-radius: 6px;
             padding: 5px 8.5px;
-            font-size: 7.05pt;
-            line-height: 1.24;
+            font-size: 7.0pt;
+            line-height: 1.23;
         }
 
         .info-panel h4 {
-            font-size: 7.95pt;
+            font-size: 7.9pt;
             font-weight: 800;
             margin-bottom: 1.5px;
             color: #0f172a;
@@ -417,7 +418,7 @@
         /* Stopka kontaktowa */
         .footer-cta {
             margin-top: 5px;
-            background: #0f172a;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
             border-radius: 7px;
             padding: 7px 14px;
@@ -427,19 +428,19 @@
         }
 
         .footer-cta .cta-left h3 {
-            font-size: 9pt;
+            font-size: 8.9pt;
             color: #eab308;
             font-weight: 800;
         }
 
         .footer-cta .cta-left p {
-            font-size: 7.1pt;
+            font-size: 7.05pt;
             color: #cbd5e1;
         }
 
         .footer-cta .cta-right {
             text-align: right;
-            font-size: 7.7pt;
+            font-size: 7.65pt;
             line-height: 1.3;
             background: rgba(255,255,255,0.07);
             padding: 4.5px 10px;
@@ -461,12 +462,17 @@
             .a4-sheet {
                 width: 210mm;
                 height: 297mm;
+                min-height: 297mm;
+                max-height: 297mm;
+                overflow: hidden;
                 margin: 0;
-                padding: 7.5mm 10mm;
+                padding: 7mm 9.5mm;
                 box-shadow: none;
                 border-radius: 0;
                 page-break-after: avoid;
                 break-after: avoid;
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
         }
     </style>
@@ -498,7 +504,7 @@
                     <div class="kpi-lbl">Wzorcowa struktura dla 1 szt. wyrobu</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">8 Modułów + 7 Narzędzi</div>
+                    <div class="kpi-val">8 Modułów + 6 Narzędzi</div>
                     <div class="kpi-lbl">Kompletny system z przybornikiem warsztatowym</div>
                 </div>
                 <div class="kpi-card">
@@ -518,7 +524,7 @@
                 </div>
                 <div class="prob-item">
                     <strong>2. Spójność SSoT i logika produkcji</strong>
-                    Kontrola kompletności SSoT przed agregacją oraz posortowane karty PDF na gniazda (szybszy nesting, mniej przezbrojeń, łatwy załadunek).
+                    Kontrola kompletności i formuł SSoT przed agregacją oraz posortowane karty PDF na gniazda (szybszy nesting, łatwe komisjonowanie).
                 </div>
                 <div class="prob-item">
                     <strong>3. Sekcje zakupowe, malarnia i wysyłka</strong>
@@ -543,8 +549,8 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>1. Inspektor SSoT (Weryfikacja kompletności przed agregacją)</h4>
-                        <p>Sprawdza kompletność i poprawność plików SSoT przed produkcją: odblokowuje pobrane arkusze, wykrywa braki gniazd/wymiarów, odbudowuje drzewo i tworzy raport A4 z klikalnym przejściem do poprawki (PL/EN/DE).</p>
+                        <h4>1. Inspektor SSoT (Walidacja kompletności i formuł przed agregacją)</h4>
+                        <p>Weryfikuje wartości i formuły arkuszy SSoT przed produkcją: odblokowuje pliki z sieci, sprawdza gniazda/wymiary/wysyłkę, odbudowuje drzewo i tworzy raport A4 z klikalnym przejściem do poprawki (PL/EN/DE).</p>
                     </div>
 
                     <div class="mod-box">
@@ -553,18 +559,18 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Generator Raportów (Karty PDF, Zakupy, do 5 Farb)</h4>
-                        <p>Tworzy posortowane sekcje zakupowe (sztangi 6/12/dowolne), <strong>Kalkulator Farb</strong> (do <strong>5 wariantów</strong> [m²/L]) i <strong>Karty PDF</strong> z kolumną ilości pod nesting. <em>Opcjonalnie wersja dedykowana pod gniazda i algorytmy zakładu.</em></p>
+                        <h4>3. Generator Raportów (Karty PDF, Zakupy, Konfigurator do 5 Farb)</h4>
+                        <p>Posortowane sekcje zakupowe (sztangi 6/12/dowolne), konfigurator zamówienia z kontrolą sumy wariantów i podsumowaniem sztuk, <strong>Kalkulator Farb</strong> (do <strong>5 powłok</strong> [m²/L]) i <strong>Karty PDF</strong> na gniazda.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>4. Nester 1D (Rozkrój pod realia hali, nie tylko na papier)</h4>
-                        <p>Dobiera sztangi 6 m / 12 m / dowolne z rzazem piły. Dwa tryby: <strong>globalny</strong> (min. odpad) lub <strong>z podziałem na podzlecenia</strong> pod późniejsze komisjonowanie bez szukania pomieszanych detali, filtry gniazd i folder <code>NESTING</code>.</p>
+                        <h4>4. Nester 1D (Rozkrój pod realia hali + komisjonowanie i grupowanie)</h4>
+                        <p>Sztangi 6/12/dowolne z rzazem piły. Tryb <strong>globalny</strong> lub <strong>wg podzleceń</strong> (z nr komisji poz. 1), opcja grupowania identycznych sztang (<code>Nx Sztangi</code>), podgląd przed zapisem PDF i stały folder <code>NESTING</code>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>5. Generator Etykiet Wysyłkowych (PDF B&amp;W / Excel, Zebra/Dymo)</h4>
-                        <p>Zaciąga pozycje z Listy Załadunkowej do folderu wysyłki. Przełączanie 1 klikiem per wiersz: <strong>Szczegółowy (1/N)</strong> na duże elementy wysyłkowe lub <strong>Zbiorczy (szt. N)</strong>, własne mm (+ mikro), <strong>DE/EN/PL</strong> i 6 opcji dwujęzycznych + Lista.</p>
+                        <p>Zaciąga pozycje z Listy Załadunkowej. Przełączanie 1 klikiem: <strong>Szczegółowy (1/N)</strong> lub <strong>Zbiorczy (szt. N)</strong>, własne mm (+ mikro), <strong>DE/EN/PL</strong> i 6 opcji dwujęzycznych + Lista Załadunkowa domyślnie w PDF A4 (z sumą wag).</p>
                     </div>
                 </div>
 
@@ -600,18 +606,16 @@
                 </div>
             </div>
 
-            <!-- PRZYBORNIK WARSZTATOWY 7 NARZĘDZI -->
+            <!-- PRZYBORNIK WARSZTATOWY 6 NARZĘDZI -->
             <div class="toolbox-bar">
-                <h4>🧰 Zintegrowany Przybornik Warsztatowy i Kalkulatory (7 narzędzi z dolnego doku Dashboardu – PL / EN / DE)</h4>
+                <h4>🧰 Zintegrowany Przybornik Warsztatowy i Szybkie Kalkulatory (6 narzędzi z dolnego doku Dashboardu – PL / EN / DE)</h4>
                 <div class="toolbox-items">
-                    <div><strong>• Kalkulator Wag 1D (EN/DIN):</strong> IPE, IPN, HEA/B/M, UPN/UPE, C, T/TB, kątowniki równ./nierówn. L, SHS/RHS/CHS, tryb mb i mm×szt. + PDF A4.</div>
-                    <div><strong>• Przelicznik 2D m² ↔ kg:</strong> Dwukierunkowe wyliczenia dla 21 materiałów (stale, Hardox, Corten, nierdzewki, Alu, Cu, szkło, drewno), arkusze, ×2 + PDF A4.</div>
-                    <div><strong>• Kalkulator Farb LIGHT:</strong> Dane TDS (m²/l, l/m², µm), warstwy, 7-poziomowy suwak strat (+30%..+250%) + fiszka zakupowa PDF A4.</div>
-                    <div><strong>• Generator Etykiet Dowolnych:</strong> Szybkie naklejki termiczne B&amp;W z dowolnego tekstu/tłumacza, Auto-Fit, wyrównanie, kopie przyciskiem + (Zebra/PDF).</div>
-                    <div><strong>• Zbiorczy Rozpakowywacz ZIP:</strong> Masowe rozpakowywanie archiwów od klientów/kooperacji z podfolderami i naprawą polskich/niemieckich znaków.</div>
-                    <div><strong>• Kolekcjoner i Łącznik PDF:</strong> Zbieranie rysunków wg SSoT/Excel/listy z raportem braków, zestawieniem Excel A4 oraz scalaniem wielu PDF.</div>
-                    <div><strong>• Kolekcjoner DXF / STEP:</strong> Zbieracz plików produkcyjnych (.dxf, .step, .iges, .dwg) z drzewa katalogów + osobne/łączne wydruki Excel A4 dla kooperacji.</div>
-                    <div><strong>• Gotowość wyjściowa:</strong> Czyste pliki PDF A4 i termiczne B&amp;W, zestawienia Excel z autofiltrami i datą – zero zależności od CAD.</div>
+                    <div><strong>• Kalkulator Wag i Powierzchni (1D + 2D):</strong> 391 profili EN/DIN (waga kg/m + obwód zewn. m²/m) oraz blachy 2D (21 materiałów, L×W, m²↔kg, domyślnie ×2 str.) we wspólnej tabeli z PDF/Excel.</div>
+                    <div><strong>• Szybki Kalkulator Farb (LIGHT):</strong> Wstawianie m² 1 klikiem prosto z Kalkulatora 1D/2D, dane TDS (m²/l, l/m², µm), edycja warstw, 7-poziomowy suwak strat (+30%..+250%) + PDF/Excel.</div>
+                    <div><strong>• Generator Etykiet Dowolnych:</strong> Podgląd na żywo (Real-Time) oraz podgląd PDF przed zapisem, naklejki B&amp;W z tekstu/tłumacza, Auto-Fit, wyrównanie, kopie (Zebra/Dymo/PDF).</div>
+                    <div><strong>• Zbiorczy Rozpakowywacz ZIP:</strong> Masowe rozpakowywanie archiwów z podfolderami, naprawą znaków PL/DE i pytaniem o bezpośrednie otwarcie folderu wynikowego.</div>
+                    <div><strong>• Kolekcjoner i Łącznik PDF:</strong> Zbieranie rysunków wg SSoT/Excel/listy z raportem braków, zestawieniem Excel A4, scalaniem PDF i otwarciem folderu docelowego.</div>
+                    <div><strong>• Kolekcjoner DXF / STEP:</strong> Zbieracz plików produkcyjnych (.dxf, .step, .iges, .dwg) z drzewa katalogów + wydruki Excel A4 z autofiltrem, datą i numeracją Strona X z Y.</div>
                 </div>
             </div>
 
@@ -670,7 +674,7 @@
                     <div class="kpi-lbl">Master BOM structure for 1 unit of product</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">8 Modules + 7 Tools</div>
+                    <div class="kpi-val">8 Modules + 6 Tools</div>
                     <div class="kpi-lbl">Full suite with shop-floor utility dock</div>
                 </div>
                 <div class="kpi-card">
@@ -690,7 +694,7 @@
                 </div>
                 <div class="prob-item">
                     <strong>2. Verified SSoT &amp; Shop-Floor Logic</strong>
-                    Pre-consolidation SSoT completeness check plus sorted PDF job cards (faster nesting, fewer setups, easy picking &amp; loading).
+                    Pre-consolidation SSoT value &amp; formula check plus sorted PDF job cards (faster nesting, fewer setups, easy picking &amp; loading).
                 </div>
                 <div class="prob-item">
                     <strong>3. Sorted Purchasing, Paint &amp; Dispatch</strong>
@@ -715,8 +719,8 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>1. SSoT Inspector (Completeness Check Prior to Consolidation)</h4>
-                        <p>Verifies SSoT data completeness before ordering: unblocks files, detects missing work centers/sizes, rebuilds tree levels, and exports an A4 report with click-to-fix hyperlinks (PL/EN/DE).</p>
+                        <h4>1. SSoT Inspector (Value &amp; Formula Validation Prior to Consolidation)</h4>
+                        <p>Verifies SSoT data values and formulas before ordering: unblocks files, detects missing work centers/sizes/shipping flags, rebuilds tree levels, and exports an A4 report with click-to-fix links (PL/EN/DE).</p>
                     </div>
 
                     <div class="mod-box">
@@ -726,17 +730,17 @@
 
                     <div class="mod-box">
                         <h4>3. Production Reports Generator (PDF, Purchasing, 5 Paints)</h4>
-                        <p>Creates sorted purchasing sections (6/12/custom bar lengths), <strong>Paint Estimator</strong> (up to <strong>5 coats</strong> [m²/L]), and <strong>PDF Job Cards</strong> with nesting totals. <em>Optional plant-specific workstation &amp; routing edition.</em></p>
+                        <p>Sorted purchasing sections (6/12/custom bars), Order Configurator with color-split validation &amp; total piece summary, <strong>Paint Estimator</strong> (up to <strong>5 coats</strong> [m²/L]), and <strong>PDF Job Cards</strong>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>4. 1D Bar &amp; Profile Nester (Built for Real Shop Floors)</h4>
-                        <p>Supports 6/12/custom bars + saw kerf. Two modes: <strong>global waste minimization</strong> or <strong>sub-order division</strong> for sequential picking without hunting mixed parts on the shop floor, station filters, and <code>NESTING</code> folder.</p>
+                        <p>6/12/custom bars + saw kerf. <strong>Global</strong> or <strong>sub-order picking mode</strong> (with Level-1 commission number), optional identical-bar grouping (<code>Nx Bars</code>), pre-save PDF preview, and clean <code>NESTING</code> folder.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>5. Shipping Label Generator (Thermal B&amp;W PDF / Excel, Zebra)</h4>
-                        <p>Pulls rows from the Loading Summary into a dispatch folder. One-click per-row switch: <strong>Detailed (1/N)</strong> for large shipping items or <strong>Bulk (Pcs N)</strong>, custom mm (+ micro layout), <strong>DE/EN/PL</strong> + 6 bilingual variants &amp; Loading List.</p>
+                        <p>Pulls rows from the Loading Summary. One-click per-row switch: <strong>Detailed (1/N)</strong> or <strong>Bulk (Pcs N)</strong>, custom mm (+ micro), <strong>DE/EN/PL</strong> + 6 bilingual variants &amp; default A4 PDF Loading List with weight totals.</p>
                     </div>
                 </div>
 
@@ -772,18 +776,16 @@
                 </div>
             </div>
 
-            <!-- WORKSHOP TOOLBOX 7 TOOLS -->
+            <!-- WORKSHOP TOOLBOX 6 TOOLS -->
             <div class="toolbox-bar">
-                <h4>🧰 Integrated Engineering &amp; Shop-Floor Toolbox (7 Quick Dashboard Dock Utilities – PL / EN / DE)</h4>
+                <h4>🧰 Integrated Engineering &amp; Shop-Floor Toolbox (6 Quick Dashboard Dock Utilities – PL / EN / DE)</h4>
                 <div class="toolbox-items">
-                    <div><strong>• 1D Weight Calculator (EN/DIN):</strong> IPE, IPN, HEA/B/M, UPN/UPE, C, T/TB, equal/unequal L angles, SHS/RHS/CHS, m &amp; mm×pcs modes + A4 PDF.</div>
-                    <div><strong>• 2D Weight &amp; m² Converter:</strong> Bidirectional conversion across 21 materials (steels, Hardox, Corten, SS, Alu, Cu, glass, wood), sheets, ×2 + A4 PDF.</div>
-                    <div><strong>• Quick Paint Calculator LIGHT:</strong> Datasheet (TDS m²/L, L/m², µm), multi-coats, 7-step loss slider (+30%..+250%) + A4 buying spec PDF.</div>
-                    <div><strong>• Custom Labels Generator:</strong> Crisp B&amp;W thermal labels from pasted notes or translator text, Auto-Fit, alignment, + copies (Zebra/PDF).</div>
-                    <div><strong>• Batch ZIP Extractor:</strong> Unpack dozens of client or supplier archives in one click across subfolders with PL/DE filename encoding repair.</div>
-                    <div><strong>• PDF Collector &amp; Merger:</strong> Gather drawings matching SSoT/Excel/lists with missing report, A4 Excel manifest, and single-file PDF merging.</div>
-                    <div><strong>• DXF / STEP Collector:</strong> Gather production files (.dxf, .step, .iges, .dwg) across folders with per-format or combined A4 Excel outsourcing lists.</div>
-                    <div><strong>• Zero-CAD Deliverables:</strong> Crisp A4 PDF reports, borderless B&amp;W thermal labels, and AutoFiltered Excel manifests ready for shop printing.</div>
+                    <div><strong>• Unified 1D + 2D Weight &amp; Surface Calc:</strong> 391 EN/DIN profiles (kg/m + external perimeter m²/m) &amp; 2D plates (21 materials, L×W, m²↔kg, ×2 sides default) in one table with PDF/Excel export.</div>
+                    <div><strong>• Quick Paint Calculator LIGHT:</strong> 1-click m² import straight from 1D/2D Calc, TDS specs (m²/L, L/m², µm), editable coats, 7-step loss slider (+30%..+250%) + A4 PDF/Excel.</div>
+                    <div><strong>• Custom Labels Generator:</strong> Real-time live preview &amp; pre-save PDF preview, crisp B&amp;W thermal labels from notes/translator, Auto-Fit, alignment, copies (Zebra/Dymo/PDF).</div>
+                    <div><strong>• Batch ZIP Extractor:</strong> Unpack dozens of client/supplier archives across subfolders with PL/DE filename encoding repair and direct output-folder open prompt.</div>
+                    <div><strong>• PDF Collector &amp; Merger:</strong> Gather drawings matching SSoT/Excel/lists with missing report, A4 Excel manifest, single-file PDF merging, and direct folder access.</div>
+                    <div><strong>• DXF / STEP Collector:</strong> Gather production files (.dxf, .step, .iges, .dwg) across folders with AutoFiltered A4 Excel lists, creation timestamp, and Page X of Y footer.</div>
                 </div>
             </div>
 
@@ -842,7 +844,7 @@
                     <div class="kpi-lbl">Stamm-Stückliste für 1 Stück des Produkts</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">8 Module + 7 Tools</div>
+                    <div class="kpi-val">8 Module + 6 Tools</div>
                     <div class="kpi-lbl">Komplettpaket inkl. Werkstatt-Dock</div>
                 </div>
                 <div class="kpi-card">
@@ -862,7 +864,7 @@
                 </div>
                 <div class="prob-item">
                     <strong>2. Geprüftes SSoT &amp; Fertigungslogik</strong>
-                    SSoT-Vollständigkeitsprüfung vorab sowie sortierte PDF-Laufkarten (schnelleres Nesting, weniger Rüstzeiten, leichtes Verladen).
+                    SSoT-Wert- &amp; Formelprüfung vorab sowie sortierte PDF-Laufkarten (schnelleres Nesting, weniger Rüstzeiten, leichtes Verladen).
                 </div>
                 <div class="prob-item">
                     <strong>3. Einkaufsrubriken, Lack &amp; Versand</strong>
@@ -887,8 +889,8 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>1. SSoT-Inspektor (Vollständigkeitsprüfung vor der Bündelung)</h4>
-                        <p>Prüft SSoT-Dateien vor Auftragsstart auf Vollständigkeit &amp; Korrektheit: hebt Sperren auf, findet fehlende Arbeitsplätze/Maße und erstellt A4-Berichte mit Klick-Sprung direkt in die fehlerhafte Zelle (PL/EN/DE).</p>
+                        <h4>1. SSoT-Inspektor (Wert- &amp; Formelprüfung vor der Bündelung)</h4>
+                        <p>Prüft SSoT-Werte und Excel-Formeln vor Auftragsstart: hebt Sperren auf, prüft Arbeitsplätze/Maße/Versand und erstellt A4-Berichte mit Klick-Sprung direkt in die fehlerhafte Zelle (PL/EN/DE).</p>
                     </div>
 
                     <div class="mod-box">
@@ -897,18 +899,18 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Berichts- &amp; Laufkartengenerator (PDF, Einkauf, 5 Lacke)</h4>
-                        <p>Erzeugt sortierte Einkaufsrubriken (6/12/freie Stangen), <strong>Lackrechner</strong> (bis <strong>5 Systeme</strong> [m²/L]) und <strong>PDF-Karten</strong> samt Nesting-Summe. <em>Optional maßgeschneiderte Werksversion inkl. Maschinenpark-Regeln.</em></p>
+                        <h4>3. Produktionsberichts-Generator (PDF, Einkauf, 5 Lacke)</h4>
+                        <p>Sortierte Einkaufsrubriken (6/12/freie Stangen), Auftrags-Konfigurator mit Summenkontrolle &amp; Stückzahl-Summenzeile, <strong>Lackrechner</strong> (bis <strong>5 Systeme</strong> [m²/L]) und <strong>PDF-Laufkarten</strong>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>4. 1D-Stangen- &amp; Profil-Nester (Für reale Abläufe entwickelt)</h4>
-                        <p>6 m / 12 m / freie Handelslängen inkl. Sägeschnitt. Zwei Modi: <strong>global</strong> (min. Rest) oder <strong>unterauftragsweise</strong> für sequentielles Kommissionieren ohne Suchen vermischter Teile auf der Halle, Ordner <code>NESTING</code>.</p>
+                        <p>6/12/freie Längen inkl. Sägeschnitt. <strong>Global</strong> oder <strong>unterauftragsweise</strong> (mit Pos.-1-Kommissionsnummer), Gruppierung identischer Stangen (<code>Nx Stangen</code>), PDF-Vorschau und Ordner <code>NESTING</code>.</p>
                     </div>
 
                     <div class="mod-box">
                         <h4>5. Versandetiketten-Generator (S/W-PDF / Excel, Zebra/Dymo)</h4>
-                        <p>Liest direkt aus der Verladeliste. Ein-Klick-Wechsel je Zeile: <strong>Detail (1/N)</strong> für große Versandteile oder <strong>Sammel (Stk. N)</strong>, freie mm (+ Mikro), <strong>DE/EN/PL</strong> + 6 Zweisprach-Varianten inkl. Verladeliste.</p>
+                        <p>Liest direkt aus der Verladeliste. Ein-Klick-Wechsel: <strong>Detail (1/N)</strong> oder <strong>Sammel (Stk. N)</strong>, freie mm (+ Mikro), <strong>DE/EN/PL</strong> + 6 Zweisprach-Varianten inkl. A4-PDF-Verladeliste mit Gewichtssumme.</p>
                     </div>
                 </div>
 
@@ -944,18 +946,16 @@
                 </div>
             </div>
 
-            <!-- WERKSTATT-TOOLBOX 7 TOOLS -->
+            <!-- WERKSTATT-TOOLBOX 6 TOOLS -->
             <div class="toolbox-bar">
-                <h4>🧰 Integrierte Werkstatt-Toolbox &amp; Schnellrechner (7 Praxis-Tools im unteren Dashboard-Dock – PL / EN / DE)</h4>
+                <h4>🧰 Integrierte Werkstatt-Toolbox &amp; Schnellrechner (6 Praxis-Tools im unteren Dashboard-Dock – PL / EN / DE)</h4>
                 <div class="toolbox-items">
-                    <div><strong>• 1D-Gewichtsrechner (EN/DIN):</strong> IPE, IPN, HEA/B/M, UPN/UPE, C, T/TB, gleich- &amp; ungleichsch. Winkel L, SHS/RHS/CHS, lfd.m &amp; mm×Stk. + PDF A4.</div>
-                    <div><strong>• 2D-Umrechner m² ↔ kg:</strong> Bidirektional für 21 Werkstoffe (Stahl, Hardox, Corten, Edelstahl, Alu, Cu, Glas, Holz), Tafeln, ×2 + PDF A4.</div>
-                    <div><strong>• Schnell-Lackrechner LIGHT:</strong> Merkblatt-Werte (TDS m²/l, l/m², µm), Schichten, 7-Stufen-Verlustregler (+30%..+250%) + A4-Bestell-PDF.</div>
-                    <div><strong>• Freie Etiketten Generator:</strong> S/W-Thermoetiketten aus Zeichnungshinweisen/Übersetzung, Auto-Fit, Ausrichtung, +-Kopien (Zebra/PDF).</div>
-                    <div><strong>• ZIP-Sammelentpacker:</strong> Entpackt ganze Kunden-/Kooperationspakete per Klick inkl. Unterordnern und automatischer PL/DE-Zeichenkorrektur.</div>
-                    <div><strong>• PDF-Sammler &amp; Combiner:</strong> Sammelt PDF-Zeichnungen nach SSoT/Excel/Liste inkl. Fehlteil-Report, A4-Excel-Liste und PDF-Zusammenführung.</div>
-                    <div><strong>• DXF / STEP-Sammler:</strong> Bündelt Produktionsdateien (.dxf, .step, .iges, .dwg) mit getrennten oder kombinierten A4-Excel-Drucklisten für Laser/Vergabe.</div>
-                    <div><strong>• Sofort einsatzbereit:</strong> Saubere A4-PDFs, randlose S/W-Thermoetiketten und A4-Excel-Listen mit Autofilter &amp; Zeitstempel – ohne CAD-Lizenz.</div>
+                    <div><strong>• Kombinierter 1D+2D Gewichts- &amp; Flächenrechner:</strong> 391 EN/DIN-Profile (kg/m + Außenumfang m²/m) &amp; 2D-Bleche (21 Werkstoffe, L×B, m²↔kg, Standard ×2 S.) in einer Tabelle mit PDF/Excel.</div>
+                    <div><strong>• Schnell-Lackrechner LIGHT:</strong> 1-Klick m²-Übernahme aus 1D/2D-Rechner, TDS-Werte (m²/l, l/m², µm), Schichtbearbeitung, 7-Stufen-Verlustregler (+30%..+250%) + A4-PDF/Excel.</div>
+                    <div><strong>• Freie Etiketten Generator:</strong> Echtzeit-Vorschau &amp; PDF-Vorschau vor dem Speichern, S/W-Thermoetiketten aus Hinweisen/Übersetzung, Auto-Fit, Ausrichtung, Kopien (Zebra/PDF).</div>
+                    <div><strong>• ZIP-Sammelentpacker:</strong> Entpackt Kunden-/Kooperationspakete inkl. Unterordnern, PL/DE-Zeichenkorrektur und direkter Zielordner-Öffnung.</div>
+                    <div><strong>• PDF-Sammler &amp; Combiner:</strong> Sammelt PDF-Zeichnungen nach SSoT/Excel/Liste inkl. Fehlteil-Report, A4-Excel-Liste, PDF-Merge und Ordner-Direktzugriff.</div>
+                    <div><strong>• DXF / STEP-Sammler:</strong> Bündelt Produktionsdateien (.dxf, .step, .iges, .dwg) mit A4-Excel-Drucklisten inkl. Autofilter, Zeitstempel und Seite X von Y.</div>
                 </div>
             </div>
 
