@@ -317,8 +317,8 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 5px;
-            padding: 4px 7px;
-            margin-bottom: 3.5px;
+            padding: 3.1px 6.5px;
+            margin-bottom: 2.7px;
         }
 
         .mod-box:last-child {
@@ -326,15 +326,15 @@
         }
 
         .mod-box h4 {
-            font-size: 7.8pt;
+            font-size: 7.45pt;
             font-weight: 800;
             color: #0f172a;
-            margin-bottom: 1px;
+            margin-bottom: 0.8px;
         }
 
         .mod-box p {
-            font-size: 6.8pt;
-            line-height: 1.22;
+            font-size: 6.42pt;
+            line-height: 1.18;
             color: #334155;
         }
 
@@ -504,8 +504,8 @@
                     <div class="kpi-lbl">Wzorcowa struktura dla 1 szt. wyrobu</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">8 Modułów + 6 Narzędzi</div>
-                    <div class="kpi-lbl">Kompletny system z przybornikiem warsztatowym</div>
+                    <div class="kpi-val">9 Modułów + 6 Narzędzi</div>
+                    <div class="kpi-lbl">Kompletny system z przybornikiem i podręcznikiem</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-val">Bez CAD na hali</div>
@@ -527,14 +527,14 @@
                     Kontrola kompletności i formuł SSoT przed agregacją oraz posortowane karty PDF na gniazda (szybszy nesting, łatwe komisjonowanie).
                 </div>
                 <div class="prob-item">
-                    <strong>3. Sekcje zakupowe, malarnia i wysyłka</strong>
-                    Posortowane zestawienie materiałów (blachy, sztangi 6/12/dowolne, kupne, półprodukty, drewno, szkło), do 5 farb i etykiety B&amp;W.
+                    <strong>3. Sekcje zakupowe, malarnia, Poka-Yoke i wysyłka</strong>
+                    Posortowane materiały (blachy, sztangi 6/12/dowolne, kooperacja K/KW/KZ, kupne, drewno, szkło), do 5 farb i etykiety B&amp;W.
                 </div>
             </div>
 
-            <!-- 8 MODUŁÓW W 2 WARSTWACH -->
+            <!-- 9 MODUŁÓW W 2 WARSTWACH -->
             <div class="sec-title">
-                <span>8 Głównych Modułów Systemu – Licencjonowanie warstwowe (BASIC / PRO)</span>
+                <span>9 Głównych Modułów Systemu – Licencjonowanie warstwowe (6 BASIC / 3 PRO) + Interaktywny Podręcznik (PL/EN/DE)</span>
             </div>
 
             <div class="tiers-grid">
@@ -550,7 +550,7 @@
 
                     <div class="mod-box">
                         <h4>1. Inspektor SSoT (Walidacja kompletności i formuł przed agregacją)</h4>
-                        <p>Weryfikuje wartości i formuły arkuszy SSoT przed produkcją: odblokowuje pliki z sieci, sprawdza gniazda/wymiary/wysyłkę, odbudowuje drzewo i tworzy raport A4 z klikalnym przejściem do poprawki (PL/EN/DE).</p>
+                        <p>Weryfikuje wartości i formuły SSoT przed produkcją: odblokowuje pliki, sprawdza gniazda/wymiary/wysyłkę, wpisuje datowany raport w kol. W (z buforem kol. V) i tworzy raport A4 z klikalnym przejściem do poprawki.</p>
                     </div>
 
                     <div class="mod-box">
@@ -559,18 +559,23 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Generator Raportów (Karty PDF, Zakupy, Konfigurator do 5 Farb)</h4>
-                        <p>Posortowane sekcje zakupowe (sztangi 6/12/dowolne), konfigurator zamówienia z kontrolą sumy wariantów i podsumowaniem sztuk, <strong>Kalkulator Farb</strong> (do <strong>5 powłok</strong> [m²/L]) i <strong>Karty PDF</strong> na gniazda.</p>
+                        <h4>3. Generator Raportów (Karty PDF, Zakupy K/KW/KZ, Skosy, do 5 Farb)</h4>
+                        <p>Sekcje zakupowe (sztangi 6/12/dowolne, kooperacja <code>K/KW/KZ</code>), ostrzeżenie skosów 1D (<code>S</code> → <em>SKOS - ciąć wg rysunku!</em>), konfigurator wariantów, <strong>Kalkulator Farb</strong> (do <strong>5 powłok</strong>) i <strong>Karty PDF</strong>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>4. Nester 1D (Rozkrój pod realia hali + komisjonowanie i grupowanie)</h4>
-                        <p>Sztangi 6/12/dowolne z rzazem piły. Tryb <strong>globalny</strong> lub <strong>wg podzleceń</strong> (z nr komisji poz. 1), opcja grupowania identycznych sztang (<code>Nx Sztangi</code>), podgląd przed zapisem PDF i stały folder <code>NESTING</code>.</p>
+                        <h4>4. Nester 1D (Rozkrój pod realia hali + komisjonowanie, skosy * i grupowanie)</h4>
+                        <p>Sztangi 6/12/dowolne z rzazem piły. Tryb <strong>globalny</strong> lub <strong>wg podzleceń</strong> (z nr komisji poz. 1), znacznik skosu <code>*</code>, grupowanie identycznych sztang (<code>Nx Sztangi</code>), podgląd PDF i folder <code>NESTING</code>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>5. Generator Etykiet Wysyłkowych (PDF B&amp;W / Excel, Zebra/Dymo)</h4>
-                        <p>Zaciąga pozycje z Listy Załadunkowej. Przełączanie 1 klikiem: <strong>Szczegółowy (1/N)</strong> lub <strong>Zbiorczy (szt. N)</strong>, własne mm (+ mikro), <strong>DE/EN/PL</strong> i 6 opcji dwujęzycznych + Lista Załadunkowa domyślnie w PDF A4 (z sumą wag).</p>
+                        <h4>5. Generator Etykiet Poka-Yoke (Naklejki identyfikacyjne na rysunki 2D)</h4>
+                        <p>Etykiety na rysunki warsztatowe (Zebra/Dymo/A4 + podgląd na żywo): tryb <strong>skonsolidowany</strong> (1 naklejka na rysunek ze wszystkimi wystąpieniami) lub <strong>rozdzielny</strong>, sortowanie A–Z / wg drzewa / wg gniazd.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>6. Generator Etykiet Wysyłkowych (PDF B&amp;W / Excel, Zebra/Dymo)</h4>
+                        <p>Zaciąga pozycje z Listy Załadunkowej. Przełączanie 1 klikiem: <strong>Szczegółowy (1/N)</strong> lub <strong>Zbiorczy (szt. N)</strong>, własne mm (+ mikro), <strong>DE/EN/PL</strong> i 6 opcji dwujęzycznych + Lista Załadunkowa w PDF A4 (z sumą wag).</p>
                     </div>
                 </div>
 
@@ -585,18 +590,18 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>6. Harvester Metadanych i Plików Maszynowych</h4>
-                        <p>Półautomatyczna konwersja na blachę pod okiem technologa, eksport <strong>DXF 1:1</strong> i <strong>STEP</strong>, harvesting wymiarów i wag, wstępne gniazda z geometrii (np. blacha &lt; 20 mm → laser 2D; edytowalne przez technologa) oraz <strong>żółty alert</strong>.</p>
+                        <h4>7. Harvester Metadanych i Plików Maszynowych</h4>
+                        <p>Półautomatyczna konwersja na blachę pod okiem technologa (detale z gięciami 100% traktowane jako blacha), eksport <strong>DXF 1:1</strong> i <strong>STEP</strong>, harvesting wymiarów i wag, wstępne gniazda oraz <strong>żółty alert</strong>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>7. Generator CAD SSoT (Struktura dla 1 szt. wyrobu)</h4>
-                        <p>Tworzy wielopoziomową strukturę wzorcową <strong>SSoT</strong> (dla 1 szt. wyrobu: spawanie i montaż 1, 1.1, 1.1.1) prosto z drzewa SolidWorks. Wykrywa gięcia i przyporządkowuje krawędziarkę tylko tam, gdzie występują.</p>
+                        <h4>8. Generator CAD SSoT (Struktura dla 1 szt. wyrobu)</h4>
+                        <p>Tworzy wielopoziomową strukturę wzorcową <strong>SSoT</strong> (dla 1 szt. wyrobu: spawanie i montaż 1, 1.1, 1.1.1) prosto z drzewa SolidWorks. Wykrywa gięcia i przyporządkowuje krawędziarkę (kol. M) tylko tam, gdzie występują.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>8. Integrator SSoT (Szkielet 2D zasilany danymi z 3D)</h4>
-                        <p>Głównie dla importowanej geometrii (i własnych PDF o różnych sortowaniach). Technolog buduje nadrzędny <strong>szkielet SSoT</strong> ze stałym porządkiem z dokumentacji płaskiej, a Integrator zasila go wymiarami i masami z 3D oraz wykrywa braki.</p>
+                        <h4>9. Integrator SSoT (Szkielet 2D zasilany danymi z 3D)</h4>
+                        <p>Głównie dla importowanej geometrii (i pełnej spójności numeracji pozycji z płaskimi rysunkami spawalniczymi 2D). Technolog buduje nadrzędny <strong>szkielet SSoT</strong>, a Integrator zasila go wymiarami i masami z 3D.</p>
                     </div>
 
                     <div class="pro-roi-mini">
@@ -674,8 +679,8 @@
                     <div class="kpi-lbl">Master BOM structure for 1 unit of product</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">8 Modules + 6 Tools</div>
-                    <div class="kpi-lbl">Full suite with shop-floor utility dock</div>
+                    <div class="kpi-val">9 Modules + 6 Tools</div>
+                    <div class="kpi-lbl">Full suite with utility dock &amp; user manual</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-val">No CAD Needed</div>
@@ -697,14 +702,14 @@
                     Pre-consolidation SSoT value &amp; formula check plus sorted PDF job cards (faster nesting, fewer setups, easy picking &amp; loading).
                 </div>
                 <div class="prob-item">
-                    <strong>3. Sorted Purchasing, Paint &amp; Dispatch</strong>
-                    Sectioned purchasing summary (plates, 6/12/custom bars, hardware, subassemblies, wood, glass), up to 5 paints, and B&amp;W labels.
+                    <strong>3. Sorted Purchasing, Paint, Poka-Yoke &amp; Dispatch</strong>
+                    Sectioned purchasing summary (plates, 6/12/custom bars, subcontracting K/KW/KZ, hardware, wood, glass), up to 5 paints &amp; B&amp;W labels.
                 </div>
             </div>
 
-            <!-- 8 MODULES IN 2 TIERS -->
+            <!-- 9 MODULES IN 2 TIERS -->
             <div class="sec-title">
-                <span>8 System Modules – Two-Tier Licensing Tailored to Your Workstations</span>
+                <span>9 System Modules – Two-Tier Licensing (6 BASIC / 3 PRO) + Built-In Interactive User Manual (PL/EN/DE)</span>
             </div>
 
             <div class="tiers-grid">
@@ -720,7 +725,7 @@
 
                     <div class="mod-box">
                         <h4>1. SSoT Inspector (Value &amp; Formula Validation Prior to Consolidation)</h4>
-                        <p>Verifies SSoT data values and formulas before ordering: unblocks files, detects missing work centers/sizes/shipping flags, rebuilds tree levels, and exports an A4 report with click-to-fix links (PL/EN/DE).</p>
+                        <p>Verifies SSoT data values and formulas before ordering: unblocks files, detects missing work centers/sizes, writes a dated validation report in col. W (with empty buffer col. V), and exports an A4 report with click-to-fix links.</p>
                     </div>
 
                     <div class="mod-box">
@@ -729,17 +734,22 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Production Reports Generator (PDF, Purchasing, 5 Paints)</h4>
-                        <p>Sorted purchasing sections (6/12/custom bars), Order Configurator with color-split validation &amp; total piece summary, <strong>Paint Estimator</strong> (up to <strong>5 coats</strong> [m²/L]), and <strong>PDF Job Cards</strong>.</p>
+                        <h4>3. Production Reports Generator (PDF, K/KW/KZ Purchasing, Miter Alerts, 5 Paints)</h4>
+                        <p>Purchasing sections (6/12/custom bars, subcontracting <code>K/KW/KZ</code>), 1D bevel/miter cut alert (<code>S</code> → <em>BEVEL - cut per drawing!</em>), Order Configurator, <strong>Paint Estimator</strong> (up to <strong>5 coats</strong>), and <strong>PDF Job Cards</strong>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>4. 1D Bar &amp; Profile Nester (Built for Real Shop Floors)</h4>
-                        <p>6/12/custom bars + saw kerf. <strong>Global</strong> or <strong>sub-order picking mode</strong> (with Level-1 commission number), optional identical-bar grouping (<code>Nx Bars</code>), pre-save PDF preview, and clean <code>NESTING</code> folder.</p>
+                        <h4>4. 1D Bar &amp; Profile Nester (Built for Real Shop Floors + Miter * Marker)</h4>
+                        <p>6/12/custom bars + saw kerf. <strong>Global</strong> or <strong>sub-order picking mode</strong> (with Level-1 commission number), bevel cut marker <code>*</code>, identical-bar grouping (<code>Nx Bars</code>), pre-save PDF preview, and clean <code>NESTING</code> folder.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>5. Shipping Label Generator (Thermal B&amp;W PDF / Excel, Zebra)</h4>
+                        <h4>5. Poka-Yoke Label Generator (Shop-Floor Drawing Identification Labels)</h4>
+                        <p>Identification labels for 2D shop drawings (Zebra/Dymo/A4 + live preview): <strong>consolidated mode</strong> (1 label per drawing listing all occurrences) or <strong>individual per position</strong>, sorted A–Z / by BOM tree / by work center.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>6. Shipping Label Generator (Thermal B&amp;W PDF / Excel, Zebra)</h4>
                         <p>Pulls rows from the Loading Summary. One-click per-row switch: <strong>Detailed (1/N)</strong> or <strong>Bulk (Pcs N)</strong>, custom mm (+ micro), <strong>DE/EN/PL</strong> + 6 bilingual variants &amp; default A4 PDF Loading List with weight totals.</p>
                     </div>
                 </div>
@@ -755,18 +765,18 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>6. 3D Metadata &amp; Machine File Harvester</h4>
-                        <p>Semi-automatic sheet conversion under technologist oversight, bulk <strong>1:1 DXF</strong> &amp; <strong>STEP</strong> export, 3D dimension/weight harvesting, geometry-based routing (e.g. sheet &lt; 20 mm → 2D laser; editable by technologist) &amp; <strong>yellow alerts</strong>.</p>
+                        <h4>7. 3D Metadata &amp; Machine File Harvester</h4>
+                        <p>Semi-automatic sheet conversion under technologist oversight (bent parts 100% classified as sheet metal), bulk <strong>1:1 DXF</strong> &amp; <strong>STEP</strong> export, 3D dimension/weight harvesting, geometry routing &amp; <strong>yellow alerts</strong>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>7. CAD SSoT Structure Generator (1 Unit of Product)</h4>
-                        <p>Builds a multi-level master <strong>SSoT</strong> structure (for 1 unit of product: welding &amp; assembly 1, 1.1, 1.1.1) straight from SolidWorks. Detects bends and assigns press brakes strictly where bends exist.</p>
+                        <h4>8. CAD SSoT Structure Generator (1 Unit of Product)</h4>
+                        <p>Builds a multi-level master <strong>SSoT</strong> structure (for 1 unit of product: welding &amp; assembly 1, 1.1, 1.1.1) straight from SolidWorks. Detects bends and assigns press brakes (col. M) strictly where bends exist.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>8. SSoT Data Integrator (2D Master Skeleton + 3D Feed)</h4>
-                        <p>Built primarily for imported geometry (and custom PDFs with varied sorting). The technologist builds the master <strong>SSoT skeleton</strong> from 2D docs under one standard order, while Integrator populates 3D dimensions/weights and flags mismatches.</p>
+                        <h4>9. SSoT Data Integrator (2D Master Skeleton + 3D Feed)</h4>
+                        <p>Built primarily for imported geometry (and full item-number alignment with 2D welding assembly drawings). The technologist builds the master <strong>SSoT skeleton</strong>, while Integrator populates 3D dimensions/weights and flags mismatches.</p>
                     </div>
 
                     <div class="pro-roi-mini">
@@ -844,8 +854,8 @@
                     <div class="kpi-lbl">Stamm-Stückliste für 1 Stück des Produkts</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-val">8 Module + 6 Tools</div>
-                    <div class="kpi-lbl">Komplettpaket inkl. Werkstatt-Dock</div>
+                    <div class="kpi-val">9 Module + 6 Tools</div>
+                    <div class="kpi-lbl">Komplettpaket inkl. Dock &amp; Benutzerhandbuch</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-val">Kein CAD in AV</div>
@@ -867,14 +877,14 @@
                     SSoT-Wert- &amp; Formelprüfung vorab sowie sortierte PDF-Laufkarten (schnelleres Nesting, weniger Rüstzeiten, leichtes Verladen).
                 </div>
                 <div class="prob-item">
-                    <strong>3. Einkaufsrubriken, Lack &amp; Versand</strong>
-                    Sortierte Einkaufsbereiche (Bleche, 6/12/freie Stangen, Kaufteile, Halbfabrikate, Holz, Glas), bis 5 Lacksysteme &amp; S/W-Etiketten.
+                    <strong>3. Einkaufsrubriken, Lack, Poka-Yoke &amp; Versand</strong>
+                    Sortierte Einkaufsbereiche (Bleche, 6/12/freie Stangen, Kooperation K/KW/KZ, Kaufteile, Holz, Glas), bis 5 Lacke &amp; S/W-Etiketten.
                 </div>
             </div>
 
-            <!-- 8 MODULE IN 2 EBENEN -->
+            <!-- 9 MODULE IN 2 EBENEN -->
             <div class="sec-title">
-                <span>8 Systemmodule – Zweistufige Lizenzierung (BASIC / PRO) passend für Ihre Arbeitsplätze</span>
+                <span>9 Systemmodule – Zweistufige Lizenzierung (6 BASIC / 3 PRO) + Integriertes Benutzerhandbuch (PL/EN/DE)</span>
             </div>
 
             <div class="tiers-grid">
@@ -890,7 +900,7 @@
 
                     <div class="mod-box">
                         <h4>1. SSoT-Inspektor (Wert- &amp; Formelprüfung vor der Bündelung)</h4>
-                        <p>Prüft SSoT-Werte und Excel-Formeln vor Auftragsstart: hebt Sperren auf, prüft Arbeitsplätze/Maße/Versand und erstellt A4-Berichte mit Klick-Sprung direkt in die fehlerhafte Zelle (PL/EN/DE).</p>
+                        <p>Prüft SSoT-Werte und Formeln vor Auftragsstart: hebt Sperren auf, prüft Arbeitsplätze/Maße, schreibt den datierten Prüfbericht in Spalte W (mit Puffer Spalte V) und erstellt A4-Berichte mit Klick-Sprung in die Zelle.</p>
                     </div>
 
                     <div class="mod-box">
@@ -899,17 +909,22 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>3. Produktionsberichts-Generator (PDF, Einkauf, 5 Lacke)</h4>
-                        <p>Sortierte Einkaufsrubriken (6/12/freie Stangen), Auftrags-Konfigurator mit Summenkontrolle &amp; Stückzahl-Summenzeile, <strong>Lackrechner</strong> (bis <strong>5 Systeme</strong> [m²/L]) und <strong>PDF-Laufkarten</strong>.</p>
+                        <h4>3. Produktionsberichts-Generator (PDF, Einkauf K/KW/KZ, Gehrung, 5 Lacke)</h4>
+                        <p>Einkaufsrubriken (6/12/freie Stangen, Kooperation <code>K/KW/KZ</code>), 1D-Gehrungswarnung (<code>S</code> → <em>GEHRUNG - nach Zeichnung schneiden!</em>), Auftrags-Konfigurator, <strong>Lackrechner</strong> (bis <strong>5 Systeme</strong>) und <strong>PDF-Laufkarten</strong>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>4. 1D-Stangen- &amp; Profil-Nester (Für reale Abläufe entwickelt)</h4>
-                        <p>6/12/freie Längen inkl. Sägeschnitt. <strong>Global</strong> oder <strong>unterauftragsweise</strong> (mit Pos.-1-Kommissionsnummer), Gruppierung identischer Stangen (<code>Nx Stangen</code>), PDF-Vorschau und Ordner <code>NESTING</code>.</p>
+                        <h4>4. 1D-Stangen- &amp; Profil-Nester (Für reale Abläufe + Gehrungsmarker *)</h4>
+                        <p>6/12/freie Längen inkl. Sägeschnitt. <strong>Global</strong> oder <strong>unterauftragsweise</strong> (mit Pos.-1-Kommissionsnummer), Gehrungsmarker <code>*</code>, Gruppierung identischer Stangen (<code>Nx Stangen</code>), PDF-Vorschau und Ordner <code>NESTING</code>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>5. Versandetiketten-Generator (S/W-PDF / Excel, Zebra/Dymo)</h4>
+                        <h4>5. Poka-Yoke-Etikettengenerator (Kennzeichnungsetiketten für 2D-Zeichnungen)</h4>
+                        <p>Etiketten für Werkstattzeichnungen (Zebra/Dymo/A4 + Live-Vorschau): <strong>konsolidiert</strong> (1 Etikett pro Zeichnung mit allen Vorkommen) oder <strong>einzeln je Position</strong>, sortiert A–Z / nach Struktur / nach Fertigungsinsel.</p>
+                    </div>
+
+                    <div class="mod-box">
+                        <h4>6. Versandetiketten-Generator (S/W-PDF / Excel, Zebra/Dymo)</h4>
                         <p>Liest direkt aus der Verladeliste. Ein-Klick-Wechsel: <strong>Detail (1/N)</strong> oder <strong>Sammel (Stk. N)</strong>, freie mm (+ Mikro), <strong>DE/EN/PL</strong> + 6 Zweisprach-Varianten inkl. A4-PDF-Verladeliste mit Gewichtssumme.</p>
                     </div>
                 </div>
@@ -925,18 +940,18 @@
                     </div>
 
                     <div class="mod-box">
-                        <h4>6. 3D-Metadaten- &amp; Maschinendatei-Harvester</h4>
-                        <p>Halbautomatische Blechkonvertierung unter Aufsicht, Stapel-Export <strong>1:1-DXF</strong> &amp; <strong>STEP</strong>, 3D-Maß-/Gewichts-Harvesting, Geometrie-Vorbelegung (z. B. Blech &lt; 20 mm → 2D-Laser; vom Technologen änderbar) &amp; <strong>gelbe Hinweise</strong>.</p>
+                        <h4>7. 3D-Metadaten- &amp; Maschinendatei-Harvester</h4>
+                        <p>Halbautomatische Blechkonvertierung unter Aufsicht (Teile mit Biegungen zu 100% als Blech erkannt), Stapel-Export <strong>1:1-DXF</strong> &amp; <strong>STEP</strong>, 3D-Maß-/Gewichts-Harvesting, Geometrie-Vorbelegung &amp; <strong>gelbe Hinweise</strong>.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>7. CAD-SSoT-Strukturgenerator (1 Stück eines Produkts)</h4>
-                        <p>Erstellt die mehrstufige <strong>SSoT</strong>-Stammstruktur (für 1 Stk.: Schweißen &amp; Montage 1, 1.1, 1.1.1) direkt aus SolidWorks. Erkennt gekantete Teile und ordnet die Abkantpresse gezielt bei Biegungen zu.</p>
+                        <h4>8. CAD-SSoT-Strukturgenerator (1 Stück eines Produkts)</h4>
+                        <p>Erstellt die mehrstufige <strong>SSoT</strong>-Stammstruktur (für 1 Stk.: Schweißen &amp; Montage 1, 1.1, 1.1.1) direkt aus SolidWorks. Erkennt gekantete Teile und ordnet die Abkantpresse (Sp. M) gezielt bei Biegungen zu.</p>
                     </div>
 
                     <div class="mod-box">
-                        <h4>8. SSoT-Datenintegrator (2D-Gerüst + 3D-Datenzufuhr)</h4>
-                        <p>Vor allem für importierte Geometrien (&amp; eigene PDFs mit fremder Sortierung). Der Technologe baut das <strong>übergeordnete SSoT-Gerüst</strong> aus 2D-Daten im festen Ordnungsschema, der Integrator speist 3D-Maße/Gewichte zu.</p>
+                        <h4>9. SSoT-Datenintegrator (2D-Gerüst + 3D-Datenzufuhr)</h4>
+                        <p>Vor allem für importierte Geometrien (&amp; volle Positionsnummern-Konsistenz mit flachen 2D-Schweißzeichnungen). Der Technologe baut das <strong>übergeordnete SSoT-Gerüst</strong>, der Integrator speist 3D-Maße/Gewichte zu.</p>
                     </div>
 
                     <div class="pro-roi-mini">
